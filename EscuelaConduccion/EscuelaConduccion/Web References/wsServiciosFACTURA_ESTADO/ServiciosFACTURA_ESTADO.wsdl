@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crearFACTURA_ESTADO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:FACTURA_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FACTURA_ESTADO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESTADO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearFACTURA_ESTADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearFACTURA_ESTADOResult" type="tns:FACTURA_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarFACTURA_ESTADO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:FACTURA_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarFACTURA_ESTADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="editarFACTURA_ESTADOResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroFACTURA_ESTADO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:FACTURA_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroFACTURA_ESTADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroFACTURA_ESTADOResult" type="tns:FACTURA_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarFACTURA_ESTADO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:FACTURA_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarFACTURA_ESTADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarFACTURA_ESTADOResult" type="tns:ArrayOfFACTURA_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFACTURA_ESTADO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FACTURA_ESTADO" nillable="true" type="tns:FACTURA_ESTADO" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listarFACTURA_ESTADO">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarFACTURA_ESTADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarFACTURA_ESTADOResult" type="tns:ArrayOfFACTURA_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarFACTURA_ESTADO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:FACTURA_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarFACTURA_ESTADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminarFACTURA_ESTADOResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crearFACTURA_ESTADOSoapIn">
+    <wsdl:part name="parameters" element="tns:crearFACTURA_ESTADO" />
+  </wsdl:message>
+  <wsdl:message name="crearFACTURA_ESTADOSoapOut">
+    <wsdl:part name="parameters" element="tns:crearFACTURA_ESTADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarFACTURA_ESTADOSoapIn">
+    <wsdl:part name="parameters" element="tns:editarFACTURA_ESTADO" />
+  </wsdl:message>
+  <wsdl:message name="editarFACTURA_ESTADOSoapOut">
+    <wsdl:part name="parameters" element="tns:editarFACTURA_ESTADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroFACTURA_ESTADOSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroFACTURA_ESTADO" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroFACTURA_ESTADOSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroFACTURA_ESTADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarFACTURA_ESTADOSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarFACTURA_ESTADO" />
+  </wsdl:message>
+  <wsdl:message name="buscarFACTURA_ESTADOSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarFACTURA_ESTADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarFACTURA_ESTADOSoapIn">
+    <wsdl:part name="parameters" element="tns:listarFACTURA_ESTADO" />
+  </wsdl:message>
+  <wsdl:message name="listarFACTURA_ESTADOSoapOut">
+    <wsdl:part name="parameters" element="tns:listarFACTURA_ESTADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarFACTURA_ESTADOSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarFACTURA_ESTADO" />
+  </wsdl:message>
+  <wsdl:message name="eliminarFACTURA_ESTADOSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarFACTURA_ESTADOResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosFACTURA_ESTADOSoap">
+    <wsdl:operation name="crearFACTURA_ESTADO">
+      <wsdl:input message="tns:crearFACTURA_ESTADOSoapIn" />
+      <wsdl:output message="tns:crearFACTURA_ESTADOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarFACTURA_ESTADO">
+      <wsdl:input message="tns:editarFACTURA_ESTADOSoapIn" />
+      <wsdl:output message="tns:editarFACTURA_ESTADOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroFACTURA_ESTADO">
+      <wsdl:input message="tns:buscarPrimeroFACTURA_ESTADOSoapIn" />
+      <wsdl:output message="tns:buscarPrimeroFACTURA_ESTADOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarFACTURA_ESTADO">
+      <wsdl:input message="tns:buscarFACTURA_ESTADOSoapIn" />
+      <wsdl:output message="tns:buscarFACTURA_ESTADOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarFACTURA_ESTADO">
+      <wsdl:input message="tns:listarFACTURA_ESTADOSoapIn" />
+      <wsdl:output message="tns:listarFACTURA_ESTADOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarFACTURA_ESTADO">
+      <wsdl:input message="tns:eliminarFACTURA_ESTADOSoapIn" />
+      <wsdl:output message="tns:eliminarFACTURA_ESTADOSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosFACTURA_ESTADOSoap" type="tns:ServiciosFACTURA_ESTADOSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearFACTURA_ESTADO">
+      <soap:operation soapAction="http://tempuri.org/crearFACTURA_ESTADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarFACTURA_ESTADO">
+      <soap:operation soapAction="http://tempuri.org/editarFACTURA_ESTADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroFACTURA_ESTADO">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroFACTURA_ESTADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarFACTURA_ESTADO">
+      <soap:operation soapAction="http://tempuri.org/buscarFACTURA_ESTADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarFACTURA_ESTADO">
+      <soap:operation soapAction="http://tempuri.org/listarFACTURA_ESTADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarFACTURA_ESTADO">
+      <soap:operation soapAction="http://tempuri.org/eliminarFACTURA_ESTADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosFACTURA_ESTADOSoap12" type="tns:ServiciosFACTURA_ESTADOSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearFACTURA_ESTADO">
+      <soap12:operation soapAction="http://tempuri.org/crearFACTURA_ESTADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarFACTURA_ESTADO">
+      <soap12:operation soapAction="http://tempuri.org/editarFACTURA_ESTADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroFACTURA_ESTADO">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroFACTURA_ESTADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarFACTURA_ESTADO">
+      <soap12:operation soapAction="http://tempuri.org/buscarFACTURA_ESTADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarFACTURA_ESTADO">
+      <soap12:operation soapAction="http://tempuri.org/listarFACTURA_ESTADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarFACTURA_ESTADO">
+      <soap12:operation soapAction="http://tempuri.org/eliminarFACTURA_ESTADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosFACTURA_ESTADO">
+    <wsdl:port name="ServiciosFACTURA_ESTADOSoap" binding="tns:ServiciosFACTURA_ESTADOSoap">
+      <soap:address location="http://localhost:52393/Model/Services/ServiciosFACTURA_ESTADO.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosFACTURA_ESTADOSoap12" binding="tns:ServiciosFACTURA_ESTADOSoap12">
+      <soap12:address location="http://localhost:52393/Model/Services/ServiciosFACTURA_ESTADO.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

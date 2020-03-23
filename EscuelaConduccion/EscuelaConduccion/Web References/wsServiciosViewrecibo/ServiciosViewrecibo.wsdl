@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="buscarPrimeroViewrecibo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Viewrecibo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Viewrecibo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NUMERO_RECIBO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="VALOR" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_CLIENTE" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRES" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="APELLIDOS" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_ESTADO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESTADO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_TIPO_LIQUIDACION" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPO_PAGO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="buscarPrimeroViewreciboResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroViewreciboResult" type="tns:Viewrecibo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarViewrecibo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Viewrecibo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarViewreciboResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarViewreciboResult" type="tns:ArrayOfViewrecibo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfViewrecibo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Viewrecibo" nillable="true" type="tns:Viewrecibo" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="buscarPaginacionViewrecibo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Viewrecibo" />
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPaginacionViewreciboResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPaginacionViewreciboResult" type="tns:ArrayOfViewrecibo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarViewrecibo">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarViewreciboResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarViewreciboResult" type="tns:ArrayOfViewrecibo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionViewrecibo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionViewreciboResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarPaginacionViewreciboResult" type="tns:ArrayOfViewrecibo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaViewrecibo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Viewrecibo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaViewreciboResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="contarBusquedaViewreciboResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="buscarPrimeroViewreciboSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroViewrecibo" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroViewreciboSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroViewreciboResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarViewreciboSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarViewrecibo" />
+  </wsdl:message>
+  <wsdl:message name="buscarViewreciboSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarViewreciboResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionViewreciboSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionViewrecibo" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionViewreciboSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionViewreciboResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarViewreciboSoapIn">
+    <wsdl:part name="parameters" element="tns:listarViewrecibo" />
+  </wsdl:message>
+  <wsdl:message name="listarViewreciboSoapOut">
+    <wsdl:part name="parameters" element="tns:listarViewreciboResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionViewreciboSoapIn">
+    <wsdl:part name="parameters" element="tns:listarPaginacionViewrecibo" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionViewreciboSoapOut">
+    <wsdl:part name="parameters" element="tns:listarPaginacionViewreciboResponse" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaViewreciboSoapIn">
+    <wsdl:part name="parameters" element="tns:contarBusquedaViewrecibo" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaViewreciboSoapOut">
+    <wsdl:part name="parameters" element="tns:contarBusquedaViewreciboResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosViewreciboSoap">
+    <wsdl:operation name="buscarPrimeroViewrecibo">
+      <wsdl:input message="tns:buscarPrimeroViewreciboSoapIn" />
+      <wsdl:output message="tns:buscarPrimeroViewreciboSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarViewrecibo">
+      <wsdl:input message="tns:buscarViewreciboSoapIn" />
+      <wsdl:output message="tns:buscarViewreciboSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionViewrecibo">
+      <wsdl:input message="tns:buscarPaginacionViewreciboSoapIn" />
+      <wsdl:output message="tns:buscarPaginacionViewreciboSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarViewrecibo">
+      <wsdl:input message="tns:listarViewreciboSoapIn" />
+      <wsdl:output message="tns:listarViewreciboSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionViewrecibo">
+      <wsdl:input message="tns:listarPaginacionViewreciboSoapIn" />
+      <wsdl:output message="tns:listarPaginacionViewreciboSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaViewrecibo">
+      <wsdl:input message="tns:contarBusquedaViewreciboSoapIn" />
+      <wsdl:output message="tns:contarBusquedaViewreciboSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosViewreciboSoap" type="tns:ServiciosViewreciboSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="buscarPrimeroViewrecibo">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroViewrecibo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarViewrecibo">
+      <soap:operation soapAction="http://tempuri.org/buscarViewrecibo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionViewrecibo">
+      <soap:operation soapAction="http://tempuri.org/buscarPaginacionViewrecibo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarViewrecibo">
+      <soap:operation soapAction="http://tempuri.org/listarViewrecibo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionViewrecibo">
+      <soap:operation soapAction="http://tempuri.org/listarPaginacionViewrecibo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaViewrecibo">
+      <soap:operation soapAction="http://tempuri.org/contarBusquedaViewrecibo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosViewreciboSoap12" type="tns:ServiciosViewreciboSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="buscarPrimeroViewrecibo">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroViewrecibo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarViewrecibo">
+      <soap12:operation soapAction="http://tempuri.org/buscarViewrecibo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionViewrecibo">
+      <soap12:operation soapAction="http://tempuri.org/buscarPaginacionViewrecibo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarViewrecibo">
+      <soap12:operation soapAction="http://tempuri.org/listarViewrecibo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionViewrecibo">
+      <soap12:operation soapAction="http://tempuri.org/listarPaginacionViewrecibo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaViewrecibo">
+      <soap12:operation soapAction="http://tempuri.org/contarBusquedaViewrecibo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosViewrecibo">
+    <wsdl:port name="ServiciosViewreciboSoap" binding="tns:ServiciosViewreciboSoap">
+      <soap:address location="http://localhost:52393/Model/Services/ServiciosViewrecibo.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosViewreciboSoap12" binding="tns:ServiciosViewreciboSoap12">
+      <soap12:address location="http://localhost:52393/Model/Services/ServiciosViewrecibo.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

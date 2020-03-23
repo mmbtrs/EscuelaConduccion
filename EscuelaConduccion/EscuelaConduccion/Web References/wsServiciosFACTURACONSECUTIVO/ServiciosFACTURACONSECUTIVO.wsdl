@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crearFACTURACONSECUTIVO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:FACTURACONSECUTIVO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FACTURACONSECUTIVO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="RANGO_INICIAL" type="s:float" />
+          <s:element minOccurs="1" maxOccurs="1" name="RANGO_FINAL" type="s:float" />
+          <s:element minOccurs="0" maxOccurs="1" name="SUFIJO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RESOLUCION" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FECHA_RESOLUCION" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearFACTURACONSECUTIVOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearFACTURACONSECUTIVOResult" type="tns:FACTURACONSECUTIVO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarFACTURACONSECUTIVO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:FACTURACONSECUTIVO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarFACTURACONSECUTIVOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="editarFACTURACONSECUTIVOResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroFACTURACONSECUTIVO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:FACTURACONSECUTIVO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroFACTURACONSECUTIVOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroFACTURACONSECUTIVOResult" type="tns:FACTURACONSECUTIVO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarFACTURACONSECUTIVO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:FACTURACONSECUTIVO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarFACTURACONSECUTIVOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarFACTURACONSECUTIVOResult" type="tns:ArrayOfFACTURACONSECUTIVO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFACTURACONSECUTIVO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="FACTURACONSECUTIVO" nillable="true" type="tns:FACTURACONSECUTIVO" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listarFACTURACONSECUTIVO">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarFACTURACONSECUTIVOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarFACTURACONSECUTIVOResult" type="tns:ArrayOfFACTURACONSECUTIVO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarFACTURACONSECUTIVO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:FACTURACONSECUTIVO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarFACTURACONSECUTIVOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminarFACTURACONSECUTIVOResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crearFACTURACONSECUTIVOSoapIn">
+    <wsdl:part name="parameters" element="tns:crearFACTURACONSECUTIVO" />
+  </wsdl:message>
+  <wsdl:message name="crearFACTURACONSECUTIVOSoapOut">
+    <wsdl:part name="parameters" element="tns:crearFACTURACONSECUTIVOResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarFACTURACONSECUTIVOSoapIn">
+    <wsdl:part name="parameters" element="tns:editarFACTURACONSECUTIVO" />
+  </wsdl:message>
+  <wsdl:message name="editarFACTURACONSECUTIVOSoapOut">
+    <wsdl:part name="parameters" element="tns:editarFACTURACONSECUTIVOResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroFACTURACONSECUTIVOSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroFACTURACONSECUTIVO" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroFACTURACONSECUTIVOSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroFACTURACONSECUTIVOResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarFACTURACONSECUTIVOSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarFACTURACONSECUTIVO" />
+  </wsdl:message>
+  <wsdl:message name="buscarFACTURACONSECUTIVOSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarFACTURACONSECUTIVOResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarFACTURACONSECUTIVOSoapIn">
+    <wsdl:part name="parameters" element="tns:listarFACTURACONSECUTIVO" />
+  </wsdl:message>
+  <wsdl:message name="listarFACTURACONSECUTIVOSoapOut">
+    <wsdl:part name="parameters" element="tns:listarFACTURACONSECUTIVOResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarFACTURACONSECUTIVOSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarFACTURACONSECUTIVO" />
+  </wsdl:message>
+  <wsdl:message name="eliminarFACTURACONSECUTIVOSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarFACTURACONSECUTIVOResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosFACTURACONSECUTIVOSoap">
+    <wsdl:operation name="crearFACTURACONSECUTIVO">
+      <wsdl:input message="tns:crearFACTURACONSECUTIVOSoapIn" />
+      <wsdl:output message="tns:crearFACTURACONSECUTIVOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarFACTURACONSECUTIVO">
+      <wsdl:input message="tns:editarFACTURACONSECUTIVOSoapIn" />
+      <wsdl:output message="tns:editarFACTURACONSECUTIVOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroFACTURACONSECUTIVO">
+      <wsdl:input message="tns:buscarPrimeroFACTURACONSECUTIVOSoapIn" />
+      <wsdl:output message="tns:buscarPrimeroFACTURACONSECUTIVOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarFACTURACONSECUTIVO">
+      <wsdl:input message="tns:buscarFACTURACONSECUTIVOSoapIn" />
+      <wsdl:output message="tns:buscarFACTURACONSECUTIVOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarFACTURACONSECUTIVO">
+      <wsdl:input message="tns:listarFACTURACONSECUTIVOSoapIn" />
+      <wsdl:output message="tns:listarFACTURACONSECUTIVOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarFACTURACONSECUTIVO">
+      <wsdl:input message="tns:eliminarFACTURACONSECUTIVOSoapIn" />
+      <wsdl:output message="tns:eliminarFACTURACONSECUTIVOSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosFACTURACONSECUTIVOSoap" type="tns:ServiciosFACTURACONSECUTIVOSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearFACTURACONSECUTIVO">
+      <soap:operation soapAction="http://tempuri.org/crearFACTURACONSECUTIVO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarFACTURACONSECUTIVO">
+      <soap:operation soapAction="http://tempuri.org/editarFACTURACONSECUTIVO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroFACTURACONSECUTIVO">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroFACTURACONSECUTIVO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarFACTURACONSECUTIVO">
+      <soap:operation soapAction="http://tempuri.org/buscarFACTURACONSECUTIVO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarFACTURACONSECUTIVO">
+      <soap:operation soapAction="http://tempuri.org/listarFACTURACONSECUTIVO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarFACTURACONSECUTIVO">
+      <soap:operation soapAction="http://tempuri.org/eliminarFACTURACONSECUTIVO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosFACTURACONSECUTIVOSoap12" type="tns:ServiciosFACTURACONSECUTIVOSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearFACTURACONSECUTIVO">
+      <soap12:operation soapAction="http://tempuri.org/crearFACTURACONSECUTIVO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarFACTURACONSECUTIVO">
+      <soap12:operation soapAction="http://tempuri.org/editarFACTURACONSECUTIVO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroFACTURACONSECUTIVO">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroFACTURACONSECUTIVO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarFACTURACONSECUTIVO">
+      <soap12:operation soapAction="http://tempuri.org/buscarFACTURACONSECUTIVO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarFACTURACONSECUTIVO">
+      <soap12:operation soapAction="http://tempuri.org/listarFACTURACONSECUTIVO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarFACTURACONSECUTIVO">
+      <soap12:operation soapAction="http://tempuri.org/eliminarFACTURACONSECUTIVO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosFACTURACONSECUTIVO">
+    <wsdl:port name="ServiciosFACTURACONSECUTIVOSoap" binding="tns:ServiciosFACTURACONSECUTIVOSoap">
+      <soap:address location="http://localhost:52393/Model/Services/ServiciosFACTURACONSECUTIVO.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosFACTURACONSECUTIVOSoap12" binding="tns:ServiciosFACTURACONSECUTIVOSoap12">
+      <soap12:address location="http://localhost:52393/Model/Services/ServiciosFACTURACONSECUTIVO.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

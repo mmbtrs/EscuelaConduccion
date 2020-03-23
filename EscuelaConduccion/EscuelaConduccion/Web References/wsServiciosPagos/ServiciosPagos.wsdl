@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crearPagos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Pagos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Pagos">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_RECIBO" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_FORMAPAGO" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="VALOR" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="FECHA_PAGO" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearPagosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearPagosResult" type="tns:Pagos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarPagos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Pagos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarPagosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="editarPagosResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroPagos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Pagos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroPagosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroPagosResult" type="tns:Pagos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPagos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Pagos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPagosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPagosResult" type="tns:ArrayOfPagos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPagos">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Pagos" nillable="true" type="tns:Pagos" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="buscarPaginacionPagos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Pagos" />
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPaginacionPagosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPaginacionPagosResult" type="tns:ArrayOfPagos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPagos">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarPagosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarPagosResult" type="tns:ArrayOfPagos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionPagos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionPagosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarPaginacionPagosResult" type="tns:ArrayOfPagos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaPagos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Pagos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaPagosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="contarBusquedaPagosResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarPagos">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Pagos" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarPagosResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminarPagosResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crearPagosSoapIn">
+    <wsdl:part name="parameters" element="tns:crearPagos" />
+  </wsdl:message>
+  <wsdl:message name="crearPagosSoapOut">
+    <wsdl:part name="parameters" element="tns:crearPagosResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarPagosSoapIn">
+    <wsdl:part name="parameters" element="tns:editarPagos" />
+  </wsdl:message>
+  <wsdl:message name="editarPagosSoapOut">
+    <wsdl:part name="parameters" element="tns:editarPagosResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroPagosSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroPagos" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroPagosSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroPagosResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPagosSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPagos" />
+  </wsdl:message>
+  <wsdl:message name="buscarPagosSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPagosResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionPagosSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionPagos" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionPagosSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionPagosResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarPagosSoapIn">
+    <wsdl:part name="parameters" element="tns:listarPagos" />
+  </wsdl:message>
+  <wsdl:message name="listarPagosSoapOut">
+    <wsdl:part name="parameters" element="tns:listarPagosResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionPagosSoapIn">
+    <wsdl:part name="parameters" element="tns:listarPaginacionPagos" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionPagosSoapOut">
+    <wsdl:part name="parameters" element="tns:listarPaginacionPagosResponse" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaPagosSoapIn">
+    <wsdl:part name="parameters" element="tns:contarBusquedaPagos" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaPagosSoapOut">
+    <wsdl:part name="parameters" element="tns:contarBusquedaPagosResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarPagosSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarPagos" />
+  </wsdl:message>
+  <wsdl:message name="eliminarPagosSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarPagosResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosPagosSoap">
+    <wsdl:operation name="crearPagos">
+      <wsdl:input message="tns:crearPagosSoapIn" />
+      <wsdl:output message="tns:crearPagosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarPagos">
+      <wsdl:input message="tns:editarPagosSoapIn" />
+      <wsdl:output message="tns:editarPagosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroPagos">
+      <wsdl:input message="tns:buscarPrimeroPagosSoapIn" />
+      <wsdl:output message="tns:buscarPrimeroPagosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPagos">
+      <wsdl:input message="tns:buscarPagosSoapIn" />
+      <wsdl:output message="tns:buscarPagosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionPagos">
+      <wsdl:input message="tns:buscarPaginacionPagosSoapIn" />
+      <wsdl:output message="tns:buscarPaginacionPagosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarPagos">
+      <wsdl:input message="tns:listarPagosSoapIn" />
+      <wsdl:output message="tns:listarPagosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionPagos">
+      <wsdl:input message="tns:listarPaginacionPagosSoapIn" />
+      <wsdl:output message="tns:listarPaginacionPagosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaPagos">
+      <wsdl:input message="tns:contarBusquedaPagosSoapIn" />
+      <wsdl:output message="tns:contarBusquedaPagosSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarPagos">
+      <wsdl:input message="tns:eliminarPagosSoapIn" />
+      <wsdl:output message="tns:eliminarPagosSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosPagosSoap" type="tns:ServiciosPagosSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearPagos">
+      <soap:operation soapAction="http://tempuri.org/crearPagos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarPagos">
+      <soap:operation soapAction="http://tempuri.org/editarPagos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroPagos">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroPagos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPagos">
+      <soap:operation soapAction="http://tempuri.org/buscarPagos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionPagos">
+      <soap:operation soapAction="http://tempuri.org/buscarPaginacionPagos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPagos">
+      <soap:operation soapAction="http://tempuri.org/listarPagos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionPagos">
+      <soap:operation soapAction="http://tempuri.org/listarPaginacionPagos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaPagos">
+      <soap:operation soapAction="http://tempuri.org/contarBusquedaPagos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarPagos">
+      <soap:operation soapAction="http://tempuri.org/eliminarPagos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosPagosSoap12" type="tns:ServiciosPagosSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearPagos">
+      <soap12:operation soapAction="http://tempuri.org/crearPagos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarPagos">
+      <soap12:operation soapAction="http://tempuri.org/editarPagos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroPagos">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroPagos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPagos">
+      <soap12:operation soapAction="http://tempuri.org/buscarPagos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionPagos">
+      <soap12:operation soapAction="http://tempuri.org/buscarPaginacionPagos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPagos">
+      <soap12:operation soapAction="http://tempuri.org/listarPagos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionPagos">
+      <soap12:operation soapAction="http://tempuri.org/listarPaginacionPagos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaPagos">
+      <soap12:operation soapAction="http://tempuri.org/contarBusquedaPagos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarPagos">
+      <soap12:operation soapAction="http://tempuri.org/eliminarPagos" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosPagos">
+    <wsdl:port name="ServiciosPagosSoap" binding="tns:ServiciosPagosSoap">
+      <soap:address location="http://localhost:52393/Model/Services/ServiciosPagos.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosPagosSoap12" binding="tns:ServiciosPagosSoap12">
+      <soap12:address location="http://localhost:52393/Model/Services/ServiciosPagos.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

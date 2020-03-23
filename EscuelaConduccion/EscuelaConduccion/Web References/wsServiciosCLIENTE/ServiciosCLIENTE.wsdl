@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crearCLIENTE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:CLIENTE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CLIENTE">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_GENERO" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_CIUDAD" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_TIPO_DOCUMENTO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="IDENTIFICACION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRES" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="APELLIDOS" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DIRECCION" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TELEFONO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CELULAR" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CORREO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FECHA_NACIMIENTO" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearCLIENTEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearCLIENTEResult" type="tns:CLIENTE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarCLIENTE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:CLIENTE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarCLIENTEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="editarCLIENTEResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroCLIENTE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:CLIENTE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroCLIENTEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroCLIENTEResult" type="tns:CLIENTE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarCLIENTE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:CLIENTE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarCLIENTEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarCLIENTEResult" type="tns:ArrayOfCLIENTE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCLIENTE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CLIENTE" nillable="true" type="tns:CLIENTE" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listarCLIENTE">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarCLIENTEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarCLIENTEResult" type="tns:ArrayOfCLIENTE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarCLIENTE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:CLIENTE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarCLIENTEResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminarCLIENTEResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crearCLIENTESoapIn">
+    <wsdl:part name="parameters" element="tns:crearCLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="crearCLIENTESoapOut">
+    <wsdl:part name="parameters" element="tns:crearCLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarCLIENTESoapIn">
+    <wsdl:part name="parameters" element="tns:editarCLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="editarCLIENTESoapOut">
+    <wsdl:part name="parameters" element="tns:editarCLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroCLIENTESoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroCLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroCLIENTESoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroCLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarCLIENTESoapIn">
+    <wsdl:part name="parameters" element="tns:buscarCLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="buscarCLIENTESoapOut">
+    <wsdl:part name="parameters" element="tns:buscarCLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarCLIENTESoapIn">
+    <wsdl:part name="parameters" element="tns:listarCLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="listarCLIENTESoapOut">
+    <wsdl:part name="parameters" element="tns:listarCLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarCLIENTESoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarCLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="eliminarCLIENTESoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarCLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosCLIENTESoap">
+    <wsdl:operation name="crearCLIENTE">
+      <wsdl:input message="tns:crearCLIENTESoapIn" />
+      <wsdl:output message="tns:crearCLIENTESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarCLIENTE">
+      <wsdl:input message="tns:editarCLIENTESoapIn" />
+      <wsdl:output message="tns:editarCLIENTESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroCLIENTE">
+      <wsdl:input message="tns:buscarPrimeroCLIENTESoapIn" />
+      <wsdl:output message="tns:buscarPrimeroCLIENTESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarCLIENTE">
+      <wsdl:input message="tns:buscarCLIENTESoapIn" />
+      <wsdl:output message="tns:buscarCLIENTESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarCLIENTE">
+      <wsdl:input message="tns:listarCLIENTESoapIn" />
+      <wsdl:output message="tns:listarCLIENTESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarCLIENTE">
+      <wsdl:input message="tns:eliminarCLIENTESoapIn" />
+      <wsdl:output message="tns:eliminarCLIENTESoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosCLIENTESoap" type="tns:ServiciosCLIENTESoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearCLIENTE">
+      <soap:operation soapAction="http://tempuri.org/crearCLIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarCLIENTE">
+      <soap:operation soapAction="http://tempuri.org/editarCLIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroCLIENTE">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroCLIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarCLIENTE">
+      <soap:operation soapAction="http://tempuri.org/buscarCLIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarCLIENTE">
+      <soap:operation soapAction="http://tempuri.org/listarCLIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarCLIENTE">
+      <soap:operation soapAction="http://tempuri.org/eliminarCLIENTE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosCLIENTESoap12" type="tns:ServiciosCLIENTESoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearCLIENTE">
+      <soap12:operation soapAction="http://tempuri.org/crearCLIENTE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarCLIENTE">
+      <soap12:operation soapAction="http://tempuri.org/editarCLIENTE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroCLIENTE">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroCLIENTE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarCLIENTE">
+      <soap12:operation soapAction="http://tempuri.org/buscarCLIENTE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarCLIENTE">
+      <soap12:operation soapAction="http://tempuri.org/listarCLIENTE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarCLIENTE">
+      <soap12:operation soapAction="http://tempuri.org/eliminarCLIENTE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosCLIENTE">
+    <wsdl:port name="ServiciosCLIENTESoap" binding="tns:ServiciosCLIENTESoap">
+      <soap:address location="http://localhost:52393/Model/Services/ServiciosCLIENTE.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosCLIENTESoap12" binding="tns:ServiciosCLIENTESoap12">
+      <soap12:address location="http://localhost:52393/Model/Services/ServiciosCLIENTE.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

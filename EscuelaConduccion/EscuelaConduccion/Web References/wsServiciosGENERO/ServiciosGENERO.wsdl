@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crearGENERO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:GENERO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GENERO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearGENEROResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearGENEROResult" type="tns:GENERO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarGENERO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:GENERO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarGENEROResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="editarGENEROResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroGENERO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:GENERO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroGENEROResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroGENEROResult" type="tns:GENERO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarGENERO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:GENERO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarGENEROResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarGENEROResult" type="tns:ArrayOfGENERO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGENERO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GENERO" nillable="true" type="tns:GENERO" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listarGENERO">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarGENEROResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarGENEROResult" type="tns:ArrayOfGENERO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarGENERO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:GENERO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarGENEROResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminarGENEROResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crearGENEROSoapIn">
+    <wsdl:part name="parameters" element="tns:crearGENERO" />
+  </wsdl:message>
+  <wsdl:message name="crearGENEROSoapOut">
+    <wsdl:part name="parameters" element="tns:crearGENEROResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarGENEROSoapIn">
+    <wsdl:part name="parameters" element="tns:editarGENERO" />
+  </wsdl:message>
+  <wsdl:message name="editarGENEROSoapOut">
+    <wsdl:part name="parameters" element="tns:editarGENEROResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroGENEROSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroGENERO" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroGENEROSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroGENEROResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarGENEROSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarGENERO" />
+  </wsdl:message>
+  <wsdl:message name="buscarGENEROSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarGENEROResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarGENEROSoapIn">
+    <wsdl:part name="parameters" element="tns:listarGENERO" />
+  </wsdl:message>
+  <wsdl:message name="listarGENEROSoapOut">
+    <wsdl:part name="parameters" element="tns:listarGENEROResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarGENEROSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarGENERO" />
+  </wsdl:message>
+  <wsdl:message name="eliminarGENEROSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarGENEROResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosGENEROSoap">
+    <wsdl:operation name="crearGENERO">
+      <wsdl:input message="tns:crearGENEROSoapIn" />
+      <wsdl:output message="tns:crearGENEROSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarGENERO">
+      <wsdl:input message="tns:editarGENEROSoapIn" />
+      <wsdl:output message="tns:editarGENEROSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroGENERO">
+      <wsdl:input message="tns:buscarPrimeroGENEROSoapIn" />
+      <wsdl:output message="tns:buscarPrimeroGENEROSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarGENERO">
+      <wsdl:input message="tns:buscarGENEROSoapIn" />
+      <wsdl:output message="tns:buscarGENEROSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarGENERO">
+      <wsdl:input message="tns:listarGENEROSoapIn" />
+      <wsdl:output message="tns:listarGENEROSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarGENERO">
+      <wsdl:input message="tns:eliminarGENEROSoapIn" />
+      <wsdl:output message="tns:eliminarGENEROSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosGENEROSoap" type="tns:ServiciosGENEROSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearGENERO">
+      <soap:operation soapAction="http://tempuri.org/crearGENERO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarGENERO">
+      <soap:operation soapAction="http://tempuri.org/editarGENERO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroGENERO">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroGENERO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarGENERO">
+      <soap:operation soapAction="http://tempuri.org/buscarGENERO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarGENERO">
+      <soap:operation soapAction="http://tempuri.org/listarGENERO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarGENERO">
+      <soap:operation soapAction="http://tempuri.org/eliminarGENERO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosGENEROSoap12" type="tns:ServiciosGENEROSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearGENERO">
+      <soap12:operation soapAction="http://tempuri.org/crearGENERO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarGENERO">
+      <soap12:operation soapAction="http://tempuri.org/editarGENERO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroGENERO">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroGENERO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarGENERO">
+      <soap12:operation soapAction="http://tempuri.org/buscarGENERO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarGENERO">
+      <soap12:operation soapAction="http://tempuri.org/listarGENERO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarGENERO">
+      <soap12:operation soapAction="http://tempuri.org/eliminarGENERO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosGENERO">
+    <wsdl:port name="ServiciosGENEROSoap" binding="tns:ServiciosGENEROSoap">
+      <soap:address location="http://localhost:52393/Model/Services/ServiciosGENERO.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosGENEROSoap12" binding="tns:ServiciosGENEROSoap12">
+      <soap12:address location="http://localhost:52393/Model/Services/ServiciosGENERO.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

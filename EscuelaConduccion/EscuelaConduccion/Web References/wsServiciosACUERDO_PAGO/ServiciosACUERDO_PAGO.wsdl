@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crearACUERDO_PAGO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:ACUERDO_PAGO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ACUERDO_PAGO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_LIQUIDACION" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_ACUERDO_ESTADO" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NUMERO_ACUERDO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FECHA_ACUERDO" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearACUERDO_PAGOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearACUERDO_PAGOResult" type="tns:ACUERDO_PAGO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarACUERDO_PAGO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:ACUERDO_PAGO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarACUERDO_PAGOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="editarACUERDO_PAGOResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroACUERDO_PAGO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:ACUERDO_PAGO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroACUERDO_PAGOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroACUERDO_PAGOResult" type="tns:ACUERDO_PAGO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarACUERDO_PAGO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:ACUERDO_PAGO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarACUERDO_PAGOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarACUERDO_PAGOResult" type="tns:ArrayOfACUERDO_PAGO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfACUERDO_PAGO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ACUERDO_PAGO" nillable="true" type="tns:ACUERDO_PAGO" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listarACUERDO_PAGO">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarACUERDO_PAGOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarACUERDO_PAGOResult" type="tns:ArrayOfACUERDO_PAGO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarACUERDO_PAGO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:ACUERDO_PAGO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarACUERDO_PAGOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminarACUERDO_PAGOResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crearACUERDO_PAGOSoapIn">
+    <wsdl:part name="parameters" element="tns:crearACUERDO_PAGO" />
+  </wsdl:message>
+  <wsdl:message name="crearACUERDO_PAGOSoapOut">
+    <wsdl:part name="parameters" element="tns:crearACUERDO_PAGOResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarACUERDO_PAGOSoapIn">
+    <wsdl:part name="parameters" element="tns:editarACUERDO_PAGO" />
+  </wsdl:message>
+  <wsdl:message name="editarACUERDO_PAGOSoapOut">
+    <wsdl:part name="parameters" element="tns:editarACUERDO_PAGOResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroACUERDO_PAGOSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroACUERDO_PAGO" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroACUERDO_PAGOSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroACUERDO_PAGOResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarACUERDO_PAGOSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarACUERDO_PAGO" />
+  </wsdl:message>
+  <wsdl:message name="buscarACUERDO_PAGOSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarACUERDO_PAGOResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarACUERDO_PAGOSoapIn">
+    <wsdl:part name="parameters" element="tns:listarACUERDO_PAGO" />
+  </wsdl:message>
+  <wsdl:message name="listarACUERDO_PAGOSoapOut">
+    <wsdl:part name="parameters" element="tns:listarACUERDO_PAGOResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarACUERDO_PAGOSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarACUERDO_PAGO" />
+  </wsdl:message>
+  <wsdl:message name="eliminarACUERDO_PAGOSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarACUERDO_PAGOResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosACUERDO_PAGOSoap">
+    <wsdl:operation name="crearACUERDO_PAGO">
+      <wsdl:input message="tns:crearACUERDO_PAGOSoapIn" />
+      <wsdl:output message="tns:crearACUERDO_PAGOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarACUERDO_PAGO">
+      <wsdl:input message="tns:editarACUERDO_PAGOSoapIn" />
+      <wsdl:output message="tns:editarACUERDO_PAGOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroACUERDO_PAGO">
+      <wsdl:input message="tns:buscarPrimeroACUERDO_PAGOSoapIn" />
+      <wsdl:output message="tns:buscarPrimeroACUERDO_PAGOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarACUERDO_PAGO">
+      <wsdl:input message="tns:buscarACUERDO_PAGOSoapIn" />
+      <wsdl:output message="tns:buscarACUERDO_PAGOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarACUERDO_PAGO">
+      <wsdl:input message="tns:listarACUERDO_PAGOSoapIn" />
+      <wsdl:output message="tns:listarACUERDO_PAGOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarACUERDO_PAGO">
+      <wsdl:input message="tns:eliminarACUERDO_PAGOSoapIn" />
+      <wsdl:output message="tns:eliminarACUERDO_PAGOSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosACUERDO_PAGOSoap" type="tns:ServiciosACUERDO_PAGOSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearACUERDO_PAGO">
+      <soap:operation soapAction="http://tempuri.org/crearACUERDO_PAGO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarACUERDO_PAGO">
+      <soap:operation soapAction="http://tempuri.org/editarACUERDO_PAGO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroACUERDO_PAGO">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroACUERDO_PAGO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarACUERDO_PAGO">
+      <soap:operation soapAction="http://tempuri.org/buscarACUERDO_PAGO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarACUERDO_PAGO">
+      <soap:operation soapAction="http://tempuri.org/listarACUERDO_PAGO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarACUERDO_PAGO">
+      <soap:operation soapAction="http://tempuri.org/eliminarACUERDO_PAGO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosACUERDO_PAGOSoap12" type="tns:ServiciosACUERDO_PAGOSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearACUERDO_PAGO">
+      <soap12:operation soapAction="http://tempuri.org/crearACUERDO_PAGO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarACUERDO_PAGO">
+      <soap12:operation soapAction="http://tempuri.org/editarACUERDO_PAGO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroACUERDO_PAGO">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroACUERDO_PAGO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarACUERDO_PAGO">
+      <soap12:operation soapAction="http://tempuri.org/buscarACUERDO_PAGO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarACUERDO_PAGO">
+      <soap12:operation soapAction="http://tempuri.org/listarACUERDO_PAGO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarACUERDO_PAGO">
+      <soap12:operation soapAction="http://tempuri.org/eliminarACUERDO_PAGO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosACUERDO_PAGO">
+    <wsdl:port name="ServiciosACUERDO_PAGOSoap" binding="tns:ServiciosACUERDO_PAGOSoap">
+      <soap:address location="http://localhost:52393/Model/Services/ServiciosACUERDO_PAGO.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosACUERDO_PAGOSoap12" binding="tns:ServiciosACUERDO_PAGOSoap12">
+      <soap12:address location="http://localhost:52393/Model/Services/ServiciosACUERDO_PAGO.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

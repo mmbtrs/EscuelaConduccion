@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscuelaConduccion", "EscuelaConduccion\EscuelaConduccion.csproj", "{4463374E-1C97-45D5-8EC1-DA2965B2FF28}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A6DC594F-085D-4DA1-8857-9EC17CD8DEF3} = {A6DC594F-085D-4DA1-8857-9EC17CD8DEF3}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiciosEscuelaConduccion", "ServiciosEscuelaConduccion\ServiciosEscuelaConduccion.csproj", "{A6DC594F-085D-4DA1-8857-9EC17CD8DEF3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4463374E-1C97-45D5-8EC1-DA2965B2FF28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4463374E-1C97-45D5-8EC1-DA2965B2FF28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4463374E-1C97-45D5-8EC1-DA2965B2FF28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4463374E-1C97-45D5-8EC1-DA2965B2FF28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6DC594F-085D-4DA1-8857-9EC17CD8DEF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6DC594F-085D-4DA1-8857-9EC17CD8DEF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6DC594F-085D-4DA1-8857-9EC17CD8DEF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6DC594F-085D-4DA1-8857-9EC17CD8DEF3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {628D27D0-C3DF-4B32-B3D5-F4C248DF4B3D}
+	EndGlobalSection
+EndGlobal

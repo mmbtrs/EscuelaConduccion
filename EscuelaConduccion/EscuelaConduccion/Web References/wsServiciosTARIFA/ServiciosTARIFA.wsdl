@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crearTARIFA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:TARIFA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TARIFA">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_VIGENCIA" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_TARIFA_CATEGORIA" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESTADO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearTARIFAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearTARIFAResult" type="tns:TARIFA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarTARIFA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:TARIFA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarTARIFAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="editarTARIFAResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroTARIFA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:TARIFA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroTARIFAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroTARIFAResult" type="tns:TARIFA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarTARIFA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:TARIFA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarTARIFAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarTARIFAResult" type="tns:ArrayOfTARIFA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTARIFA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TARIFA" nillable="true" type="tns:TARIFA" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listarTARIFA">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarTARIFAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarTARIFAResult" type="tns:ArrayOfTARIFA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarTARIFA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:TARIFA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarTARIFAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminarTARIFAResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crearTARIFASoapIn">
+    <wsdl:part name="parameters" element="tns:crearTARIFA" />
+  </wsdl:message>
+  <wsdl:message name="crearTARIFASoapOut">
+    <wsdl:part name="parameters" element="tns:crearTARIFAResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarTARIFASoapIn">
+    <wsdl:part name="parameters" element="tns:editarTARIFA" />
+  </wsdl:message>
+  <wsdl:message name="editarTARIFASoapOut">
+    <wsdl:part name="parameters" element="tns:editarTARIFAResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroTARIFASoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroTARIFA" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroTARIFASoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroTARIFAResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarTARIFASoapIn">
+    <wsdl:part name="parameters" element="tns:buscarTARIFA" />
+  </wsdl:message>
+  <wsdl:message name="buscarTARIFASoapOut">
+    <wsdl:part name="parameters" element="tns:buscarTARIFAResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarTARIFASoapIn">
+    <wsdl:part name="parameters" element="tns:listarTARIFA" />
+  </wsdl:message>
+  <wsdl:message name="listarTARIFASoapOut">
+    <wsdl:part name="parameters" element="tns:listarTARIFAResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarTARIFASoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarTARIFA" />
+  </wsdl:message>
+  <wsdl:message name="eliminarTARIFASoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarTARIFAResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosTARIFASoap">
+    <wsdl:operation name="crearTARIFA">
+      <wsdl:input message="tns:crearTARIFASoapIn" />
+      <wsdl:output message="tns:crearTARIFASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarTARIFA">
+      <wsdl:input message="tns:editarTARIFASoapIn" />
+      <wsdl:output message="tns:editarTARIFASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroTARIFA">
+      <wsdl:input message="tns:buscarPrimeroTARIFASoapIn" />
+      <wsdl:output message="tns:buscarPrimeroTARIFASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarTARIFA">
+      <wsdl:input message="tns:buscarTARIFASoapIn" />
+      <wsdl:output message="tns:buscarTARIFASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarTARIFA">
+      <wsdl:input message="tns:listarTARIFASoapIn" />
+      <wsdl:output message="tns:listarTARIFASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarTARIFA">
+      <wsdl:input message="tns:eliminarTARIFASoapIn" />
+      <wsdl:output message="tns:eliminarTARIFASoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosTARIFASoap" type="tns:ServiciosTARIFASoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearTARIFA">
+      <soap:operation soapAction="http://tempuri.org/crearTARIFA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarTARIFA">
+      <soap:operation soapAction="http://tempuri.org/editarTARIFA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroTARIFA">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroTARIFA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarTARIFA">
+      <soap:operation soapAction="http://tempuri.org/buscarTARIFA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarTARIFA">
+      <soap:operation soapAction="http://tempuri.org/listarTARIFA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarTARIFA">
+      <soap:operation soapAction="http://tempuri.org/eliminarTARIFA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosTARIFASoap12" type="tns:ServiciosTARIFASoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearTARIFA">
+      <soap12:operation soapAction="http://tempuri.org/crearTARIFA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarTARIFA">
+      <soap12:operation soapAction="http://tempuri.org/editarTARIFA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroTARIFA">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroTARIFA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarTARIFA">
+      <soap12:operation soapAction="http://tempuri.org/buscarTARIFA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarTARIFA">
+      <soap12:operation soapAction="http://tempuri.org/listarTARIFA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarTARIFA">
+      <soap12:operation soapAction="http://tempuri.org/eliminarTARIFA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosTARIFA">
+    <wsdl:port name="ServiciosTARIFASoap" binding="tns:ServiciosTARIFASoap">
+      <soap:address location="http://localhost:52393/Model/Services/ServiciosTARIFA.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosTARIFASoap12" binding="tns:ServiciosTARIFASoap12">
+      <soap12:address location="http://localhost:52393/Model/Services/ServiciosTARIFA.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

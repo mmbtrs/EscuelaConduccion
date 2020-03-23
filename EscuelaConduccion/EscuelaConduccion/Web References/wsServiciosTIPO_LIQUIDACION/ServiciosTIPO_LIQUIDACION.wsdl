@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crearTIPO_LIQUIDACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:TIPO_LIQUIDACION" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TIPO_LIQUIDACION">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearTIPO_LIQUIDACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearTIPO_LIQUIDACIONResult" type="tns:TIPO_LIQUIDACION" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarTIPO_LIQUIDACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:TIPO_LIQUIDACION" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarTIPO_LIQUIDACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="editarTIPO_LIQUIDACIONResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroTIPO_LIQUIDACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:TIPO_LIQUIDACION" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroTIPO_LIQUIDACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroTIPO_LIQUIDACIONResult" type="tns:TIPO_LIQUIDACION" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarTIPO_LIQUIDACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:TIPO_LIQUIDACION" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarTIPO_LIQUIDACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarTIPO_LIQUIDACIONResult" type="tns:ArrayOfTIPO_LIQUIDACION" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTIPO_LIQUIDACION">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TIPO_LIQUIDACION" nillable="true" type="tns:TIPO_LIQUIDACION" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listarTIPO_LIQUIDACION">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarTIPO_LIQUIDACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarTIPO_LIQUIDACIONResult" type="tns:ArrayOfTIPO_LIQUIDACION" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarTIPO_LIQUIDACION">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:TIPO_LIQUIDACION" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarTIPO_LIQUIDACIONResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminarTIPO_LIQUIDACIONResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crearTIPO_LIQUIDACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:crearTIPO_LIQUIDACION" />
+  </wsdl:message>
+  <wsdl:message name="crearTIPO_LIQUIDACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:crearTIPO_LIQUIDACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarTIPO_LIQUIDACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:editarTIPO_LIQUIDACION" />
+  </wsdl:message>
+  <wsdl:message name="editarTIPO_LIQUIDACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:editarTIPO_LIQUIDACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroTIPO_LIQUIDACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroTIPO_LIQUIDACION" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroTIPO_LIQUIDACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroTIPO_LIQUIDACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarTIPO_LIQUIDACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarTIPO_LIQUIDACION" />
+  </wsdl:message>
+  <wsdl:message name="buscarTIPO_LIQUIDACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarTIPO_LIQUIDACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarTIPO_LIQUIDACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:listarTIPO_LIQUIDACION" />
+  </wsdl:message>
+  <wsdl:message name="listarTIPO_LIQUIDACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:listarTIPO_LIQUIDACIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarTIPO_LIQUIDACIONSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarTIPO_LIQUIDACION" />
+  </wsdl:message>
+  <wsdl:message name="eliminarTIPO_LIQUIDACIONSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarTIPO_LIQUIDACIONResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosTIPO_LIQUIDACIONSoap">
+    <wsdl:operation name="crearTIPO_LIQUIDACION">
+      <wsdl:input message="tns:crearTIPO_LIQUIDACIONSoapIn" />
+      <wsdl:output message="tns:crearTIPO_LIQUIDACIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarTIPO_LIQUIDACION">
+      <wsdl:input message="tns:editarTIPO_LIQUIDACIONSoapIn" />
+      <wsdl:output message="tns:editarTIPO_LIQUIDACIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroTIPO_LIQUIDACION">
+      <wsdl:input message="tns:buscarPrimeroTIPO_LIQUIDACIONSoapIn" />
+      <wsdl:output message="tns:buscarPrimeroTIPO_LIQUIDACIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarTIPO_LIQUIDACION">
+      <wsdl:input message="tns:buscarTIPO_LIQUIDACIONSoapIn" />
+      <wsdl:output message="tns:buscarTIPO_LIQUIDACIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarTIPO_LIQUIDACION">
+      <wsdl:input message="tns:listarTIPO_LIQUIDACIONSoapIn" />
+      <wsdl:output message="tns:listarTIPO_LIQUIDACIONSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarTIPO_LIQUIDACION">
+      <wsdl:input message="tns:eliminarTIPO_LIQUIDACIONSoapIn" />
+      <wsdl:output message="tns:eliminarTIPO_LIQUIDACIONSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosTIPO_LIQUIDACIONSoap" type="tns:ServiciosTIPO_LIQUIDACIONSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearTIPO_LIQUIDACION">
+      <soap:operation soapAction="http://tempuri.org/crearTIPO_LIQUIDACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarTIPO_LIQUIDACION">
+      <soap:operation soapAction="http://tempuri.org/editarTIPO_LIQUIDACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroTIPO_LIQUIDACION">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroTIPO_LIQUIDACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarTIPO_LIQUIDACION">
+      <soap:operation soapAction="http://tempuri.org/buscarTIPO_LIQUIDACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarTIPO_LIQUIDACION">
+      <soap:operation soapAction="http://tempuri.org/listarTIPO_LIQUIDACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarTIPO_LIQUIDACION">
+      <soap:operation soapAction="http://tempuri.org/eliminarTIPO_LIQUIDACION" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosTIPO_LIQUIDACIONSoap12" type="tns:ServiciosTIPO_LIQUIDACIONSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearTIPO_LIQUIDACION">
+      <soap12:operation soapAction="http://tempuri.org/crearTIPO_LIQUIDACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarTIPO_LIQUIDACION">
+      <soap12:operation soapAction="http://tempuri.org/editarTIPO_LIQUIDACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroTIPO_LIQUIDACION">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroTIPO_LIQUIDACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarTIPO_LIQUIDACION">
+      <soap12:operation soapAction="http://tempuri.org/buscarTIPO_LIQUIDACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarTIPO_LIQUIDACION">
+      <soap12:operation soapAction="http://tempuri.org/listarTIPO_LIQUIDACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarTIPO_LIQUIDACION">
+      <soap12:operation soapAction="http://tempuri.org/eliminarTIPO_LIQUIDACION" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosTIPO_LIQUIDACION">
+    <wsdl:port name="ServiciosTIPO_LIQUIDACIONSoap" binding="tns:ServiciosTIPO_LIQUIDACIONSoap">
+      <soap:address location="http://localhost:52393/Model/Services/ServiciosTIPO_LIQUIDACION.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosTIPO_LIQUIDACIONSoap12" binding="tns:ServiciosTIPO_LIQUIDACIONSoap12">
+      <soap12:address location="http://localhost:52393/Model/Services/ServiciosTIPO_LIQUIDACION.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,87 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EscuelaConduccion.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="EscuelaConduccion_wsServiciosDEPARTAMENTO_ServiciosDEPARTAMENTO" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosDEPARTAMENTO.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosCIUDAD_ServiciosCIUDAD" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosCIUDAD.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosVIEW_CIUDAD_ServiciosVIEW_CIUDAD" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosVIEW_CIUDAD.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosCLIENTE_ServiciosCLIENTE" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosCLIENTE.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosVIEW_CLIENTE_ServiciosVIEW_CLIENTE" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosVIEW_CLIENTE.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosTIPO_DOCUMENTO_ServiciosTIPO_DOCUMENTO" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosTIPO_DOCUMENTO.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosGENERO_ServiciosGENERO" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosGENERO.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosTARIFA_ServiciosTARIFA" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosTARIFA.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosTARIFA_DETALLE_ServiciosTARIFA_DETALLE" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosTARIFA_DETALLE.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosVIGENCIA_ServiciosVIGENCIA" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosVIGENCIA.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosLIQUIDACION_DETALLE_ServiciosLIQUIDACION_DETALLE" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosLIQUIDACION_DETALLE.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosTIPO_LIQUIDACION_ServiciosTIPO_LIQUIDACION" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosTIPO_LIQUIDACION.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosLIQUIDACION_ServiciosLIQUIDACION" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosLIQUIDACION.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_WSServiciosRECIBO_ServiciosRECIBO" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosRECIBO.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosRECIBO_ESTADO_ServiciosRECIBO_ESTADO" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosRECIBO_ESTADO.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosViewliquidacion_ServiciosViewliquidacion" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosViewliquidacion.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosFACTURACONSECUTIVO_ServiciosFACTURACONSECUTIVO" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosFACTURACONSECUTIVO.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosViewrecibo_ServiciosViewrecibo" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosViewrecibo.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_WSServiciosFormadepago_ServiciosFormadepago" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosFormadepago.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosPagos_ServiciosPagos" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosPagos.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosFacturaconsecutivodetalle_ServiciosFacturaconsecutivodetalle" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosFacturaconsecutivodetalle.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosFACTURA_ServiciosFACTURA" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosFACTURA.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosSQL_ServiciosSQL" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosSQL.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosACUERDO_PAGO_DETALLE_ServiciosACUERDO_PAGO_DETALLE" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosACUERDO_PAGO_DETALLE.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosACUERDO_ESTADO_ServiciosACUERDO_ESTADO" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosACUERDO_ESTADO.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosACUERDO_PAGO_ServiciosACUERDO_PAGO" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosACUERDO_PAGO.asmx</Value>
+    </Setting>
+    <Setting Name="EscuelaConduccion_wsServiciosFACTURA_ESTADO_ServiciosFACTURA_ESTADO" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:52393/Model/Services/ServiciosFACTURA_ESTADO.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

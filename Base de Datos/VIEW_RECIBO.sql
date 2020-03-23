@@ -1,0 +1,13 @@
+CREATE TABLE VIEW_RECIBO (
+ID int,
+NUMERO_RECIBO varchar2 (10), 
+VALOR float, 
+ID_CLIENTE int, 
+NOMBRES varchar2 (50), 
+APELLIDOS varchar2 (50),
+ID_ESTADO int,
+ESTADO varchar2 (20), 
+ID_TIPO_LIQUIDACION int, 
+TIPO_PAGO varchar2 (15)
+CONSTRAINT PRIMARY KEY (ID)
+)

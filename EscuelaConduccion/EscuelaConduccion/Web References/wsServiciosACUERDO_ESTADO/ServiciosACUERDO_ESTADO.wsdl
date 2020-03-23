@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crearACUERDO_ESTADO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:ACUERDO_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ACUERDO_ESTADO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearACUERDO_ESTADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearACUERDO_ESTADOResult" type="tns:ACUERDO_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarACUERDO_ESTADO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:ACUERDO_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarACUERDO_ESTADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="editarACUERDO_ESTADOResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroACUERDO_ESTADO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:ACUERDO_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroACUERDO_ESTADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroACUERDO_ESTADOResult" type="tns:ACUERDO_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarACUERDO_ESTADO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:ACUERDO_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarACUERDO_ESTADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarACUERDO_ESTADOResult" type="tns:ArrayOfACUERDO_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfACUERDO_ESTADO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ACUERDO_ESTADO" nillable="true" type="tns:ACUERDO_ESTADO" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listarACUERDO_ESTADO">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarACUERDO_ESTADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarACUERDO_ESTADOResult" type="tns:ArrayOfACUERDO_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarACUERDO_ESTADO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:ACUERDO_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarACUERDO_ESTADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminarACUERDO_ESTADOResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crearACUERDO_ESTADOSoapIn">
+    <wsdl:part name="parameters" element="tns:crearACUERDO_ESTADO" />
+  </wsdl:message>
+  <wsdl:message name="crearACUERDO_ESTADOSoapOut">
+    <wsdl:part name="parameters" element="tns:crearACUERDO_ESTADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarACUERDO_ESTADOSoapIn">
+    <wsdl:part name="parameters" element="tns:editarACUERDO_ESTADO" />
+  </wsdl:message>
+  <wsdl:message name="editarACUERDO_ESTADOSoapOut">
+    <wsdl:part name="parameters" element="tns:editarACUERDO_ESTADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroACUERDO_ESTADOSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroACUERDO_ESTADO" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroACUERDO_ESTADOSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroACUERDO_ESTADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarACUERDO_ESTADOSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarACUERDO_ESTADO" />
+  </wsdl:message>
+  <wsdl:message name="buscarACUERDO_ESTADOSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarACUERDO_ESTADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarACUERDO_ESTADOSoapIn">
+    <wsdl:part name="parameters" element="tns:listarACUERDO_ESTADO" />
+  </wsdl:message>
+  <wsdl:message name="listarACUERDO_ESTADOSoapOut">
+    <wsdl:part name="parameters" element="tns:listarACUERDO_ESTADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarACUERDO_ESTADOSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarACUERDO_ESTADO" />
+  </wsdl:message>
+  <wsdl:message name="eliminarACUERDO_ESTADOSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarACUERDO_ESTADOResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosACUERDO_ESTADOSoap">
+    <wsdl:operation name="crearACUERDO_ESTADO">
+      <wsdl:input message="tns:crearACUERDO_ESTADOSoapIn" />
+      <wsdl:output message="tns:crearACUERDO_ESTADOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarACUERDO_ESTADO">
+      <wsdl:input message="tns:editarACUERDO_ESTADOSoapIn" />
+      <wsdl:output message="tns:editarACUERDO_ESTADOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroACUERDO_ESTADO">
+      <wsdl:input message="tns:buscarPrimeroACUERDO_ESTADOSoapIn" />
+      <wsdl:output message="tns:buscarPrimeroACUERDO_ESTADOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarACUERDO_ESTADO">
+      <wsdl:input message="tns:buscarACUERDO_ESTADOSoapIn" />
+      <wsdl:output message="tns:buscarACUERDO_ESTADOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarACUERDO_ESTADO">
+      <wsdl:input message="tns:listarACUERDO_ESTADOSoapIn" />
+      <wsdl:output message="tns:listarACUERDO_ESTADOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarACUERDO_ESTADO">
+      <wsdl:input message="tns:eliminarACUERDO_ESTADOSoapIn" />
+      <wsdl:output message="tns:eliminarACUERDO_ESTADOSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosACUERDO_ESTADOSoap" type="tns:ServiciosACUERDO_ESTADOSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearACUERDO_ESTADO">
+      <soap:operation soapAction="http://tempuri.org/crearACUERDO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarACUERDO_ESTADO">
+      <soap:operation soapAction="http://tempuri.org/editarACUERDO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroACUERDO_ESTADO">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroACUERDO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarACUERDO_ESTADO">
+      <soap:operation soapAction="http://tempuri.org/buscarACUERDO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarACUERDO_ESTADO">
+      <soap:operation soapAction="http://tempuri.org/listarACUERDO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarACUERDO_ESTADO">
+      <soap:operation soapAction="http://tempuri.org/eliminarACUERDO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosACUERDO_ESTADOSoap12" type="tns:ServiciosACUERDO_ESTADOSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearACUERDO_ESTADO">
+      <soap12:operation soapAction="http://tempuri.org/crearACUERDO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarACUERDO_ESTADO">
+      <soap12:operation soapAction="http://tempuri.org/editarACUERDO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroACUERDO_ESTADO">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroACUERDO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarACUERDO_ESTADO">
+      <soap12:operation soapAction="http://tempuri.org/buscarACUERDO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarACUERDO_ESTADO">
+      <soap12:operation soapAction="http://tempuri.org/listarACUERDO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarACUERDO_ESTADO">
+      <soap12:operation soapAction="http://tempuri.org/eliminarACUERDO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosACUERDO_ESTADO">
+    <wsdl:port name="ServiciosACUERDO_ESTADOSoap" binding="tns:ServiciosACUERDO_ESTADOSoap">
+      <soap:address location="http://localhost:52393/Model/Services/ServiciosACUERDO_ESTADO.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosACUERDO_ESTADOSoap12" binding="tns:ServiciosACUERDO_ESTADOSoap12">
+      <soap12:address location="http://localhost:52393/Model/Services/ServiciosACUERDO_ESTADO.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

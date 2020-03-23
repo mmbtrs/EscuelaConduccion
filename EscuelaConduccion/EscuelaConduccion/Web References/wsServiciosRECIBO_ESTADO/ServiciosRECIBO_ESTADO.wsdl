@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crearRECIBO_ESTADO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:RECIBO_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RECIBO_ESTADO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESTADO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DESCRIPCION_ESTADO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearRECIBO_ESTADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearRECIBO_ESTADOResult" type="tns:RECIBO_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarRECIBO_ESTADO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:RECIBO_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarRECIBO_ESTADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="editarRECIBO_ESTADOResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroRECIBO_ESTADO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:RECIBO_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroRECIBO_ESTADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroRECIBO_ESTADOResult" type="tns:RECIBO_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarRECIBO_ESTADO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:RECIBO_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarRECIBO_ESTADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarRECIBO_ESTADOResult" type="tns:ArrayOfRECIBO_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRECIBO_ESTADO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RECIBO_ESTADO" nillable="true" type="tns:RECIBO_ESTADO" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listarRECIBO_ESTADO">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarRECIBO_ESTADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarRECIBO_ESTADOResult" type="tns:ArrayOfRECIBO_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarRECIBO_ESTADO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:RECIBO_ESTADO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarRECIBO_ESTADOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminarRECIBO_ESTADOResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crearRECIBO_ESTADOSoapIn">
+    <wsdl:part name="parameters" element="tns:crearRECIBO_ESTADO" />
+  </wsdl:message>
+  <wsdl:message name="crearRECIBO_ESTADOSoapOut">
+    <wsdl:part name="parameters" element="tns:crearRECIBO_ESTADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarRECIBO_ESTADOSoapIn">
+    <wsdl:part name="parameters" element="tns:editarRECIBO_ESTADO" />
+  </wsdl:message>
+  <wsdl:message name="editarRECIBO_ESTADOSoapOut">
+    <wsdl:part name="parameters" element="tns:editarRECIBO_ESTADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroRECIBO_ESTADOSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroRECIBO_ESTADO" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroRECIBO_ESTADOSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroRECIBO_ESTADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarRECIBO_ESTADOSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarRECIBO_ESTADO" />
+  </wsdl:message>
+  <wsdl:message name="buscarRECIBO_ESTADOSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarRECIBO_ESTADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarRECIBO_ESTADOSoapIn">
+    <wsdl:part name="parameters" element="tns:listarRECIBO_ESTADO" />
+  </wsdl:message>
+  <wsdl:message name="listarRECIBO_ESTADOSoapOut">
+    <wsdl:part name="parameters" element="tns:listarRECIBO_ESTADOResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarRECIBO_ESTADOSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarRECIBO_ESTADO" />
+  </wsdl:message>
+  <wsdl:message name="eliminarRECIBO_ESTADOSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarRECIBO_ESTADOResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosRECIBO_ESTADOSoap">
+    <wsdl:operation name="crearRECIBO_ESTADO">
+      <wsdl:input message="tns:crearRECIBO_ESTADOSoapIn" />
+      <wsdl:output message="tns:crearRECIBO_ESTADOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarRECIBO_ESTADO">
+      <wsdl:input message="tns:editarRECIBO_ESTADOSoapIn" />
+      <wsdl:output message="tns:editarRECIBO_ESTADOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroRECIBO_ESTADO">
+      <wsdl:input message="tns:buscarPrimeroRECIBO_ESTADOSoapIn" />
+      <wsdl:output message="tns:buscarPrimeroRECIBO_ESTADOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarRECIBO_ESTADO">
+      <wsdl:input message="tns:buscarRECIBO_ESTADOSoapIn" />
+      <wsdl:output message="tns:buscarRECIBO_ESTADOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarRECIBO_ESTADO">
+      <wsdl:input message="tns:listarRECIBO_ESTADOSoapIn" />
+      <wsdl:output message="tns:listarRECIBO_ESTADOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarRECIBO_ESTADO">
+      <wsdl:input message="tns:eliminarRECIBO_ESTADOSoapIn" />
+      <wsdl:output message="tns:eliminarRECIBO_ESTADOSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosRECIBO_ESTADOSoap" type="tns:ServiciosRECIBO_ESTADOSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearRECIBO_ESTADO">
+      <soap:operation soapAction="http://tempuri.org/crearRECIBO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarRECIBO_ESTADO">
+      <soap:operation soapAction="http://tempuri.org/editarRECIBO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroRECIBO_ESTADO">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroRECIBO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarRECIBO_ESTADO">
+      <soap:operation soapAction="http://tempuri.org/buscarRECIBO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarRECIBO_ESTADO">
+      <soap:operation soapAction="http://tempuri.org/listarRECIBO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarRECIBO_ESTADO">
+      <soap:operation soapAction="http://tempuri.org/eliminarRECIBO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosRECIBO_ESTADOSoap12" type="tns:ServiciosRECIBO_ESTADOSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearRECIBO_ESTADO">
+      <soap12:operation soapAction="http://tempuri.org/crearRECIBO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarRECIBO_ESTADO">
+      <soap12:operation soapAction="http://tempuri.org/editarRECIBO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroRECIBO_ESTADO">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroRECIBO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarRECIBO_ESTADO">
+      <soap12:operation soapAction="http://tempuri.org/buscarRECIBO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarRECIBO_ESTADO">
+      <soap12:operation soapAction="http://tempuri.org/listarRECIBO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarRECIBO_ESTADO">
+      <soap12:operation soapAction="http://tempuri.org/eliminarRECIBO_ESTADO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosRECIBO_ESTADO">
+    <wsdl:port name="ServiciosRECIBO_ESTADOSoap" binding="tns:ServiciosRECIBO_ESTADOSoap">
+      <soap:address location="http://localhost:52393/Model/Services/ServiciosRECIBO_ESTADO.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosRECIBO_ESTADOSoap12" binding="tns:ServiciosRECIBO_ESTADOSoap12">
+      <soap12:address location="http://localhost:52393/Model/Services/ServiciosRECIBO_ESTADO.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

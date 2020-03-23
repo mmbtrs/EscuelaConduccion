@@ -1,0 +1,971 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4463374E-1C97-45D5-8EC1-DA2965B2FF28}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>EscuelaConduccion</RootNamespace>
+    <AssemblyName>EscuelaConduccion</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>carroAzul.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="INIREADER">
+      <HintPath>..\..\dlls\INIREADER.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UtilidadesServiciosWeb">
+      <HintPath>..\..\dlls\UtilidadesServiciosWeb.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Accesorias\frmMunicipios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Accesorias\frmMunicipios.Designer.cs">
+      <DependentUpon>frmMunicipios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Accesorias\frmDepartamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Accesorias\frmDepartamentos.Designer.cs">
+      <DependentUpon>frmDepartamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Cliente\frmCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Cliente\frmCliente.Designer.cs">
+      <DependentUpon>frmCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Cliente\frmGestionCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Cliente\frmGestionCliente.Designer.cs">
+      <DependentUpon>frmGestionCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Facturas\frmCrearConsecutivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Facturas\frmCrearConsecutivo.Designer.cs">
+      <DependentUpon>frmCrearConsecutivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Facturas\frmGestionConsecutivosFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Facturas\frmGestionConsecutivosFactura.Designer.cs">
+      <DependentUpon>frmGestionConsecutivosFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Liquidacion\frmAcuerdoPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Liquidacion\frmAcuerdoPago.Designer.cs">
+      <DependentUpon>frmAcuerdoPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Liquidacion\frmBuscarLiquidacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Liquidacion\frmBuscarLiquidacion.Designer.cs">
+      <DependentUpon>frmBuscarLiquidacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Liquidacion\frmBuscarReciboFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Liquidacion\frmBuscarReciboFactura.Designer.cs">
+      <DependentUpon>frmBuscarReciboFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Liquidacion\frmCreacionCuotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Liquidacion\frmCreacionCuotas.Designer.cs">
+      <DependentUpon>frmCreacionCuotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Liquidacion\frmLiquidar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Liquidacion\frmLiquidar.Designer.cs">
+      <DependentUpon>frmLiquidar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Liquidacion\frmLiquidarTarifas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Liquidacion\frmLiquidarTarifas.Designer.cs">
+      <DependentUpon>frmLiquidarTarifas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Liquidacion\frmModificarPreLiquidacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Liquidacion\frmModificarPreLiquidacion.Designer.cs">
+      <DependentUpon>frmModificarPreLiquidacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Liquidacion\frmPagarRecibo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Liquidacion\frmPagarRecibo.Designer.cs">
+      <DependentUpon>frmPagarRecibo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Liquidacion\frmTipoLiquidacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Liquidacion\frmTipoLiquidacion.Designer.cs">
+      <DependentUpon>frmTipoLiquidacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Liquidacion\frmViewAcuerdoPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Liquidacion\frmViewAcuerdoPago.Designer.cs">
+      <DependentUpon>frmViewAcuerdoPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilidades\Funciones.cs" />
+    <Compile Include="Web References\wsServiciosACUERDO_ESTADO\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosACUERDO_PAGO\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosACUERDO_PAGO_DETALLE\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosCIUDAD\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosCLIENTE\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosDEPARTAMENTO\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosFacturaconsecutivodetalle\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosFACTURACONSECUTIVO\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosFACTURA\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosFACTURA_ESTADO\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosFormadepago\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosGENERO\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosLIQUIDACION\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosLIQUIDACION_DETALLE\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosPagos\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WSServiciosRECIBO\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosRECIBO_ESTADO\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosSQL\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosTARIFA\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosTARIFA_DETALLE\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosTIPO_DOCUMENTO\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosTIPO_LIQUIDACION\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosViewliquidacion\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosViewrecibo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosVIEW_CIUDAD\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosVIEW_CLIENTE\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosVIGENCIA\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Accesorias\frmMunicipios.resx">
+      <DependentUpon>frmMunicipios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Accesorias\frmDepartamentos.resx">
+      <DependentUpon>frmDepartamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Cliente\frmCliente.resx">
+      <DependentUpon>frmCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Cliente\frmGestionCliente.resx">
+      <DependentUpon>frmGestionCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Facturas\frmCrearConsecutivo.resx">
+      <DependentUpon>frmCrearConsecutivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Facturas\frmGestionConsecutivosFactura.resx">
+      <DependentUpon>frmGestionConsecutivosFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Liquidacion\frmAcuerdoPago.resx">
+      <DependentUpon>frmAcuerdoPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Liquidacion\frmBuscarLiquidacion.resx">
+      <DependentUpon>frmBuscarLiquidacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Liquidacion\frmBuscarReciboFactura.resx">
+      <DependentUpon>frmBuscarReciboFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Liquidacion\frmCreacionCuotas.resx">
+      <DependentUpon>frmCreacionCuotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Liquidacion\frmLiquidar.resx">
+      <DependentUpon>frmLiquidar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Liquidacion\frmLiquidarTarifas.resx">
+      <DependentUpon>frmLiquidarTarifas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Liquidacion\frmModificarPreLiquidacion.resx">
+      <DependentUpon>frmModificarPreLiquidacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Liquidacion\frmPagarRecibo.resx">
+      <DependentUpon>frmPagarRecibo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Liquidacion\frmTipoLiquidacion.resx">
+      <DependentUpon>frmTipoLiquidacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Liquidacion\frmViewAcuerdoPago.resx">
+      <DependentUpon>frmViewAcuerdoPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\wsServiciosACUERDO_ESTADO\ACUERDO_ESTADO.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosACUERDO_ESTADO\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosACUERDO_ESTADO\ServiciosACUERDO_ESTADO.wsdl" />
+    <None Include="Web References\wsServiciosACUERDO_PAGO\ACUERDO_PAGO.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosACUERDO_PAGO\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosACUERDO_PAGO\ServiciosACUERDO_PAGO.wsdl" />
+    <None Include="Web References\wsServiciosACUERDO_PAGO_DETALLE\ACUERDO_PAGO_DETALLE.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosACUERDO_PAGO_DETALLE\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosACUERDO_PAGO_DETALLE\ServiciosACUERDO_PAGO_DETALLE.wsdl" />
+    <None Include="Web References\wsServiciosCIUDAD\CIUDAD.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosCIUDAD\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosCIUDAD\ServiciosCIUDAD.wsdl" />
+    <None Include="Web References\wsServiciosCLIENTE\CLIENTE.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosCLIENTE\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosCLIENTE\ServiciosCLIENTE.wsdl" />
+    <None Include="Web References\wsServiciosDEPARTAMENTO\DEPARTAMENTO.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosDEPARTAMENTO\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosDEPARTAMENTO\ServiciosDEPARTAMENTO.wsdl" />
+    <None Include="Web References\wsServiciosFacturaconsecutivodetalle\Facturaconsecutivodetalle.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosFacturaconsecutivodetalle\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosFacturaconsecutivodetalle\ServiciosFacturaconsecutivodetalle.wsdl" />
+    <None Include="Web References\wsServiciosFACTURACONSECUTIVO\FACTURACONSECUTIVO.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosFACTURACONSECUTIVO\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosFACTURACONSECUTIVO\ServiciosFACTURACONSECUTIVO.wsdl" />
+    <None Include="Web References\wsServiciosFACTURA\FACTURA.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosFACTURA\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosFACTURA\ServiciosFACTURA.wsdl" />
+    <None Include="Web References\wsServiciosFACTURA_ESTADO\FACTURA_ESTADO.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosFACTURA_ESTADO\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosFACTURA_ESTADO\ServiciosFACTURA_ESTADO.wsdl" />
+    <None Include="Web References\wsServiciosFormadepago\Formadepago1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosFormadepago\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosFormadepago\ServiciosFormadepago.wsdl" />
+    <None Include="Web References\wsServiciosGENERO\GENERO.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosGENERO\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosGENERO\ServiciosGENERO.wsdl" />
+    <None Include="Web References\wsServiciosLIQUIDACION\LIQUIDACION.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosLIQUIDACION\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosLIQUIDACION\ServiciosLIQUIDACION.wsdl" />
+    <None Include="Web References\wsServiciosLIQUIDACION_DETALLE\LIQUIDACION_DETALLE.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosLIQUIDACION_DETALLE\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosLIQUIDACION_DETALLE\ServiciosLIQUIDACION_DETALLE.wsdl" />
+    <None Include="Web References\wsServiciosPagos\Pagos.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosPagos\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosPagos\ServiciosPagos.wsdl" />
+    <None Include="Web References\WSServiciosRECIBO\RECIBO.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WSServiciosRECIBO\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WSServiciosRECIBO\ServiciosRECIBO.wsdl" />
+    <None Include="Web References\wsServiciosRECIBO_ESTADO\RECIBO_ESTADO.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosRECIBO_ESTADO\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosRECIBO_ESTADO\ServiciosRECIBO_ESTADO.wsdl" />
+    <None Include="Web References\wsServiciosSQL\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosSQL\ServiciosSQL.wsdl" />
+    <None Include="Web References\wsServiciosTARIFA\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosTARIFA\ServiciosTARIFA.wsdl" />
+    <None Include="Web References\wsServiciosTARIFA\TARIFA.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosTARIFA_DETALLE\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosTARIFA_DETALLE\ServiciosTARIFA_DETALLE.wsdl" />
+    <None Include="Web References\wsServiciosTARIFA_DETALLE\TARIFA_DETALLE.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosTIPO_DOCUMENTO\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosTIPO_DOCUMENTO\ServiciosTIPO_DOCUMENTO.wsdl" />
+    <None Include="Web References\wsServiciosTIPO_DOCUMENTO\TIPO_DOCUMENTO.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosTIPO_LIQUIDACION\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosTIPO_LIQUIDACION\ServiciosTIPO_LIQUIDACION.wsdl" />
+    <None Include="Web References\wsServiciosTIPO_LIQUIDACION\TIPO_LIQUIDACION.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosViewliquidacion\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosViewliquidacion\ServiciosViewliquidacion.wsdl" />
+    <None Include="Web References\wsServiciosViewliquidacion\Viewliquidacion.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosViewrecibo\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosViewrecibo\ServiciosViewrecibo.wsdl" />
+    <None Include="Web References\wsServiciosViewrecibo\Viewrecibo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosVIEW_CIUDAD\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosVIEW_CIUDAD\ServiciosVIEW_CIUDAD.wsdl" />
+    <None Include="Web References\wsServiciosVIEW_CIUDAD\VIEW_CIUDAD.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosVIEW_CLIENTE\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosVIEW_CLIENTE\ServiciosVIEW_CLIENTE.wsdl" />
+    <None Include="Web References\wsServiciosVIEW_CLIENTE\VIEW_CLIENTE.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosVIGENCIA\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosVIGENCIA\ServiciosVIGENCIA.wsdl" />
+    <None Include="Web References\wsServiciosVIGENCIA\VIGENCIA.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fondo_1_conLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="carroAzul.ico" />
+    <None Include="Web References\wsServiciosFACTURA_ESTADO\ServiciosFACTURA_ESTADO.disco" />
+    <None Include="Web References\wsServiciosACUERDO_PAGO\ServiciosACUERDO_PAGO.disco" />
+    <None Include="Web References\wsServiciosACUERDO_ESTADO\ServiciosACUERDO_ESTADO.disco" />
+    <None Include="Web References\wsServiciosACUERDO_PAGO_DETALLE\ServiciosACUERDO_PAGO_DETALLE.disco" />
+    <None Include="Resources\calcular2_32x32.png" />
+    <None Include="Resources\calcular_32x32.png" />
+    <None Include="Web References\wsServiciosSQL\ServiciosSQL.disco" />
+    <None Include="Web References\wsServiciosFACTURA\ServiciosFACTURA.disco" />
+    <None Include="Web References\wsServiciosFacturaconsecutivodetalle\ServiciosFacturaconsecutivodetalle.disco" />
+    <None Include="Web References\wsServiciosPagos\ServiciosPagos.disco" />
+    <None Include="Web References\wsServiciosFormadepago\ServiciosFormadepago.disco" />
+    <None Include="Resources\minus_32x32.png" />
+    <None Include="Resources\more_32x32.png" />
+    <None Include="Resources\-_32x32.png" />
+    <None Include="Resources\+_32x32.png" />
+    <None Include="Web References\wsServiciosViewrecibo\ServiciosViewrecibo.disco" />
+    <None Include="Web References\wsServiciosFACTURACONSECUTIVO\ServiciosFACTURACONSECUTIVO.disco" />
+    <None Include="Resources\Configuracion_consecutivo_32x32.png" />
+    <None Include="Resources\Consecutivo_32x32.png" />
+    <None Include="Resources\configuracion_32x32.png" />
+    <None Include="Web References\wsServiciosViewliquidacion\ServiciosViewliquidacion.disco" />
+    <None Include="Web References\wsServiciosRECIBO_ESTADO\ServiciosRECIBO_ESTADO.disco" />
+    <None Include="Resources\iconfinder_3_3319636.png" />
+    <None Include="Resources\acuerdo_pago_32x32.png" />
+    <None Include="Resources\anularFactura_32x32.png" />
+    <None Include="Resources\anularPago_32x32.png" />
+    <None Include="Resources\print_32x32.png" />
+    <None Include="Resources\buscarFactura_32x32.png" />
+    <None Include="Resources\recibo_32x32.png" />
+    <None Include="Resources\money_32x32.png" />
+    <None Include="Resources\Calculadora_32x32.png" />
+    <None Include="Resources\fondo con logo1.png" />
+    <None Include="Resources\fondo con logo2.png" />
+    <None Include="Web References\WSServiciosRECIBO\ServiciosRECIBO.disco" />
+    <None Include="Web References\wsServiciosLIQUIDACION\ServiciosLIQUIDACION.disco" />
+    <None Include="Web References\wsServiciosTIPO_LIQUIDACION\ServiciosTIPO_LIQUIDACION.disco" />
+    <None Include="Web References\wsServiciosLIQUIDACION_DETALLE\ServiciosLIQUIDACION_DETALLE.disco" />
+    <None Include="Resources\Incognita.png" />
+    <None Include="Resources\ventana.png" />
+    <None Include="Web References\wsServiciosVIGENCIA\ServiciosVIGENCIA.disco" />
+    <None Include="Web References\wsServiciosTARIFA_DETALLE\ServiciosTARIFA_DETALLE.disco" />
+    <None Include="Web References\wsServiciosTARIFA\ServiciosTARIFA.disco" />
+    <None Include="Resources\return_32x23.png" />
+    <None Include="Resources\confirmar_24x24.png" />
+    <None Include="Resources\acrobat_32x32.png" />
+    <None Include="Resources\liquidar_48x48.png" />
+    <None Include="Resources\edit_20x20_negro.png" />
+    <None Include="Resources\items_20x20_negro.png" />
+    <None Include="Web References\wsServiciosGENERO\ServiciosGENERO.disco" />
+    <None Include="Web References\wsServiciosTIPO_DOCUMENTO\ServiciosTIPO_DOCUMENTO.disco" />
+    <None Include="Resources\save_24x24.png" />
+    <None Include="Web References\wsServiciosVIEW_CLIENTE\ServiciosVIEW_CLIENTE.disco" />
+    <None Include="Web References\wsServiciosCLIENTE\ServiciosCLIENTE.disco" />
+    <None Include="Resources\view_eye_32x32.png" />
+    <None Include="Resources\add_insert_new_32x32.png" />
+    <None Include="Resources\edit_icon_32x32.png" />
+    <None Include="Resources\clean_20x20.png" />
+    <None Include="Web References\wsServiciosVIEW_CIUDAD\ServiciosVIEW_CIUDAD.disco" />
+    <None Include="Web References\wsServiciosCIUDAD\ServiciosCIUDAD.disco" />
+    <None Include="Web References\wsServiciosDEPARTAMENTO\ServiciosDEPARTAMENTO.disco" />
+    <None Include="Resources\search_24x24.png" />
+    <None Include="Resources\exit_22x22.png" />
+    <None Include="Resources\ok_24x24.png" />
+    <None Include="Resources\caja_32x32.png" />
+    <None Include="Resources\person_32x32.png" />
+    <None Include="Resources\cliente_proveedor_32x32.png" />
+    <None Include="Resources\ciente_proveedor_32x32.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosACUERDO_ESTADO.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosACUERDO_ESTADO\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosACUERDO_ESTADO.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosACUERDO_ESTADO_ServiciosACUERDO_ESTADO</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosACUERDO_PAGO.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosACUERDO_PAGO\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosACUERDO_PAGO.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosACUERDO_PAGO_ServiciosACUERDO_PAGO</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosACUERDO_PAGO_DETALLE.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosACUERDO_PAGO_DETALLE\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosACUERDO_PAGO_DETALLE.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosACUERDO_PAGO_DETALLE_ServiciosACUERDO_PAGO_DETALLE</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosCIUDAD.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosCIUDAD\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosCIUDAD.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosCIUDAD_ServiciosCIUDAD</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosCLIENTE.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosCLIENTE\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosCLIENTE.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosCLIENTE_ServiciosCLIENTE</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosDEPARTAMENTO.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosDEPARTAMENTO\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosDEPARTAMENTO.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosDEPARTAMENTO_ServiciosDEPARTAMENTO</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosFACTURA.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosFACTURA\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosFACTURA.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosFACTURA_ServiciosFACTURA</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosFACTURACONSECUTIVO.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosFACTURACONSECUTIVO\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosFACTURACONSECUTIVO.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosFACTURACONSECUTIVO_ServiciosFACTURACONSECUTIVO</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosFacturaconsecutivodetalle.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosFacturaconsecutivodetalle\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosFacturaconsecutivodetalle.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosFacturaconsecutivodetalle_ServiciosFacturaconsecutivodetalle</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosFACTURA_ESTADO.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosFACTURA_ESTADO\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosFACTURA_ESTADO.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosFACTURA_ESTADO_ServiciosFACTURA_ESTADO</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosFormadepago.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosFormadepago\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosFormadepago.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_WSServiciosFormadepago_ServiciosFormadepago</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosGENERO.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosGENERO\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosGENERO.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosGENERO_ServiciosGENERO</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosLIQUIDACION.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosLIQUIDACION\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosLIQUIDACION.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosLIQUIDACION_ServiciosLIQUIDACION</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosLIQUIDACION_DETALLE.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosLIQUIDACION_DETALLE\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosLIQUIDACION_DETALLE.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosLIQUIDACION_DETALLE_ServiciosLIQUIDACION_DETALLE</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosPagos.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosPagos\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosPagos.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosPagos_ServiciosPagos</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosRECIBO.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WSServiciosRECIBO\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosRECIBO.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_WSServiciosRECIBO_ServiciosRECIBO</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosRECIBO_ESTADO.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosRECIBO_ESTADO\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosRECIBO_ESTADO.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosRECIBO_ESTADO_ServiciosRECIBO_ESTADO</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosSQL.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosSQL\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosSQL.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosSQL_ServiciosSQL</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosTARIFA.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosTARIFA\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosTARIFA.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosTARIFA_ServiciosTARIFA</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosTARIFA_DETALLE.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosTARIFA_DETALLE\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosTARIFA_DETALLE.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosTARIFA_DETALLE_ServiciosTARIFA_DETALLE</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosTIPO_DOCUMENTO.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosTIPO_DOCUMENTO\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosTIPO_DOCUMENTO.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosTIPO_DOCUMENTO_ServiciosTIPO_DOCUMENTO</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosTIPO_LIQUIDACION.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosTIPO_LIQUIDACION\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosTIPO_LIQUIDACION.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosTIPO_LIQUIDACION_ServiciosTIPO_LIQUIDACION</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosViewliquidacion.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosViewliquidacion\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosViewliquidacion.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosViewliquidacion_ServiciosViewliquidacion</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosViewrecibo.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosViewrecibo\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosViewrecibo.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosViewrecibo_ServiciosViewrecibo</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosVIEW_CIUDAD.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosVIEW_CIUDAD\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosVIEW_CIUDAD.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosVIEW_CIUDAD_ServiciosVIEW_CIUDAD</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosVIEW_CLIENTE.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosVIEW_CLIENTE\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosVIEW_CLIENTE.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosVIEW_CLIENTE_ServiciosVIEW_CLIENTE</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosVIGENCIA.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosVIGENCIA\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosVIGENCIA.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosVIGENCIA_ServiciosVIGENCIA</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

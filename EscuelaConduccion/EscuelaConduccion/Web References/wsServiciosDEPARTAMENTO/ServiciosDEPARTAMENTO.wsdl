@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crearDEPARTAMENTO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:DEPARTAMENTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DEPARTAMENTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NOMBRE" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearDEPARTAMENTOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearDEPARTAMENTOResult" type="tns:DEPARTAMENTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarDEPARTAMENTO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:DEPARTAMENTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarDEPARTAMENTOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="editarDEPARTAMENTOResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroDEPARTAMENTO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:DEPARTAMENTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroDEPARTAMENTOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroDEPARTAMENTOResult" type="tns:DEPARTAMENTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarDEPARTAMENTO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:DEPARTAMENTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarDEPARTAMENTOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarDEPARTAMENTOResult" type="tns:ArrayOfDEPARTAMENTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDEPARTAMENTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DEPARTAMENTO" nillable="true" type="tns:DEPARTAMENTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listarDEPARTAMENTO">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarDEPARTAMENTOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarDEPARTAMENTOResult" type="tns:ArrayOfDEPARTAMENTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarDEPARTAMENTO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:DEPARTAMENTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarDEPARTAMENTOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminarDEPARTAMENTOResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crearDEPARTAMENTOSoapIn">
+    <wsdl:part name="parameters" element="tns:crearDEPARTAMENTO" />
+  </wsdl:message>
+  <wsdl:message name="crearDEPARTAMENTOSoapOut">
+    <wsdl:part name="parameters" element="tns:crearDEPARTAMENTOResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarDEPARTAMENTOSoapIn">
+    <wsdl:part name="parameters" element="tns:editarDEPARTAMENTO" />
+  </wsdl:message>
+  <wsdl:message name="editarDEPARTAMENTOSoapOut">
+    <wsdl:part name="parameters" element="tns:editarDEPARTAMENTOResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroDEPARTAMENTOSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroDEPARTAMENTO" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroDEPARTAMENTOSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroDEPARTAMENTOResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarDEPARTAMENTOSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarDEPARTAMENTO" />
+  </wsdl:message>
+  <wsdl:message name="buscarDEPARTAMENTOSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarDEPARTAMENTOResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarDEPARTAMENTOSoapIn">
+    <wsdl:part name="parameters" element="tns:listarDEPARTAMENTO" />
+  </wsdl:message>
+  <wsdl:message name="listarDEPARTAMENTOSoapOut">
+    <wsdl:part name="parameters" element="tns:listarDEPARTAMENTOResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarDEPARTAMENTOSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarDEPARTAMENTO" />
+  </wsdl:message>
+  <wsdl:message name="eliminarDEPARTAMENTOSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarDEPARTAMENTOResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosDEPARTAMENTOSoap">
+    <wsdl:operation name="crearDEPARTAMENTO">
+      <wsdl:input message="tns:crearDEPARTAMENTOSoapIn" />
+      <wsdl:output message="tns:crearDEPARTAMENTOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarDEPARTAMENTO">
+      <wsdl:input message="tns:editarDEPARTAMENTOSoapIn" />
+      <wsdl:output message="tns:editarDEPARTAMENTOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroDEPARTAMENTO">
+      <wsdl:input message="tns:buscarPrimeroDEPARTAMENTOSoapIn" />
+      <wsdl:output message="tns:buscarPrimeroDEPARTAMENTOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarDEPARTAMENTO">
+      <wsdl:input message="tns:buscarDEPARTAMENTOSoapIn" />
+      <wsdl:output message="tns:buscarDEPARTAMENTOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarDEPARTAMENTO">
+      <wsdl:input message="tns:listarDEPARTAMENTOSoapIn" />
+      <wsdl:output message="tns:listarDEPARTAMENTOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDEPARTAMENTO">
+      <wsdl:input message="tns:eliminarDEPARTAMENTOSoapIn" />
+      <wsdl:output message="tns:eliminarDEPARTAMENTOSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosDEPARTAMENTOSoap" type="tns:ServiciosDEPARTAMENTOSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearDEPARTAMENTO">
+      <soap:operation soapAction="http://tempuri.org/crearDEPARTAMENTO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarDEPARTAMENTO">
+      <soap:operation soapAction="http://tempuri.org/editarDEPARTAMENTO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroDEPARTAMENTO">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroDEPARTAMENTO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarDEPARTAMENTO">
+      <soap:operation soapAction="http://tempuri.org/buscarDEPARTAMENTO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarDEPARTAMENTO">
+      <soap:operation soapAction="http://tempuri.org/listarDEPARTAMENTO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDEPARTAMENTO">
+      <soap:operation soapAction="http://tempuri.org/eliminarDEPARTAMENTO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosDEPARTAMENTOSoap12" type="tns:ServiciosDEPARTAMENTOSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearDEPARTAMENTO">
+      <soap12:operation soapAction="http://tempuri.org/crearDEPARTAMENTO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarDEPARTAMENTO">
+      <soap12:operation soapAction="http://tempuri.org/editarDEPARTAMENTO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroDEPARTAMENTO">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroDEPARTAMENTO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarDEPARTAMENTO">
+      <soap12:operation soapAction="http://tempuri.org/buscarDEPARTAMENTO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarDEPARTAMENTO">
+      <soap12:operation soapAction="http://tempuri.org/listarDEPARTAMENTO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDEPARTAMENTO">
+      <soap12:operation soapAction="http://tempuri.org/eliminarDEPARTAMENTO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosDEPARTAMENTO">
+    <wsdl:port name="ServiciosDEPARTAMENTOSoap" binding="tns:ServiciosDEPARTAMENTOSoap">
+      <soap:address location="http://localhost:52393/Model/Services/ServiciosDEPARTAMENTO.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosDEPARTAMENTOSoap12" binding="tns:ServiciosDEPARTAMENTOSoap12">
+      <soap12:address location="http://localhost:52393/Model/Services/ServiciosDEPARTAMENTO.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

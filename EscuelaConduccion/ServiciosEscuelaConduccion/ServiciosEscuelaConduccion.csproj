@@ -1,0 +1,485 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A6DC594F-085D-4DA1-8857-9EC17CD8DEF3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ServiciosEscuelaConduccion</RootNamespace>
+    <AssemblyName>ServiciosEscuelaConduccion</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Evaluant.Antlr">
+      <HintPath>..\..\dlls\Evaluant.Antlr.dll</HintPath>
+    </Reference>
+    <Reference Include="Evaluant.Calculator">
+      <HintPath>..\..\dlls\Evaluant.Calculator.dll</HintPath>
+    </Reference>
+    <Reference Include="ExpressionsEvaluator">
+      <HintPath>..\..\dlls\ExpressionsEvaluator.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\Services\ServiciosACUERDO_ESTADO.asmx" />
+    <Content Include="Model\Services\ServiciosACUERDO_PAGO.asmx" />
+    <Content Include="Model\Services\ServiciosACUERDO_PAGO_DETALLE.asmx" />
+    <Content Include="Model\Services\ServiciosCIUDAD.asmx" />
+    <Content Include="Model\Services\ServiciosCLIENTE.asmx" />
+    <Content Include="Model\Services\ServiciosCONFIGURACIONINICIAL.asmx" />
+    <Content Include="Model\Services\ServiciosDEPARTAMENTO.asmx" />
+    <Content Include="Model\Services\ServiciosDIAFESTIVO.asmx" />
+    <Content Include="Model\Services\ServiciosFACTURA.asmx" />
+    <Content Include="Model\Services\ServiciosFACTURACONSECUTIVO.asmx" />
+    <Content Include="Model\Services\ServiciosFacturaconsecutivodetalle.asmx" />
+    <Content Include="Model\Services\ServiciosFACTURA_ESTADO.asmx" />
+    <Content Include="Model\Services\ServiciosFormadepago.asmx" />
+    <Content Include="Model\Services\ServiciosGENERO.asmx" />
+    <Content Include="Model\Services\ServiciosLIQUIDACION.asmx" />
+    <Content Include="Model\Services\ServiciosLIQUIDACION_DETALLE.asmx" />
+    <Content Include="Model\Services\ServiciosPagos.asmx" />
+    <Content Include="Model\Services\ServiciosPERFIL.asmx" />
+    <Content Include="Model\Services\ServiciosPERFIL_DETALLE.asmx" />
+    <Content Include="Model\Services\ServiciosRECIBO.asmx" />
+    <Content Include="Model\Services\ServiciosRECIBO_ESTADO.asmx" />
+    <Content Include="Model\Services\ServiciosSALARIOMINIMO.asmx" />
+    <Content Include="Model\Services\ServiciosSQL.asmx" />
+    <Content Include="Model\Services\ServiciosTARIFA.asmx" />
+    <Content Include="Model\Services\ServiciosTARIFACATEGORIA.asmx" />
+    <Content Include="Model\Services\ServiciosTARIFA_CONCEPTO.asmx" />
+    <Content Include="Model\Services\ServiciosTARIFA_DETALLE.asmx" />
+    <Content Include="Model\Services\ServiciosTIPO_DOCUMENTO.asmx" />
+    <Content Include="Model\Services\ServiciosTIPO_LIQUIDACION.asmx" />
+    <Content Include="Model\Services\ServiciosUSUARIO.asmx" />
+    <Content Include="Model\Services\ServiciosViewliquidacion.asmx" />
+    <Content Include="Model\Services\ServiciosViewrecibo.asmx" />
+    <Content Include="Model\Services\ServiciosVIEW_CIUDAD.asmx" />
+    <Content Include="Model\Services\ServiciosVIEW_CLIENTE.asmx" />
+    <Content Include="Model\Services\ServiciosVIGENCIA.asmx" />
+    <Content Include="Model\Reportes\dsFactura.xsc">
+      <DependentUpon>dsFactura.xsd</DependentUpon>
+    </Content>
+    <None Include="Model\Reportes\dsFactura.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFactura.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Model\Reportes\dsFactura.xss">
+      <DependentUpon>dsFactura.xsd</DependentUpon>
+    </Content>
+    <None Include="Resources\LogoConducimos.png" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\ResourceTmp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceTmp.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DAO\ACUERDO_ESTADODao.cs" />
+    <Compile Include="Model\DAO\ACUERDO_PAGODao.cs" />
+    <Compile Include="Model\DAO\ACUERDO_PAGO_DETALLEDao.cs" />
+    <Compile Include="Model\DAO\CIUDADDao.cs" />
+    <Compile Include="Model\DAO\CLIENTEDao.cs" />
+    <Compile Include="Model\DAO\CONFIGURACIONINICIALDao.cs" />
+    <Compile Include="Model\DAO\DEPARTAMENTODao.cs" />
+    <Compile Include="Model\DAO\DIAFESTIVODao.cs" />
+    <Compile Include="Model\DAO\FACTURACONSECUTIVODao.cs" />
+    <Compile Include="Model\DAO\FacturaconsecutivodetalleDao.cs" />
+    <Compile Include="Model\DAO\FACTURADao.cs" />
+    <Compile Include="Model\DAO\FACTURA_ESTADODao.cs" />
+    <Compile Include="Model\DAO\FormadepagoDao.cs" />
+    <Compile Include="Model\DAO\GENERODao.cs" />
+    <Compile Include="Model\DAO\LIQUIDACIONDao.cs" />
+    <Compile Include="Model\DAO\LIQUIDACION_DETALLEDao.cs" />
+    <Compile Include="Model\DAO\PagosDao.cs" />
+    <Compile Include="Model\DAO\PERFILDao.cs" />
+    <Compile Include="Model\DAO\PERFIL_DETALLEDao.cs" />
+    <Compile Include="Model\DAO\RECIBODao.cs" />
+    <Compile Include="Model\DAO\RECIBO_ESTADODao.cs" />
+    <Compile Include="Model\DAO\SALARIOMINIMODao.cs" />
+    <Compile Include="Model\DAO\TARIFACATEGORIADao.cs" />
+    <Compile Include="Model\DAO\TARIFADao.cs" />
+    <Compile Include="Model\DAO\TARIFA_CONCEPTODao.cs" />
+    <Compile Include="Model\DAO\TARIFA_DETALLEDao.cs" />
+    <Compile Include="Model\DAO\TIPO_DOCUMENTODao.cs" />
+    <Compile Include="Model\DAO\TIPO_LIQUIDACIONDao.cs" />
+    <Compile Include="Model\DAO\USUARIODao.cs" />
+    <Compile Include="Model\DAO\ViewliquidacionDao.cs" />
+    <Compile Include="Model\DAO\ViewreciboDao.cs" />
+    <Compile Include="Model\DAO\VIEW_CIUDADDao.cs" />
+    <Compile Include="Model\DAO\VIEW_CLIENTEDao.cs" />
+    <Compile Include="Model\DAO\VIGENCIADao.cs" />
+    <Compile Include="Model\DataAccess\AccessDB.cs" />
+    <Compile Include="Model\Managements\ACUERDO_ESTADOManagement.cs" />
+    <Compile Include="Model\Managements\ACUERDO_PAGOManagement.cs" />
+    <Compile Include="Model\Managements\ACUERDO_PAGO_DETALLEManagement.cs" />
+    <Compile Include="Model\Managements\CIUDADManagement.cs" />
+    <Compile Include="Model\Managements\CLIENTEManagement.cs" />
+    <Compile Include="Model\Managements\CONFIGURACIONINICIALManagement.cs" />
+    <Compile Include="Model\Managements\DEPARTAMENTOManagement.cs" />
+    <Compile Include="Model\Managements\DIAFESTIVOManagement.cs" />
+    <Compile Include="Model\Managements\FACTURACONSECUTIVOManagement.cs" />
+    <Compile Include="Model\Managements\FACTURAManagement.cs" />
+    <Compile Include="Model\Managements\FACTURA_ESTADOManagement.cs" />
+    <Compile Include="Model\Managements\GENEROManagement.cs" />
+    <Compile Include="Model\Managements\GestionFacturaconsecutivodetalle.cs" />
+    <Compile Include="Model\Managements\GestionFormadepago.cs" />
+    <Compile Include="Model\Managements\GestionPagos.cs" />
+    <Compile Include="Model\Managements\GESTIONVariables.cs" />
+    <Compile Include="Model\Managements\GestionViewliquidacion.cs" />
+    <Compile Include="Model\Managements\GestionViewrecibo.cs" />
+    <Compile Include="Model\Managements\LIQUIDACIONManagement.cs" />
+    <Compile Include="Model\Managements\LIQUIDACION_DETALLEManagement.cs" />
+    <Compile Include="Model\Managements\PERFILManagement.cs" />
+    <Compile Include="Model\Managements\PERFIL_DETALLEManagement.cs" />
+    <Compile Include="Model\Managements\RECIBOManagement.cs" />
+    <Compile Include="Model\Managements\RECIBO_ESTADOManagement.cs" />
+    <Compile Include="Model\Managements\SALARIOMINIMOManagement.cs" />
+    <Compile Include="Model\Managements\SQLManagement.cs" />
+    <Compile Include="Model\Managements\TARIFACATEGORIAManagement.cs" />
+    <Compile Include="Model\Managements\TARIFAManagement.cs" />
+    <Compile Include="Model\Managements\TARIFA_CONCEPTOManagement.cs" />
+    <Compile Include="Model\Managements\TARIFA_DETALLEManagement.cs" />
+    <Compile Include="Model\Managements\TIPO_DOCUMENTOManagement.cs" />
+    <Compile Include="Model\Managements\TIPO_LIQUIDACIONManagement.cs" />
+    <Compile Include="Model\Managements\USUARIOManagement.cs" />
+    <Compile Include="Model\Managements\VIEW_CIUDADManagement.cs" />
+    <Compile Include="Model\Managements\VIEW_CLIENTEManagement.cs" />
+    <Compile Include="Model\Managements\VIGENCIAManagement.cs" />
+    <Compile Include="Model\Objects\ACUERDO_ESTADO.cs" />
+    <Compile Include="Model\Objects\ACUERDO_PAGO.cs" />
+    <Compile Include="Model\Objects\ACUERDO_PAGO_DETALLE.cs" />
+    <Compile Include="Model\Objects\CIUDAD.cs" />
+    <Compile Include="Model\Objects\CLIENTE.cs" />
+    <Compile Include="Model\Objects\CONFIGURACIONINICIAL.cs" />
+    <Compile Include="Model\Objects\DEPARTAMENTO.cs" />
+    <Compile Include="Model\Objects\DIAFESTIVO.cs" />
+    <Compile Include="Model\Objects\Facturaconsecutivodetalle.cs" />
+    <Compile Include="Model\Objects\Formadepago.cs" />
+    <Compile Include="Model\Objects\Pagos.cs" />
+    <Compile Include="Model\Objects\Viewliquidacion.cs" />
+    <Compile Include="Model\Objects\Viewrecibo.cs" />
+    <Compile Include="Model\Reportes\crFactura.cs">
+      <DependentUpon>crFactura.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Model\Reportes\crRecibo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crRecibo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Reportes\dsFactura.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFactura.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Reportes\dsRecibo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRecibo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Objects\FACTURA.cs" />
+    <Compile Include="Model\Objects\FACTURACONSECUTIVO.cs" />
+    <Compile Include="Model\Objects\FACTURA_ESTADO.cs" />
+    <Compile Include="Model\Objects\GENERO.cs" />
+    <Compile Include="Model\Objects\LIQUIDACION.cs" />
+    <Compile Include="Model\Objects\LIQUIDACION_DETALLE.cs" />
+    <Compile Include="Model\Objects\PERFIL.cs" />
+    <Compile Include="Model\Objects\PERFIL_DETALLE.cs" />
+    <Compile Include="Model\Objects\RECIBO.cs" />
+    <Compile Include="Model\Objects\RECIBO_ESTADO.cs" />
+    <Compile Include="Model\Objects\SALARIOMINIMO.cs" />
+    <Compile Include="Model\Objects\TARIFA.cs" />
+    <Compile Include="Model\Objects\TARIFACATEGORIA.cs" />
+    <Compile Include="Model\Objects\TARIFA_CONCEPTO.cs" />
+    <Compile Include="Model\Objects\TARIFA_DETALLE.cs" />
+    <Compile Include="Model\Objects\TIPO_DOCUMENTO.cs" />
+    <Compile Include="Model\Objects\TIPO_LIQUIDACION.cs" />
+    <Compile Include="Model\Objects\USUARIO.cs" />
+    <Compile Include="Model\Objects\VIEW_CIUDAD.cs" />
+    <Compile Include="Model\Objects\VIEW_CLIENTE.cs" />
+    <Compile Include="Model\Objects\VIGENCIA.cs" />
+    <Compile Include="Model\Services\ServiciosACUERDO_ESTADO.asmx.cs">
+      <DependentUpon>ServiciosACUERDO_ESTADO.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosACUERDO_PAGO.asmx.cs">
+      <DependentUpon>ServiciosACUERDO_PAGO.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosACUERDO_PAGO_DETALLE.asmx.cs">
+      <DependentUpon>ServiciosACUERDO_PAGO_DETALLE.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosCIUDAD.asmx.cs">
+      <DependentUpon>ServiciosCIUDAD.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosCLIENTE.asmx.cs">
+      <DependentUpon>ServiciosCLIENTE.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosCONFIGURACIONINICIAL.asmx.cs">
+      <DependentUpon>ServiciosCONFIGURACIONINICIAL.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosDEPARTAMENTO.asmx.cs">
+      <DependentUpon>ServiciosDEPARTAMENTO.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosDIAFESTIVO.asmx.cs">
+      <DependentUpon>ServiciosDIAFESTIVO.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosFACTURA.asmx.cs">
+      <DependentUpon>ServiciosFACTURA.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosFACTURACONSECUTIVO.asmx.cs">
+      <DependentUpon>ServiciosFACTURACONSECUTIVO.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosFacturaconsecutivodetalle.asmx.cs">
+      <DependentUpon>ServiciosFacturaconsecutivodetalle.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosFACTURA_ESTADO.asmx.cs">
+      <DependentUpon>ServiciosFACTURA_ESTADO.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosFormadepago.asmx.cs">
+      <DependentUpon>ServiciosFormadepago.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosGENERO.asmx.cs">
+      <DependentUpon>ServiciosGENERO.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosLIQUIDACION.asmx.cs">
+      <DependentUpon>ServiciosLIQUIDACION.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosLIQUIDACION_DETALLE.asmx.cs">
+      <DependentUpon>ServiciosLIQUIDACION_DETALLE.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosPagos.asmx.cs">
+      <DependentUpon>ServiciosPagos.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosPERFIL.asmx.cs">
+      <DependentUpon>ServiciosPERFIL.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosPERFIL_DETALLE.asmx.cs">
+      <DependentUpon>ServiciosPERFIL_DETALLE.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosRECIBO.asmx.cs">
+      <DependentUpon>ServiciosRECIBO.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosRECIBO_ESTADO.asmx.cs">
+      <DependentUpon>ServiciosRECIBO_ESTADO.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosSALARIOMINIMO.asmx.cs">
+      <DependentUpon>ServiciosSALARIOMINIMO.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosSQL.asmx.cs">
+      <DependentUpon>ServiciosSQL.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosTARIFA.asmx.cs">
+      <DependentUpon>ServiciosTARIFA.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosTARIFACATEGORIA.asmx.cs">
+      <DependentUpon>ServiciosTARIFACATEGORIA.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosTARIFA_CONCEPTO.asmx.cs">
+      <DependentUpon>ServiciosTARIFA_CONCEPTO.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosTARIFA_DETALLE.asmx.cs">
+      <DependentUpon>ServiciosTARIFA_DETALLE.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosTIPO_DOCUMENTO.asmx.cs">
+      <DependentUpon>ServiciosTIPO_DOCUMENTO.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosTIPO_LIQUIDACION.asmx.cs">
+      <DependentUpon>ServiciosTIPO_LIQUIDACION.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosUSUARIO.asmx.cs">
+      <DependentUpon>ServiciosUSUARIO.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosViewliquidacion.asmx.cs">
+      <DependentUpon>ServiciosViewliquidacion.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosViewrecibo.asmx.cs">
+      <DependentUpon>ServiciosViewrecibo.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosVIEW_CIUDAD.asmx.cs">
+      <DependentUpon>ServiciosVIEW_CIUDAD.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosVIEW_CLIENTE.asmx.cs">
+      <DependentUpon>ServiciosVIEW_CLIENTE.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Model\Services\ServiciosVIGENCIA.asmx.cs">
+      <DependentUpon>ServiciosVIGENCIA.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilidades\Funciones.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\Reportes\dsRecibo.xsc">
+      <DependentUpon>dsRecibo.xsd</DependentUpon>
+    </Content>
+    <None Include="Model\Reportes\dsRecibo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRecibo.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Model\Reportes\dsRecibo.xss">
+      <DependentUpon>dsRecibo.xsd</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\ResourceTmp.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ResourceTmp.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Model\Reportes\crFactura.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crFactura.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\Reportes\crRecibo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>crRecibo.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52393</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52393/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

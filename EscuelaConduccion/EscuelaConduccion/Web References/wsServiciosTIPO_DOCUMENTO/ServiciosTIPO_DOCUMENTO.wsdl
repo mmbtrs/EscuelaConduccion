@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crearTIPO_DOCUMENTO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:TIPO_DOCUMENTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TIPO_DOCUMENTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ABREVIACION" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearTIPO_DOCUMENTOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearTIPO_DOCUMENTOResult" type="tns:TIPO_DOCUMENTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarTIPO_DOCUMENTO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:TIPO_DOCUMENTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarTIPO_DOCUMENTOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="editarTIPO_DOCUMENTOResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroTIPO_DOCUMENTO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:TIPO_DOCUMENTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroTIPO_DOCUMENTOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroTIPO_DOCUMENTOResult" type="tns:TIPO_DOCUMENTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarTIPO_DOCUMENTO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:TIPO_DOCUMENTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarTIPO_DOCUMENTOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarTIPO_DOCUMENTOResult" type="tns:ArrayOfTIPO_DOCUMENTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTIPO_DOCUMENTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TIPO_DOCUMENTO" nillable="true" type="tns:TIPO_DOCUMENTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listarTIPO_DOCUMENTO">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarTIPO_DOCUMENTOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarTIPO_DOCUMENTOResult" type="tns:ArrayOfTIPO_DOCUMENTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarTIPO_DOCUMENTO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:TIPO_DOCUMENTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarTIPO_DOCUMENTOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminarTIPO_DOCUMENTOResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crearTIPO_DOCUMENTOSoapIn">
+    <wsdl:part name="parameters" element="tns:crearTIPO_DOCUMENTO" />
+  </wsdl:message>
+  <wsdl:message name="crearTIPO_DOCUMENTOSoapOut">
+    <wsdl:part name="parameters" element="tns:crearTIPO_DOCUMENTOResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarTIPO_DOCUMENTOSoapIn">
+    <wsdl:part name="parameters" element="tns:editarTIPO_DOCUMENTO" />
+  </wsdl:message>
+  <wsdl:message name="editarTIPO_DOCUMENTOSoapOut">
+    <wsdl:part name="parameters" element="tns:editarTIPO_DOCUMENTOResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroTIPO_DOCUMENTOSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroTIPO_DOCUMENTO" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroTIPO_DOCUMENTOSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroTIPO_DOCUMENTOResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarTIPO_DOCUMENTOSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarTIPO_DOCUMENTO" />
+  </wsdl:message>
+  <wsdl:message name="buscarTIPO_DOCUMENTOSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarTIPO_DOCUMENTOResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarTIPO_DOCUMENTOSoapIn">
+    <wsdl:part name="parameters" element="tns:listarTIPO_DOCUMENTO" />
+  </wsdl:message>
+  <wsdl:message name="listarTIPO_DOCUMENTOSoapOut">
+    <wsdl:part name="parameters" element="tns:listarTIPO_DOCUMENTOResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarTIPO_DOCUMENTOSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarTIPO_DOCUMENTO" />
+  </wsdl:message>
+  <wsdl:message name="eliminarTIPO_DOCUMENTOSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarTIPO_DOCUMENTOResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosTIPO_DOCUMENTOSoap">
+    <wsdl:operation name="crearTIPO_DOCUMENTO">
+      <wsdl:input message="tns:crearTIPO_DOCUMENTOSoapIn" />
+      <wsdl:output message="tns:crearTIPO_DOCUMENTOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarTIPO_DOCUMENTO">
+      <wsdl:input message="tns:editarTIPO_DOCUMENTOSoapIn" />
+      <wsdl:output message="tns:editarTIPO_DOCUMENTOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroTIPO_DOCUMENTO">
+      <wsdl:input message="tns:buscarPrimeroTIPO_DOCUMENTOSoapIn" />
+      <wsdl:output message="tns:buscarPrimeroTIPO_DOCUMENTOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarTIPO_DOCUMENTO">
+      <wsdl:input message="tns:buscarTIPO_DOCUMENTOSoapIn" />
+      <wsdl:output message="tns:buscarTIPO_DOCUMENTOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarTIPO_DOCUMENTO">
+      <wsdl:input message="tns:listarTIPO_DOCUMENTOSoapIn" />
+      <wsdl:output message="tns:listarTIPO_DOCUMENTOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarTIPO_DOCUMENTO">
+      <wsdl:input message="tns:eliminarTIPO_DOCUMENTOSoapIn" />
+      <wsdl:output message="tns:eliminarTIPO_DOCUMENTOSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosTIPO_DOCUMENTOSoap" type="tns:ServiciosTIPO_DOCUMENTOSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearTIPO_DOCUMENTO">
+      <soap:operation soapAction="http://tempuri.org/crearTIPO_DOCUMENTO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarTIPO_DOCUMENTO">
+      <soap:operation soapAction="http://tempuri.org/editarTIPO_DOCUMENTO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroTIPO_DOCUMENTO">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroTIPO_DOCUMENTO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarTIPO_DOCUMENTO">
+      <soap:operation soapAction="http://tempuri.org/buscarTIPO_DOCUMENTO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarTIPO_DOCUMENTO">
+      <soap:operation soapAction="http://tempuri.org/listarTIPO_DOCUMENTO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarTIPO_DOCUMENTO">
+      <soap:operation soapAction="http://tempuri.org/eliminarTIPO_DOCUMENTO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosTIPO_DOCUMENTOSoap12" type="tns:ServiciosTIPO_DOCUMENTOSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearTIPO_DOCUMENTO">
+      <soap12:operation soapAction="http://tempuri.org/crearTIPO_DOCUMENTO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarTIPO_DOCUMENTO">
+      <soap12:operation soapAction="http://tempuri.org/editarTIPO_DOCUMENTO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroTIPO_DOCUMENTO">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroTIPO_DOCUMENTO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarTIPO_DOCUMENTO">
+      <soap12:operation soapAction="http://tempuri.org/buscarTIPO_DOCUMENTO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarTIPO_DOCUMENTO">
+      <soap12:operation soapAction="http://tempuri.org/listarTIPO_DOCUMENTO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarTIPO_DOCUMENTO">
+      <soap12:operation soapAction="http://tempuri.org/eliminarTIPO_DOCUMENTO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosTIPO_DOCUMENTO">
+    <wsdl:port name="ServiciosTIPO_DOCUMENTOSoap" binding="tns:ServiciosTIPO_DOCUMENTOSoap">
+      <soap:address location="http://localhost:52393/Model/Services/ServiciosTIPO_DOCUMENTO.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosTIPO_DOCUMENTOSoap12" binding="tns:ServiciosTIPO_DOCUMENTOSoap12">
+      <soap12:address location="http://localhost:52393/Model/Services/ServiciosTIPO_DOCUMENTO.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

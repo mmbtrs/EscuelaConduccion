@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crearFormadepago">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Formadepago" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Formadepago">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FORMA_PAGO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearFormadepagoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearFormadepagoResult" type="tns:Formadepago" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarFormadepago">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Formadepago" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarFormadepagoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="editarFormadepagoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroFormadepago">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Formadepago" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroFormadepagoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroFormadepagoResult" type="tns:Formadepago" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarFormadepago">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Formadepago" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarFormadepagoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarFormadepagoResult" type="tns:ArrayOfFormadepago" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFormadepago">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Formadepago" nillable="true" type="tns:Formadepago" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="buscarPaginacionFormadepago">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Formadepago" />
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPaginacionFormadepagoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPaginacionFormadepagoResult" type="tns:ArrayOfFormadepago" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarFormadepago">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarFormadepagoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarFormadepagoResult" type="tns:ArrayOfFormadepago" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionFormadepago">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionFormadepagoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarPaginacionFormadepagoResult" type="tns:ArrayOfFormadepago" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaFormadepago">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Formadepago" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaFormadepagoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="contarBusquedaFormadepagoResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarFormadepago">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Formadepago" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarFormadepagoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminarFormadepagoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crearFormadepagoSoapIn">
+    <wsdl:part name="parameters" element="tns:crearFormadepago" />
+  </wsdl:message>
+  <wsdl:message name="crearFormadepagoSoapOut">
+    <wsdl:part name="parameters" element="tns:crearFormadepagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarFormadepagoSoapIn">
+    <wsdl:part name="parameters" element="tns:editarFormadepago" />
+  </wsdl:message>
+  <wsdl:message name="editarFormadepagoSoapOut">
+    <wsdl:part name="parameters" element="tns:editarFormadepagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroFormadepagoSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroFormadepago" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroFormadepagoSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroFormadepagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarFormadepagoSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarFormadepago" />
+  </wsdl:message>
+  <wsdl:message name="buscarFormadepagoSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarFormadepagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionFormadepagoSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionFormadepago" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionFormadepagoSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionFormadepagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarFormadepagoSoapIn">
+    <wsdl:part name="parameters" element="tns:listarFormadepago" />
+  </wsdl:message>
+  <wsdl:message name="listarFormadepagoSoapOut">
+    <wsdl:part name="parameters" element="tns:listarFormadepagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionFormadepagoSoapIn">
+    <wsdl:part name="parameters" element="tns:listarPaginacionFormadepago" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionFormadepagoSoapOut">
+    <wsdl:part name="parameters" element="tns:listarPaginacionFormadepagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaFormadepagoSoapIn">
+    <wsdl:part name="parameters" element="tns:contarBusquedaFormadepago" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaFormadepagoSoapOut">
+    <wsdl:part name="parameters" element="tns:contarBusquedaFormadepagoResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarFormadepagoSoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarFormadepago" />
+  </wsdl:message>
+  <wsdl:message name="eliminarFormadepagoSoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarFormadepagoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosFormadepagoSoap">
+    <wsdl:operation name="crearFormadepago">
+      <wsdl:input message="tns:crearFormadepagoSoapIn" />
+      <wsdl:output message="tns:crearFormadepagoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarFormadepago">
+      <wsdl:input message="tns:editarFormadepagoSoapIn" />
+      <wsdl:output message="tns:editarFormadepagoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroFormadepago">
+      <wsdl:input message="tns:buscarPrimeroFormadepagoSoapIn" />
+      <wsdl:output message="tns:buscarPrimeroFormadepagoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarFormadepago">
+      <wsdl:input message="tns:buscarFormadepagoSoapIn" />
+      <wsdl:output message="tns:buscarFormadepagoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionFormadepago">
+      <wsdl:input message="tns:buscarPaginacionFormadepagoSoapIn" />
+      <wsdl:output message="tns:buscarPaginacionFormadepagoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarFormadepago">
+      <wsdl:input message="tns:listarFormadepagoSoapIn" />
+      <wsdl:output message="tns:listarFormadepagoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionFormadepago">
+      <wsdl:input message="tns:listarPaginacionFormadepagoSoapIn" />
+      <wsdl:output message="tns:listarPaginacionFormadepagoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaFormadepago">
+      <wsdl:input message="tns:contarBusquedaFormadepagoSoapIn" />
+      <wsdl:output message="tns:contarBusquedaFormadepagoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarFormadepago">
+      <wsdl:input message="tns:eliminarFormadepagoSoapIn" />
+      <wsdl:output message="tns:eliminarFormadepagoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosFormadepagoSoap" type="tns:ServiciosFormadepagoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearFormadepago">
+      <soap:operation soapAction="http://tempuri.org/crearFormadepago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarFormadepago">
+      <soap:operation soapAction="http://tempuri.org/editarFormadepago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroFormadepago">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroFormadepago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarFormadepago">
+      <soap:operation soapAction="http://tempuri.org/buscarFormadepago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionFormadepago">
+      <soap:operation soapAction="http://tempuri.org/buscarPaginacionFormadepago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarFormadepago">
+      <soap:operation soapAction="http://tempuri.org/listarFormadepago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionFormadepago">
+      <soap:operation soapAction="http://tempuri.org/listarPaginacionFormadepago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaFormadepago">
+      <soap:operation soapAction="http://tempuri.org/contarBusquedaFormadepago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarFormadepago">
+      <soap:operation soapAction="http://tempuri.org/eliminarFormadepago" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosFormadepagoSoap12" type="tns:ServiciosFormadepagoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearFormadepago">
+      <soap12:operation soapAction="http://tempuri.org/crearFormadepago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarFormadepago">
+      <soap12:operation soapAction="http://tempuri.org/editarFormadepago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroFormadepago">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroFormadepago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarFormadepago">
+      <soap12:operation soapAction="http://tempuri.org/buscarFormadepago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionFormadepago">
+      <soap12:operation soapAction="http://tempuri.org/buscarPaginacionFormadepago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarFormadepago">
+      <soap12:operation soapAction="http://tempuri.org/listarFormadepago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionFormadepago">
+      <soap12:operation soapAction="http://tempuri.org/listarPaginacionFormadepago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaFormadepago">
+      <soap12:operation soapAction="http://tempuri.org/contarBusquedaFormadepago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarFormadepago">
+      <soap12:operation soapAction="http://tempuri.org/eliminarFormadepago" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosFormadepago">
+    <wsdl:port name="ServiciosFormadepagoSoap" binding="tns:ServiciosFormadepagoSoap">
+      <soap:address location="http://localhost:52393/Model/Services/ServiciosFormadepago.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosFormadepagoSoap12" binding="tns:ServiciosFormadepagoSoap12">
+      <soap12:address location="http://localhost:52393/Model/Services/ServiciosFormadepago.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

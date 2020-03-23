@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="buscarPrimeroViewliquidacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Viewliquidacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Viewliquidacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NUMERO_RECIBO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NUMERO_FACTURA" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_TIPO_DOCUMENTO" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPO_DOCUMENTO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IDENTIFICACION" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_ESTADO" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESTADO" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="FECHA_LIQUIDACION" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="FECHA_PAGO" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID_TIPO_LIQUIDACION" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="TIPO" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TARIFA" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="buscarPrimeroViewliquidacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroViewliquidacionResult" type="tns:Viewliquidacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarViewliquidacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Viewliquidacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarViewliquidacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarViewliquidacionResult" type="tns:ArrayOfViewliquidacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfViewliquidacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Viewliquidacion" nillable="true" type="tns:Viewliquidacion" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="buscarViewliquidacionBetween">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Viewliquidacion" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaIniLiq" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaFinLiq" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaIniPag" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="fechaFinPag" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarViewliquidacionBetweenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarViewliquidacionBetweenResult" type="tns:ArrayOfViewliquidacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPaginacionViewliquidacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Viewliquidacion" />
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPaginacionViewliquidacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPaginacionViewliquidacionResult" type="tns:ArrayOfViewliquidacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarViewliquidacion">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarViewliquidacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarViewliquidacionResult" type="tns:ArrayOfViewliquidacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionViewliquidacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="pag" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numReg" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listarPaginacionViewliquidacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarPaginacionViewliquidacionResult" type="tns:ArrayOfViewliquidacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaViewliquidacion">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:Viewliquidacion" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="contarBusquedaViewliquidacionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="contarBusquedaViewliquidacionResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="buscarPrimeroViewliquidacionSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroViewliquidacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroViewliquidacionSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroViewliquidacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarViewliquidacionSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarViewliquidacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarViewliquidacionSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarViewliquidacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarViewliquidacionBetweenSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarViewliquidacionBetween" />
+  </wsdl:message>
+  <wsdl:message name="buscarViewliquidacionBetweenSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarViewliquidacionBetweenResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionViewliquidacionSoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionViewliquidacion" />
+  </wsdl:message>
+  <wsdl:message name="buscarPaginacionViewliquidacionSoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPaginacionViewliquidacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarViewliquidacionSoapIn">
+    <wsdl:part name="parameters" element="tns:listarViewliquidacion" />
+  </wsdl:message>
+  <wsdl:message name="listarViewliquidacionSoapOut">
+    <wsdl:part name="parameters" element="tns:listarViewliquidacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionViewliquidacionSoapIn">
+    <wsdl:part name="parameters" element="tns:listarPaginacionViewliquidacion" />
+  </wsdl:message>
+  <wsdl:message name="listarPaginacionViewliquidacionSoapOut">
+    <wsdl:part name="parameters" element="tns:listarPaginacionViewliquidacionResponse" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaViewliquidacionSoapIn">
+    <wsdl:part name="parameters" element="tns:contarBusquedaViewliquidacion" />
+  </wsdl:message>
+  <wsdl:message name="contarBusquedaViewliquidacionSoapOut">
+    <wsdl:part name="parameters" element="tns:contarBusquedaViewliquidacionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosViewliquidacionSoap">
+    <wsdl:operation name="buscarPrimeroViewliquidacion">
+      <wsdl:input message="tns:buscarPrimeroViewliquidacionSoapIn" />
+      <wsdl:output message="tns:buscarPrimeroViewliquidacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarViewliquidacion">
+      <wsdl:input message="tns:buscarViewliquidacionSoapIn" />
+      <wsdl:output message="tns:buscarViewliquidacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarViewliquidacionBetween">
+      <wsdl:input message="tns:buscarViewliquidacionBetweenSoapIn" />
+      <wsdl:output message="tns:buscarViewliquidacionBetweenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionViewliquidacion">
+      <wsdl:input message="tns:buscarPaginacionViewliquidacionSoapIn" />
+      <wsdl:output message="tns:buscarPaginacionViewliquidacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarViewliquidacion">
+      <wsdl:input message="tns:listarViewliquidacionSoapIn" />
+      <wsdl:output message="tns:listarViewliquidacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionViewliquidacion">
+      <wsdl:input message="tns:listarPaginacionViewliquidacionSoapIn" />
+      <wsdl:output message="tns:listarPaginacionViewliquidacionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaViewliquidacion">
+      <wsdl:input message="tns:contarBusquedaViewliquidacionSoapIn" />
+      <wsdl:output message="tns:contarBusquedaViewliquidacionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosViewliquidacionSoap" type="tns:ServiciosViewliquidacionSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="buscarPrimeroViewliquidacion">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroViewliquidacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarViewliquidacion">
+      <soap:operation soapAction="http://tempuri.org/buscarViewliquidacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarViewliquidacionBetween">
+      <soap:operation soapAction="http://tempuri.org/buscarViewliquidacionBetween" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionViewliquidacion">
+      <soap:operation soapAction="http://tempuri.org/buscarPaginacionViewliquidacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarViewliquidacion">
+      <soap:operation soapAction="http://tempuri.org/listarViewliquidacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionViewliquidacion">
+      <soap:operation soapAction="http://tempuri.org/listarPaginacionViewliquidacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaViewliquidacion">
+      <soap:operation soapAction="http://tempuri.org/contarBusquedaViewliquidacion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosViewliquidacionSoap12" type="tns:ServiciosViewliquidacionSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="buscarPrimeroViewliquidacion">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroViewliquidacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarViewliquidacion">
+      <soap12:operation soapAction="http://tempuri.org/buscarViewliquidacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarViewliquidacionBetween">
+      <soap12:operation soapAction="http://tempuri.org/buscarViewliquidacionBetween" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPaginacionViewliquidacion">
+      <soap12:operation soapAction="http://tempuri.org/buscarPaginacionViewliquidacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarViewliquidacion">
+      <soap12:operation soapAction="http://tempuri.org/listarViewliquidacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarPaginacionViewliquidacion">
+      <soap12:operation soapAction="http://tempuri.org/listarPaginacionViewliquidacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="contarBusquedaViewliquidacion">
+      <soap12:operation soapAction="http://tempuri.org/contarBusquedaViewliquidacion" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosViewliquidacion">
+    <wsdl:port name="ServiciosViewliquidacionSoap" binding="tns:ServiciosViewliquidacionSoap">
+      <soap:address location="http://localhost:52393/Model/Services/ServiciosViewliquidacion.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosViewliquidacionSoap12" binding="tns:ServiciosViewliquidacionSoap12">
+      <soap12:address location="http://localhost:52393/Model/Services/ServiciosViewliquidacion.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

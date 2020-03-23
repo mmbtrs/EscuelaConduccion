@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="crearVIGENCIA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:VIGENCIA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="VIGENCIA">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NOMBRE" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="crearVIGENCIAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="crearVIGENCIAResult" type="tns:VIGENCIA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarVIGENCIA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:VIGENCIA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="editarVIGENCIAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="editarVIGENCIAResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroVIGENCIA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:VIGENCIA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarPrimeroVIGENCIAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarPrimeroVIGENCIAResult" type="tns:VIGENCIA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarVIGENCIA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:VIGENCIA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buscarVIGENCIAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buscarVIGENCIAResult" type="tns:ArrayOfVIGENCIA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfVIGENCIA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="VIGENCIA" nillable="true" type="tns:VIGENCIA" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="listarVIGENCIA">
+        <s:complexType />
+      </s:element>
+      <s:element name="listarVIGENCIAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listarVIGENCIAResult" type="tns:ArrayOfVIGENCIA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarVIGENCIA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="obj" type="tns:VIGENCIA" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="eliminarVIGENCIAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="eliminarVIGENCIAResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="crearVIGENCIASoapIn">
+    <wsdl:part name="parameters" element="tns:crearVIGENCIA" />
+  </wsdl:message>
+  <wsdl:message name="crearVIGENCIASoapOut">
+    <wsdl:part name="parameters" element="tns:crearVIGENCIAResponse" />
+  </wsdl:message>
+  <wsdl:message name="editarVIGENCIASoapIn">
+    <wsdl:part name="parameters" element="tns:editarVIGENCIA" />
+  </wsdl:message>
+  <wsdl:message name="editarVIGENCIASoapOut">
+    <wsdl:part name="parameters" element="tns:editarVIGENCIAResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroVIGENCIASoapIn">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroVIGENCIA" />
+  </wsdl:message>
+  <wsdl:message name="buscarPrimeroVIGENCIASoapOut">
+    <wsdl:part name="parameters" element="tns:buscarPrimeroVIGENCIAResponse" />
+  </wsdl:message>
+  <wsdl:message name="buscarVIGENCIASoapIn">
+    <wsdl:part name="parameters" element="tns:buscarVIGENCIA" />
+  </wsdl:message>
+  <wsdl:message name="buscarVIGENCIASoapOut">
+    <wsdl:part name="parameters" element="tns:buscarVIGENCIAResponse" />
+  </wsdl:message>
+  <wsdl:message name="listarVIGENCIASoapIn">
+    <wsdl:part name="parameters" element="tns:listarVIGENCIA" />
+  </wsdl:message>
+  <wsdl:message name="listarVIGENCIASoapOut">
+    <wsdl:part name="parameters" element="tns:listarVIGENCIAResponse" />
+  </wsdl:message>
+  <wsdl:message name="eliminarVIGENCIASoapIn">
+    <wsdl:part name="parameters" element="tns:eliminarVIGENCIA" />
+  </wsdl:message>
+  <wsdl:message name="eliminarVIGENCIASoapOut">
+    <wsdl:part name="parameters" element="tns:eliminarVIGENCIAResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiciosVIGENCIASoap">
+    <wsdl:operation name="crearVIGENCIA">
+      <wsdl:input message="tns:crearVIGENCIASoapIn" />
+      <wsdl:output message="tns:crearVIGENCIASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="editarVIGENCIA">
+      <wsdl:input message="tns:editarVIGENCIASoapIn" />
+      <wsdl:output message="tns:editarVIGENCIASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroVIGENCIA">
+      <wsdl:input message="tns:buscarPrimeroVIGENCIASoapIn" />
+      <wsdl:output message="tns:buscarPrimeroVIGENCIASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buscarVIGENCIA">
+      <wsdl:input message="tns:buscarVIGENCIASoapIn" />
+      <wsdl:output message="tns:buscarVIGENCIASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listarVIGENCIA">
+      <wsdl:input message="tns:listarVIGENCIASoapIn" />
+      <wsdl:output message="tns:listarVIGENCIASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarVIGENCIA">
+      <wsdl:input message="tns:eliminarVIGENCIASoapIn" />
+      <wsdl:output message="tns:eliminarVIGENCIASoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiciosVIGENCIASoap" type="tns:ServiciosVIGENCIASoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearVIGENCIA">
+      <soap:operation soapAction="http://tempuri.org/crearVIGENCIA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarVIGENCIA">
+      <soap:operation soapAction="http://tempuri.org/editarVIGENCIA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroVIGENCIA">
+      <soap:operation soapAction="http://tempuri.org/buscarPrimeroVIGENCIA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarVIGENCIA">
+      <soap:operation soapAction="http://tempuri.org/buscarVIGENCIA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarVIGENCIA">
+      <soap:operation soapAction="http://tempuri.org/listarVIGENCIA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarVIGENCIA">
+      <soap:operation soapAction="http://tempuri.org/eliminarVIGENCIA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiciosVIGENCIASoap12" type="tns:ServiciosVIGENCIASoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="crearVIGENCIA">
+      <soap12:operation soapAction="http://tempuri.org/crearVIGENCIA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="editarVIGENCIA">
+      <soap12:operation soapAction="http://tempuri.org/editarVIGENCIA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarPrimeroVIGENCIA">
+      <soap12:operation soapAction="http://tempuri.org/buscarPrimeroVIGENCIA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscarVIGENCIA">
+      <soap12:operation soapAction="http://tempuri.org/buscarVIGENCIA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarVIGENCIA">
+      <soap12:operation soapAction="http://tempuri.org/listarVIGENCIA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarVIGENCIA">
+      <soap12:operation soapAction="http://tempuri.org/eliminarVIGENCIA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiciosVIGENCIA">
+    <wsdl:port name="ServiciosVIGENCIASoap" binding="tns:ServiciosVIGENCIASoap">
+      <soap:address location="http://localhost:52393/Model/Services/ServiciosVIGENCIA.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiciosVIGENCIASoap12" binding="tns:ServiciosVIGENCIASoap12">
+      <soap12:address location="http://localhost:52393/Model/Services/ServiciosVIGENCIA.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
