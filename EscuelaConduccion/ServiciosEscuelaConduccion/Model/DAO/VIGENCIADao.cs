@@ -30,12 +30,16 @@ namespace ServiciosEscuelaConduccion.Model.DAO {
 			SqlCommand stmt = null;
 			try 
 			{
-				sql = "INSERT INTO VIGENCIA ( ID,"+
+				sql = "INSERT INTO VIGENCIA ( "+
 				" NOMBRE)"+
-				 "VALUES (@ID,@NOMBRE)";
+				 "VALUES (@NOMBRE)";
 
 				stmt = new SqlCommand(sql, conn);
 
+				if (valueObject.NOMBRE != 0)
+					stmt.Parameters.AddWithValue("@NOMBRE", valueObject.NOMBRE);
+				else
+					stmt.Parameters.AddWithValue("@NOMBRE", DBNull.Value);
 
 
 				databaseUpdate(stmt);
@@ -53,11 +57,14 @@ namespace ServiciosEscuelaConduccion.Model.DAO {
 			String sql = "";
 			try 
 			{
-				sql = "UPDATE VIGENCIA SET ID = @ID ,"+
+				sql = "UPDATE VIGENCIA SET"+
 				" NOMBRE = @NOMBRE  WHERE (id = @id)";
 				stmt = new SqlCommand(sql, conn);
 
-
+				if (valueObject.NOMBRE != 0)
+					stmt.Parameters.AddWithValue("@NOMBRE", valueObject.NOMBRE);
+				else
+					stmt.Parameters.AddWithValue("@NOMBRE", DBNull.Value);
 
 				stmt.Parameters.AddWithValue("@id", valueObject.ID);
 
@@ -113,7 +120,7 @@ namespace ServiciosEscuelaConduccion.Model.DAO {
 
 			if (!String.IsNullOrEmpty(valueObject.NOMBRE.ToString()) && valueObject.NOMBRE > 0) {
 				if (first) { first = false; }
-				sql += "AND NOMBRE= '" + valueObject.NOMBRE + "' ";
+				sql += "AND NOMBRE= " + valueObject.NOMBRE + " ";
 			}
 
 			sql += "ORDER BY id ASC ";

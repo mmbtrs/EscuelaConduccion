@@ -142,19 +142,31 @@ namespace EscuelaConduccion.Modelo.Liquidacion
                 {
                     foreach (DataRow fila in frm.dtTarifaLiquidada.Rows)
                     {
-                        if (fila["DESCONTABLE"].ToString().ToUpper().Equals("SI"))
+                        if (grdDatos.Rows != null && grdDatos.Rows.Count > 0)
                         {
-                            DataGridViewRow dgvr = grdDatos.Rows[0];
-                            bool repetida = false;
-                            for (int i = 0; i < grdDatos.Rows.Count; i++)
+                            if (fila["DESCONTABLE"].ToString().ToUpper().Equals("SI"))
                             {
-                                if (grdDatos.Rows[i].Cells["ID_TARIFADETALLE"].Value.ToString().Equals(fila["ID_TARIFADETALLE"]))
+                                DataGridViewRow dgvr = grdDatos.Rows[0];
+                                bool repetida = false;
+                                for (int i = 0; i < grdDatos.Rows.Count; i++)
                                 {
-                                    repetida = true;
-                                    break;
+                                    if (grdDatos.Rows[i].Cells["ID_TARIFADETALLE"].Value.ToString().Equals(fila["ID_TARIFADETALLE"]))
+                                    {
+                                        repetida = true;
+                                        break;
+                                    }
+                                }
+                                if (!repetida)
+                                {
+                                    grdDatos.Rows.Add(fila["ID_TARIFADETALLE"], fila["CONCEPTO"], fila["VALOR"], fila["DESCONTABLE"]);
+                                    if (fila["VALOR"] != null)
+                                    {
+                                        float.TryParse(fila["VALOR"].ToString(), out floatTmp);
+                                        total += floatTmp;
+                                    }
                                 }
                             }
-                            if (!repetida)
+                            else
                             {
                                 grdDatos.Rows.Add(fila["ID_TARIFADETALLE"], fila["CONCEPTO"], fila["VALOR"], fila["DESCONTABLE"]);
                                 if (fila["VALOR"] != null)
@@ -162,7 +174,7 @@ namespace EscuelaConduccion.Modelo.Liquidacion
                                     float.TryParse(fila["VALOR"].ToString(), out floatTmp);
                                     total += floatTmp;
                                 }
-                            }
+                            } 
                         }
                         else
                         {

@@ -40,9 +40,6 @@
             this.txtIdentificacion = new System.Windows.Forms.TextBox();
             this.cmbTipoDocumento = new System.Windows.Forms.ComboBox();
             this.grdDatos = new System.Windows.Forms.DataGridView();
-            this.btnVer = new System.Windows.Forms.Button();
-            this.btnInsertar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NUM_ACUERDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FECHA_ACUERDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +48,9 @@
             this.VALOR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LIQUIDACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTADO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVer = new System.Windows.Forms.Button();
+            this.btnInsertar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -200,50 +200,6 @@
             this.grdDatos.Size = new System.Drawing.Size(980, 272);
             this.grdDatos.TabIndex = 21;
             // 
-            // btnVer
-            // 
-            this.btnVer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(212)))), ((int)(((byte)(248)))));
-            this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnVer.Image = global::EscuelaConduccion.Properties.Resources.view_eye_32x32;
-            this.btnVer.Location = new System.Drawing.Point(721, 73);
-            this.btnVer.Name = "btnVer";
-            this.btnVer.Size = new System.Drawing.Size(86, 41);
-            this.btnVer.TabIndex = 25;
-            this.btnVer.Text = "Ver";
-            this.btnVer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnVer.UseVisualStyleBackColor = false;
-            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
-            // 
-            // btnInsertar
-            // 
-            this.btnInsertar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInsertar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(210)))), ((int)(((byte)(138)))));
-            this.btnInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnInsertar.Image = global::EscuelaConduccion.Properties.Resources.add_insert_new_32x32;
-            this.btnInsertar.Location = new System.Drawing.Point(813, 73);
-            this.btnInsertar.Name = "btnInsertar";
-            this.btnInsertar.Size = new System.Drawing.Size(86, 41);
-            this.btnInsertar.TabIndex = 26;
-            this.btnInsertar.Text = "Insertar";
-            this.btnInsertar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInsertar.UseVisualStyleBackColor = false;
-            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(125)))), ((int)(((byte)(104)))));
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEliminar.Image = global::EscuelaConduccion.Properties.Resources.clean_20x20;
-            this.btnEliminar.Location = new System.Drawing.Point(905, 73);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(86, 41);
-            this.btnEliminar.TabIndex = 27;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            // 
             // ID
             // 
             this.ID.HeaderText = "ID";
@@ -295,6 +251,51 @@
             this.ESTADO.HeaderText = "ESTADO";
             this.ESTADO.Name = "ESTADO";
             this.ESTADO.ReadOnly = true;
+            // 
+            // btnVer
+            // 
+            this.btnVer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(212)))), ((int)(((byte)(248)))));
+            this.btnVer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVer.Image = global::EscuelaConduccion.Properties.Resources.view_eye_32x32;
+            this.btnVer.Location = new System.Drawing.Point(721, 73);
+            this.btnVer.Name = "btnVer";
+            this.btnVer.Size = new System.Drawing.Size(86, 41);
+            this.btnVer.TabIndex = 25;
+            this.btnVer.Text = "Ver";
+            this.btnVer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVer.UseVisualStyleBackColor = false;
+            this.btnVer.Click += new System.EventHandler(this.btnVer_Click);
+            // 
+            // btnInsertar
+            // 
+            this.btnInsertar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInsertar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(210)))), ((int)(((byte)(138)))));
+            this.btnInsertar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnInsertar.Image = global::EscuelaConduccion.Properties.Resources.add_insert_new_32x32;
+            this.btnInsertar.Location = new System.Drawing.Point(813, 73);
+            this.btnInsertar.Name = "btnInsertar";
+            this.btnInsertar.Size = new System.Drawing.Size(86, 41);
+            this.btnInsertar.TabIndex = 26;
+            this.btnInsertar.Text = "Insertar";
+            this.btnInsertar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnInsertar.UseVisualStyleBackColor = false;
+            this.btnInsertar.Click += new System.EventHandler(this.btnInsertar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(125)))), ((int)(((byte)(104)))));
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminar.Image = global::EscuelaConduccion.Properties.Resources.clean_20x20;
+            this.btnEliminar.Location = new System.Drawing.Point(905, 73);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(86, 41);
+            this.btnEliminar.TabIndex = 27;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // frmViewAcuerdoPago
             // 

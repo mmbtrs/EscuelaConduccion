@@ -163,6 +163,36 @@ namespace EscuelaConduccion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calendar_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("calendar_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap calendar2_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("calendar2_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap categoria_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("categoria_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ciente_proveedor_32x32 {
             get {
                 object obj = ResourceManager.GetObject("ciente_proveedor_32x32", resourceCulture);
@@ -233,6 +263,16 @@ namespace EscuelaConduccion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap copy_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("copy_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap edit_20x20_negro {
             get {
                 object obj = ResourceManager.GetObject("edit_20x20_negro", resourceCulture);
@@ -286,6 +326,16 @@ namespace EscuelaConduccion.Properties {
         internal static System.Drawing.Bitmap fondo_con_logo2 {
             get {
                 object obj = ResourceManager.GetObject("fondo con logo2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gestion_tarifas_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("gestion_tarifas_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -393,6 +443,16 @@ namespace EscuelaConduccion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rango_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("rango_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap recibo_32x32 {
             get {
                 object obj = ResourceManager.GetObject("recibo_32x32", resourceCulture);
@@ -433,6 +493,36 @@ namespace EscuelaConduccion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap tarifaBlue_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("tarifaBlue_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tarifaConfigBlue_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("tarifaConfigBlue_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tarifas_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("tarifas_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ventana {
             get {
                 object obj = ResourceManager.GetObject("ventana", resourceCulture);
@@ -446,6 +536,16 @@ namespace EscuelaConduccion.Properties {
         internal static System.Drawing.Bitmap view_eye_32x32 {
             get {
                 object obj = ResourceManager.GetObject("view_eye_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vigencia_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("vigencia_32x32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -41,7 +41,6 @@
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.disponibles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.no_disponibles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalle = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnInsertar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -86,6 +85,10 @@
             // 
             this.grdDatos.AllowUserToAddRows = false;
             this.grdDatos.AllowUserToDeleteRows = false;
+            this.grdDatos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.grdDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdDatos.BackgroundColor = System.Drawing.Color.White;
             this.grdDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -96,14 +99,17 @@
             this.fecha_resolucion,
             this.cantidad,
             this.disponibles,
-            this.no_disponibles,
-            this.detalle});
+            this.no_disponibles});
             this.grdDatos.Location = new System.Drawing.Point(12, 110);
+            this.grdDatos.MultiSelect = false;
             this.grdDatos.Name = "grdDatos";
             this.grdDatos.ReadOnly = true;
             this.grdDatos.RowHeadersVisible = false;
+            this.grdDatos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.grdDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdDatos.Size = new System.Drawing.Size(831, 282);
             this.grdDatos.TabIndex = 19;
+            this.grdDatos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdDatos_CellClick);
             // 
             // id_rango_facturas
             // 
@@ -154,12 +160,6 @@
             this.no_disponibles.Name = "no_disponibles";
             this.no_disponibles.ReadOnly = true;
             // 
-            // detalle
-            // 
-            this.detalle.HeaderText = "DETALLE";
-            this.detalle.Name = "detalle";
-            this.detalle.ReadOnly = true;
-            // 
             // btnInsertar
             // 
             this.btnInsertar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -188,6 +188,7 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnSalir
             // 
@@ -234,6 +235,8 @@
         protected System.Windows.Forms.Panel panel2;
         protected System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.DataGridView grdDatos;
+        protected System.Windows.Forms.Button btnInsertar;
+        protected System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridViewButtonColumn id_rango_facturas;
         private System.Windows.Forms.DataGridViewTextBoxColumn rango_inicial;
         private System.Windows.Forms.DataGridViewTextBoxColumn rango_final;
@@ -242,8 +245,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn disponibles;
         private System.Windows.Forms.DataGridViewTextBoxColumn no_disponibles;
-        private System.Windows.Forms.DataGridViewButtonColumn detalle;
-        protected System.Windows.Forms.Button btnInsertar;
-        protected System.Windows.Forms.Button btnEliminar;
     }
 }

@@ -30,17 +30,24 @@ namespace ServiciosEscuelaConduccion.Model.DAO {
 			SqlCommand stmt = null;
 			try 
 			{
-				sql = "INSERT INTO TARIFA_DETALLE ( ID,"+
+				sql = "INSERT INTO TARIFA_DETALLE ("+
 				" ID_TARIFA, ID_TARIFA_CONCEPTO, TERCERO,"+
 				" DESCONTABLE, FORMULA)"+
-				 "VALUES (@ID,@ID_TARIFA,@ID_TARIFA_CONCEPTO,@TERCERO,@DESCONTABLE,@FORMULA)";
+				 "VALUES (@ID_TARIFA,@ID_TARIFA_CONCEPTO,@TERCERO,@DESCONTABLE,@FORMULA)";
 
 				stmt = new SqlCommand(sql, conn);
 
+				if (valueObject.ID_TARIFA > 0)
+					stmt.Parameters.AddWithValue("@ID_TARIFA", valueObject.ID_TARIFA);
+				else
+					stmt.Parameters.AddWithValue("@ID_TARIFA", DBNull.Value);
 
+				if (valueObject.ID_TARIFA_CONCEPTO > 0)
+					stmt.Parameters.AddWithValue("@ID_TARIFA_CONCEPTO", valueObject.ID_TARIFA_CONCEPTO);
+				else
+					stmt.Parameters.AddWithValue("@ID_TARIFA_CONCEPTO", DBNull.Value);
 
-
-				if(!String.IsNullOrEmpty(valueObject.TERCERO) && valueObject.TERCERO.Length <= 2)
+				if (!String.IsNullOrEmpty(valueObject.TERCERO) && valueObject.TERCERO.Length <= 2)
 					stmt.Parameters.AddWithValue("@TERCERO", valueObject.TERCERO);
 				else
 					stmt.Parameters.AddWithValue("@TERCERO", DBNull.Value);
@@ -70,15 +77,23 @@ namespace ServiciosEscuelaConduccion.Model.DAO {
 			String sql = "";
 			try 
 			{
-				sql = "UPDATE TARIFA_DETALLE SET ID = @ID ,"+
+				sql = "UPDATE TARIFA_DETALLE SET"+
 				" ID_TARIFA = @ID_TARIFA , ID_TARIFA_CONCEPTO = @ID_TARIFA_CONCEPTO , TERCERO = @TERCERO ,"+
 				" DESCONTABLE = @DESCONTABLE , FORMULA = @FORMULA  WHERE (id = @id)";
 				stmt = new SqlCommand(sql, conn);
 
+				if (valueObject.ID_TARIFA > 0)
+					stmt.Parameters.AddWithValue("@ID_TARIFA", valueObject.ID_TARIFA);
+				else
+					stmt.Parameters.AddWithValue("@ID_TARIFA", DBNull.Value);
+
+				if (valueObject.ID_TARIFA_CONCEPTO > 0)
+					stmt.Parameters.AddWithValue("@ID_TARIFA_CONCEPTO", valueObject.ID_TARIFA_CONCEPTO);
+				else
+					stmt.Parameters.AddWithValue("@ID_TARIFA_CONCEPTO", DBNull.Value);
 
 
-
-				if(!String.IsNullOrEmpty(valueObject.TERCERO) && valueObject.TERCERO.Length <= 2)
+				if (!String.IsNullOrEmpty(valueObject.TERCERO) && valueObject.TERCERO.Length <= 2)
 					stmt.Parameters.AddWithValue("@TERCERO", valueObject.TERCERO);
 				else
 					stmt.Parameters.AddWithValue("@TERCERO", DBNull.Value);
@@ -176,6 +191,61 @@ namespace ServiciosEscuelaConduccion.Model.DAO {
 				searchResults = new List<TARIFA_DETALLE>();
 			else
 				searchResults = listQuery(new SqlCommand(sql,conn));
+
+			return searchResults;
+		}
+
+		public List<TARIFA_DETALLE> searchSoloActivos(SqlConnection conn, TARIFA_DETALLE valueObject)
+		{
+			List<TARIFA_DETALLE> searchResults = new List<TARIFA_DETALLE>();
+			bool first = true;
+			String sql = 
+				"SELECT TARIFA_DETALLE.* FROM TARIFA_DETALLE " +
+				"LEFT JOIN TARIFA_CONCEPTO ON(TARIFA_DETALLE.ID_TARIFA_CONCEPTO = TARIFA_CONCEPTO.ID) " +
+				"WHERE TARIFA_CONCEPTO.ESTADO = 'A' ";
+
+			if (!String.IsNullOrEmpty(valueObject.ID.ToString()) && valueObject.ID > 0)
+			{
+				if (first) { first = false; }
+				sql += "AND ID= '" + valueObject.ID + "' ";
+			}
+
+			if (!String.IsNullOrEmpty(valueObject.ID_TARIFA.ToString()) && valueObject.ID_TARIFA > 0)
+			{
+				if (first) { first = false; }
+				sql += "AND ID_TARIFA= '" + valueObject.ID_TARIFA + "' ";
+			}
+
+			if (!String.IsNullOrEmpty(valueObject.ID_TARIFA_CONCEPTO.ToString()) && valueObject.ID_TARIFA_CONCEPTO > 0)
+			{
+				if (first) { first = false; }
+				sql += "AND ID_TARIFA_CONCEPTO= '" + valueObject.ID_TARIFA_CONCEPTO + "' ";
+			}
+
+			if (!String.IsNullOrEmpty(valueObject.TERCERO))
+			{
+				if (first) { first = false; }
+				sql += "AND TERCERO= '" + valueObject.TERCERO + "' ";
+			}
+
+			if (!String.IsNullOrEmpty(valueObject.DESCONTABLE))
+			{
+				if (first) { first = false; }
+				sql += "AND DESCONTABLE= '" + valueObject.DESCONTABLE + "' ";
+			}
+
+			if (!String.IsNullOrEmpty(valueObject.FORMULA))
+			{
+				if (first) { first = false; }
+				sql += "AND FORMULA= '" + valueObject.FORMULA + "' ";
+			}
+
+			sql += "ORDER BY id ASC ";
+
+			if (first)
+				searchResults = new List<TARIFA_DETALLE>();
+			else
+				searchResults = listQuery(new SqlCommand(sql, conn));
 
 			return searchResults;
 		}

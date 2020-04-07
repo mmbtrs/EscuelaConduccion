@@ -10,6 +10,7 @@ using ServiciosEscuelaConduccion.Model.DAO;
 using ServiciosEscuelaConduccion.Model.Objects;
 using ServiciosEscuelaConduccion.gestion;
 using ServiciosEscuelaConduccion.objetos;
+using ServiciosEscuelaConduccion.dao;
 
 namespace ServiciosEscuelaConduccion.Model.Managements 
 {
@@ -40,36 +41,44 @@ namespace ServiciosEscuelaConduccion.Model.Managements
             GestionFacturaconsecutivodetalle gestionFacturaconsecutivodetalle = new GestionFacturaconsecutivodetalle();
 			try 
 			{
-				FACTURACONSECUTIVODao dao = new FACTURACONSECUTIVODao();
-				conn = conexion.conection();
-				dao.create(conn, obj);
-				//verificar existencia
-                
-				lista = dao.search(conn, obj);
-				if (lista != null && lista.Count > 0) 
+				if (validarRango(obj))
 				{
-					obj = (FACTURACONSECUTIVO)lista[0];
-                    for (int i = int.Parse(obj.RANGO_INICIAL.ToString()); i <= obj.RANGO_FINAL; i++)
-                    {
-                        Facturaconsecutivodetalle facturaconsecutivodetalle = new Facturaconsecutivodetalle();
-                        Facturaconsecutivodetalle tmp = new Facturaconsecutivodetalle();
-                        tmp.CONSECUTIVO = float.Parse(i.ToString());
-                        tmp.ID_FACTURACONSECUTIVO = obj.ID;
-                        tmp = gestionFacturaconsecutivodetalle.buscarPrimeroFacturaconsecutivodetalle(tmp);
-                        if (!(tmp != null && tmp.ID > 0))
-                        {
-                            facturaconsecutivodetalle.CONSECUTIVO = float.Parse(i.ToString());
-                            facturaconsecutivodetalle.ID_FACTURACONSECUTIVO = obj.ID;
-                            facturaconsecutivodetalle.DISPONIBLE = "SI";
-                            gestionFacturaconsecutivodetalle.crearFacturaconsecutivodetalle(facturaconsecutivodetalle);
-                        }
-                    }
+					FACTURACONSECUTIVODao dao = new FACTURACONSECUTIVODao();
+					conn = conexion.conection();
+					dao.create(conn, obj);
+					//verificar existencia
+					FACTURACONSECUTIVO tmpObj = new FACTURACONSECUTIVO();
+					tmpObj.RANGO_FINAL = obj.RANGO_FINAL;
+					tmpObj.RANGO_INICIAL = obj.RANGO_INICIAL;
+					tmpObj.RESOLUCION = obj.RESOLUCION;
+					lista = dao.search(conn, tmpObj);
+					if (lista != null && lista.Count > 0)
+					{
+						obj = (FACTURACONSECUTIVO)lista[0];
+						for (int i = int.Parse(obj.RANGO_INICIAL.ToString()); i <= obj.RANGO_FINAL; i++)
+						{
+							Facturaconsecutivodetalle facturaconsecutivodetalle = new Facturaconsecutivodetalle();
+							Facturaconsecutivodetalle tmp = new Facturaconsecutivodetalle();
+							tmp.CONSECUTIVO = float.Parse(i.ToString());
+							tmp.ID_FACTURACONSECUTIVO = obj.ID;
+							tmp = gestionFacturaconsecutivodetalle.buscarPrimeroFacturaconsecutivodetalle(tmp);
+							if (!(tmp != null && tmp.ID > 0))
+							{
+								facturaconsecutivodetalle.CONSECUTIVO = float.Parse(i.ToString());
+								facturaconsecutivodetalle.ID_FACTURACONSECUTIVO = obj.ID;
+								facturaconsecutivodetalle.DISPONIBLE = "SI";
+								gestionFacturaconsecutivodetalle.crearFacturaconsecutivodetalle(facturaconsecutivodetalle);
+							}
+						}
 
+					}
+					else
+					{
+						obj.ID = -1;
+					}
 				}
-				else 
-				{
-					obj.ID = -1;
-				}
+				else
+					obj.ID = -2;//El rango se intersecta con otro rango
 			} 
 			catch (Exception e) 
 			{
@@ -80,7 +89,25 @@ namespace ServiciosEscuelaConduccion.Model.Managements
 			}
 			return obj;
 		}
-	
+
+		private bool validarRango(FACTURACONSECUTIVO obj)
+		{
+			FACTURACONSECUTIVO[] lstConsecutivos = listarFACTURACONSECUTIVO();
+			if (lstConsecutivos != null && lstConsecutivos.Length > 0)
+			{
+				foreach (FACTURACONSECUTIVO item in lstConsecutivos)
+				{
+					if ((obj.RANGO_INICIAL >= item.RANGO_INICIAL && obj.RANGO_INICIAL <= item.RANGO_FINAL)
+						|| (obj.RANGO_FINAL >= item.RANGO_INICIAL && obj.RANGO_FINAL <= item.RANGO_FINAL)
+						|| (obj.RANGO_INICIAL < item.RANGO_INICIAL && obj.RANGO_FINAL > item.RANGO_FINAL))
+						return false;
+				}
+				return true;
+			}
+			else
+				return true;
+		}
+
 		/**
 		 * Edita un registro en la tabla
 		 * @param FACTURACONSECUTIVO obj
@@ -204,6 +231,19 @@ namespace ServiciosEscuelaConduccion.Model.Managements
 			resultado = false;
 			try 
 			{
+				
+				GestionFacturaconsecutivodetalle gestionDetalle = new GestionFacturaconsecutivodetalle();
+				Facturaconsecutivodetalle detalle = new Facturaconsecutivodetalle();
+				detalle.ID_FACTURACONSECUTIVO = obj.ID;
+				Facturaconsecutivodetalle[] lstDetalles = gestionDetalle.buscarFacturaconsecutivodetalle(detalle);
+				if (lstDetalles != null && lstDetalles.Length > 0)
+				{
+					foreach (Facturaconsecutivodetalle item in lstDetalles)
+					{
+						gestionDetalle.eliminarFacturaconsecutivodetalle(item);
+					}
+				}
+
 				FACTURACONSECUTIVODao dao = new FACTURACONSECUTIVODao();
 				conn = conexion.conection();
 				dao.delete(conn, obj);

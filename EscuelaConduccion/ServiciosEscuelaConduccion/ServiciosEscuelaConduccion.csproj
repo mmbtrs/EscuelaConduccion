@@ -125,6 +125,9 @@
     <Content Include="Model\Reportes\dsFactura.xss">
       <DependentUpon>dsFactura.xsd</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\EscuelaConduccion - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\ServiciosEscuelaConduccion - Web Deploy.pubxml" />
     <None Include="Resources\LogoConducimos.png" />
     <Content Include="Web.config" />
   </ItemGroup>

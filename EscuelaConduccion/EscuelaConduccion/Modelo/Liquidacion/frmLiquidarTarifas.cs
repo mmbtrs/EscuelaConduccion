@@ -72,6 +72,7 @@ namespace EscuelaConduccion.Modelo.Liquidacion
                 {
                     wsServiciosTARIFA.TARIFA tarifa = new wsServiciosTARIFA.TARIFA();
                     tarifa.ID_VIGENCIA = vigencia.ID;
+                    tarifa.ESTADO = "A";
                     wsServiciosTARIFA.TARIFA[] lstTarifas = serviciosTARIFA.buscarTARIFA(tarifa);
                     if (lstTarifas != null && lstTarifas.Length > 0)
                     {

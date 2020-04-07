@@ -1,6 +1,9 @@
-﻿using EscuelaConduccion.Modelo.Cliente;
+﻿using EscuelaConduccion.Modelo.Accesorias;
+using EscuelaConduccion.Modelo.Cliente;
 using EscuelaConduccion.Modelo.Facturas;
 using EscuelaConduccion.Modelo.Liquidacion;
+using EscuelaConduccion.Modelo.Tarifas;
+using EscuelaConduccion.Modelo.Vigencia;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,8 +44,7 @@ namespace EscuelaConduccion
 
         private void gestiónConsecutivosFacturasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmGestionConsecutivosFactura frm = new frmGestionConsecutivosFactura();
-            frm.ShowDialog(this);
+            
         }
 
         private void pagarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,6 +68,30 @@ namespace EscuelaConduccion
         private void anularPagoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmBuscarReciboFactura frm = new frmBuscarReciboFactura();
+            frm.Show();
+        }
+
+        private void gestiónVigenciasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGestionVigencia frm = new frmGestionVigencia();
+            frm.Show();
+        }
+
+        private void gestiónTarifasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGestionTarifas frm = new frmGestionTarifas();
+            frm.Show();
+        }
+
+        private void consecutivosDIANToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGestionConsecutivosFactura frm = new frmGestionConsecutivosFactura();
+            frm.ShowDialog(this);
+        }
+
+        private void gestiónCategoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGestionCategoria frm = new frmGestionCategoria();
             frm.Show();
         }
     }

@@ -85,7 +85,12 @@ namespace EscuelaConduccion.Modelo.Facturas
                     this.Close();
                 }
                 else
-                    MessageBox.Show("Ocurrio un error  y no se creo corrcetamente el consecutivo", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                {
+                    if (facturaConsecutivo != null && facturaConsecutivo.ID == -2)
+                        MessageBox.Show("No fue posible crear el consecutivo ya que los números de este consecutivo se intersectan con los números de otro consecutivo ya registrado en el sistema", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else
+                        MessageBox.Show("Ocurrio un error  y no se creo corrcetamente el consecutivo", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

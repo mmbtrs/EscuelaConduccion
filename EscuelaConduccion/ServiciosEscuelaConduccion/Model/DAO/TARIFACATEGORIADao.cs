@@ -18,7 +18,7 @@ namespace ServiciosEscuelaConduccion.Model.DAO {
 
 		public List<TARIFACATEGORIA> loadAll(SqlConnection conn) 
 		{
-			String sql = "SELECT * FROM TARIFACATEGORIA ORDER BY ID ASC ";
+			String sql = "SELECT * FROM TARIFA_CATEGORIA ORDER BY ID ASC ";
 			List<TARIFACATEGORIA> searchResults = listQuery(new SqlCommand(sql, conn));
 			return searchResults;
 		}
@@ -30,9 +30,9 @@ namespace ServiciosEscuelaConduccion.Model.DAO {
 			SqlCommand stmt = null;
 			try 
 			{
-				sql = "INSERT INTO TARIFACATEGORIA ( ID,"+
+				sql = "INSERT INTO TARIFA_CATEGORIA ("+
 				" NOMBRE)"+
-				 "VALUES (@ID,@NOMBRE)";
+				 "VALUES (@NOMBRE)";
 
 				stmt = new SqlCommand(sql, conn);
 
@@ -57,7 +57,7 @@ namespace ServiciosEscuelaConduccion.Model.DAO {
 			String sql = "";
 			try 
 			{
-				sql = "UPDATE TARIFACATEGORIA SET ID = @ID ,"+
+				sql = "UPDATE TARIFA_CATEGORIA SET"+
 				" NOMBRE = @NOMBRE  WHERE (id = @id)";
 				stmt = new SqlCommand(sql, conn);
 
@@ -89,7 +89,7 @@ namespace ServiciosEscuelaConduccion.Model.DAO {
 			String sql = "";
 			try 
 			{
-				sql = "DELETE FROM TARIFACATEGORIA WHERE ( id = @id )";
+				sql = "DELETE FROM TARIFA_CATEGORIA WHERE ( id = @id )";
 				stmt = new SqlCommand(sql, conn);
 				stmt.Parameters.AddWithValue("@id", valueObject.ID);
 				int rowcount = databaseUpdate(stmt);

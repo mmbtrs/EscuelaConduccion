@@ -12,7 +12,7 @@ namespace EscuelaConduccion.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.3.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.5.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -176,16 +176,6 @@ namespace EscuelaConduccion.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:52393/Model/Services/ServiciosViewliquidacion.asmx")]
-        public string EscuelaConduccion_wsServiciosViewliquidacion_ServiciosViewliquidacion {
-            get {
-                return ((string)(this["EscuelaConduccion_wsServiciosViewliquidacion_ServiciosViewliquidacion"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
         [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:52393/Model/Services/ServiciosFACTURACONSECUTIVO.asmx")]
         public string EscuelaConduccion_wsServiciosFACTURACONSECUTIVO_ServiciosFACTURACONSECUTIVO {
             get {
@@ -291,6 +281,36 @@ namespace EscuelaConduccion.Properties {
         public string EscuelaConduccion_wsServiciosFACTURA_ESTADO_ServiciosFACTURA_ESTADO {
             get {
                 return ((string)(this["EscuelaConduccion_wsServiciosFACTURA_ESTADO_ServiciosFACTURA_ESTADO"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:52393/Model/Services/ServiciosViewliquidacion.asmx")]
+        public string EscuelaConduccion_wsServiciosViewliquidacion_ServiciosViewliquidacion {
+            get {
+                return ((string)(this["EscuelaConduccion_wsServiciosViewliquidacion_ServiciosViewliquidacion"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:52393/Model/Services/ServiciosTARIFACATEGORIA.asmx")]
+        public string EscuelaConduccion_wsServiciosTARIFACATEGORIA_ServiciosTARIFACATEGORIA {
+            get {
+                return ((string)(this["EscuelaConduccion_wsServiciosTARIFACATEGORIA_ServiciosTARIFACATEGORIA"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:52393/Model/Services/ServiciosTARIFA_CONCEPTO.asmx")]
+        public string EscuelaConduccion_wsServiciosTARIFA_CONCEPTO_ServiciosTARIFA_CONCEPTO {
+            get {
+                return ((string)(this["EscuelaConduccion_wsServiciosTARIFA_CONCEPTO_ServiciosTARIFA_CONCEPTO"]));
             }
         }
     }

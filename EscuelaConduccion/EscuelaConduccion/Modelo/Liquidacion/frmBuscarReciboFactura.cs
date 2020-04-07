@@ -1,19 +1,13 @@
 ﻿using EscuelaConduccion.wsServiciosFACTURA;
 using EscuelaConduccion.wsServiciosFACTURA_ESTADO;
+using EscuelaConduccion.wsServiciosPagos;
 using EscuelaConduccion.WSServiciosRECIBO;
 using EscuelaConduccion.wsServiciosRECIBO_ESTADO;
 using EscuelaConduccion.wsServiciosTIPO_DOCUMENTO;
 using EscuelaConduccion.wsServiciosViewliquidacion;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using UtilidadesServiciosWeb;
 
@@ -27,6 +21,7 @@ namespace EscuelaConduccion.Modelo.Liquidacion
         ServiciosRECIBO serviciosRECIBO;
         ServiciosFACTURA serviciosFACTURA;
         ServiciosFACTURA_ESTADO serviciosFACTURA_ESTADO;
+        ServiciosPagos serviciosPagos;
 
         public frmBuscarReciboFactura()
         {
@@ -37,6 +32,7 @@ namespace EscuelaConduccion.Modelo.Liquidacion
             serviciosFACTURA = (ServiciosFACTURA)Configurador.ConfigurarServicio(typeof(ServiciosFACTURA));
             serviciosRECIBO = (ServiciosRECIBO)Configurador.ConfigurarServicio(typeof(ServiciosRECIBO));
             serviciosFACTURA_ESTADO = (ServiciosFACTURA_ESTADO)Configurador.ConfigurarServicio(typeof(ServiciosFACTURA_ESTADO));
+            serviciosPagos = (ServiciosPagos)Configurador.ConfigurarServicio(typeof(ServiciosPagos));
 
             getTiposDocumento();
             getRecibosEstado();
@@ -169,7 +165,7 @@ namespace EscuelaConduccion.Modelo.Liquidacion
                     fechaIniPag = DateTime.Parse(datFechaInicialPago.Value.Date.ToString("dd/MM/yyyy 00:00:00"));
                     fechaFinPag = DateTime.Parse(datFechaFinalPago.Value.Date.ToString("dd/MM/yyyy 23:59:59"));
                 }
-                Viewliquidacion[] lstLiquidaciones = serviciosViewliquidacion.buscarViewliquidacionBetween(liquidacion,fechaIniLiq,fechaFinLiq,fechaIniPag,fechaFinPag);
+                Viewliquidacion[] lstLiquidaciones = serviciosViewliquidacion.buscarViewliquidacionBetween(liquidacion, fechaIniLiq, fechaFinLiq, fechaIniPag, fechaFinPag);
                 if (lstLiquidaciones != null && lstLiquidaciones.Length > 0)
                 {
                     grdDatos.Rows.Clear();
@@ -185,7 +181,7 @@ namespace EscuelaConduccion.Modelo.Liquidacion
                             fechaPago = "";
                         else
                             fechaPago = item.FECHA_PAGO.ToString("dd/MM/yyyy");
-                        grdDatos.Rows.Add(item.NUMERO_RECIBO, item.NUMERO_FACTURA, item.TIPO_DOCUMENTO, item.IDENTIFICACION, item.ESTADO, fechaLiquidacion, fechaPago, item.TIPO, item.TARIFA);
+                        grdDatos.Rows.Add(item.NUMERO_RECIBO, item.ESTADO, item.NUMERO_FACTURA, item.ESTADO_FACTURA, item.TIPO_DOCUMENTO, item.IDENTIFICACION, fechaLiquidacion, fechaPago, item.TIPO, item.TARIFA);
                     }
                 }
                 else
@@ -397,7 +393,7 @@ namespace EscuelaConduccion.Modelo.Liquidacion
                     RECIBO recibo = getRecibo(numero);
                     if (recibo != null && recibo.ID > 0)
                     {
-                        if (MessageBox.Show("¿Desea anular el recibo No." + recibo.NUMERO_RECIBO + "?","Está seguro(a)?",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (MessageBox.Show("¿Desea anular el recibo No." + recibo.NUMERO_RECIBO + "?", "Está seguro(a)?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             anularRecibo(recibo);
                     }
                     else
@@ -405,7 +401,7 @@ namespace EscuelaConduccion.Modelo.Liquidacion
                 }
             }
             else
-                MessageBox.Show("Debe seleccionar un registro de la lista", "Son selección", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe seleccionar un registro de la lista", "Sin selección", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void anularFactura(FACTURA factura)
@@ -432,7 +428,7 @@ namespace EscuelaConduccion.Modelo.Liquidacion
                             MessageBox.Show("Ocurrio un error y la factura no puede ser anulada", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
-                        MessageBox.Show("La factura no puede ser anulada porque no se ecnontro el estado anulado en el sistema", "Estado incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("La factura no puede ser anulada porque no se encontró el estado anulado en el sistema", "Estado incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                     MessageBox.Show("La factura no puede ser anulada porque no está en estado creada", "Estado incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -468,6 +464,84 @@ namespace EscuelaConduccion.Modelo.Liquidacion
                 else
                     MessageBox.Show("El recibo no puede ser anulado porque no está en estado liquidado", "Estado incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnAnularPago_Click(object sender, EventArgs e)
+        {
+            anularPago();
+        }
+
+        private void anularPago()
+        {
+            if (grdDatos.SelectedRows != null && grdDatos.SelectedRows.Count > 0)
+            {
+                String numeroFactura;
+                String numeroRecibo;
+                if (grdDatos.SelectedRows[0].Cells["estado"].Value != null &&
+                    !String.IsNullOrEmpty(grdDatos.SelectedRows[0].Cells["estado"].Value.ToString()) &&
+                    grdDatos.SelectedRows[0].Cells["estado"].Value.ToString().Equals("PAGADO"))
+                {
+                    if (MessageBox.Show("¿Desea anular el pago del recibo No." + grdDatos.SelectedRows[0].Cells["num_recibo"].Value.ToString() + "?", "¿Está seguro(a)?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        numeroFactura = grdDatos.SelectedRows[0].Cells["num_factura"].Value.ToString();
+                        numeroRecibo = grdDatos.SelectedRows[0].Cells["num_recibo"].Value.ToString();
+
+                        RECIBO recibo = getRecibo(numeroRecibo);
+                        FACTURA factura = getFactura(numeroFactura);
+
+                        if (recibo != null && recibo.ID > 0)
+                        {
+                            Pagos pago = new Pagos();
+                            pago.ID_RECIBO = recibo.ID;
+                            pago = serviciosPagos.buscarPrimeroPagos(pago);
+
+                            if (pago != null && pago.ID > 0)
+                            {
+                                if (serviciosPagos.eliminarPagos(pago))
+                                {
+                                    liquidarRecibo(recibo);
+                                    if (factura != null && factura.ID > 0)
+                                    {
+                                        anularFactura(factura);
+                                    }
+                                    MessageBox.Show("El pago fue eliminado correctamente", "Eliminación correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    buscar();
+                                }
+                                else
+                                    MessageBox.Show("Ocurrio un error y el pago no pudo ser eliminado", "Eliminación incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else
+                                MessageBox.Show("El pago no fue encontrado", "Sin pago", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                            MessageBox.Show("El recibo no fue encontrado", "Sin recibo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                    MessageBox.Show("El pago de la factura no puede ser anulado porque la factura no se ecuentra en estado pagado", "Estado incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                MessageBox.Show("Debe seleccionar un registro de la lista", "Sin selección", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void liquidarRecibo(RECIBO recibo)
+        {
+            RECIBO_ESTADO estado = new RECIBO_ESTADO();
+            estado = new RECIBO_ESTADO();
+            estado.ESTADO = "LIQUIDADO";
+            estado = serviciosRECIBO_ESTADO.buscarPrimeroRECIBO_ESTADO(estado);
+            if (estado != null && estado.ID > 0)
+            {
+                recibo.ID_ESTADO = estado.ID;
+                if (serviciosRECIBO.editarRECIBO(recibo))
+                {
+                    MessageBox.Show("El recibo fue pasado a liquidado correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                    MessageBox.Show("Ocurrio un error y el recibo no puede ser pasado a liquidado", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                MessageBox.Show("El recibo no puede pasar a estado liquidado porque no se ecnontro el estado liquidado en el sistema", "Estado incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

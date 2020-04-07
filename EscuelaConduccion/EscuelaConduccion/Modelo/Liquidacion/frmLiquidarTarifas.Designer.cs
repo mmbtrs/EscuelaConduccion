@@ -32,6 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLiquidarTarifas));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.grdDatos = new System.Windows.Forms.DataGridView();
@@ -42,8 +44,6 @@
             this.cmbTarifas = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnConfirmar = new System.Windows.Forms.Button();
-            this.btnRegresar = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDatos)).BeginInit();
@@ -59,6 +59,37 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(428, 45);
             this.panel3.TabIndex = 18;
+            // 
+            // btnConfirmar
+            // 
+            this.btnConfirmar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(210)))), ((int)(((byte)(138)))));
+            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnConfirmar.Image = global::EscuelaConduccion.Properties.Resources.confirmar_24x24;
+            this.btnConfirmar.Location = new System.Drawing.Point(234, 6);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(90, 33);
+            this.btnConfirmar.TabIndex = 10;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnConfirmar.UseVisualStyleBackColor = false;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRegresar.Image = global::EscuelaConduccion.Properties.Resources.return_32x23;
+            this.btnRegresar.Location = new System.Drawing.Point(330, 6);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(90, 33);
+            this.btnRegresar.TabIndex = 8;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // panel2
             // 
@@ -177,37 +208,6 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "Tarifa:";
             // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConfirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(210)))), ((int)(((byte)(138)))));
-            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnConfirmar.Image = global::EscuelaConduccion.Properties.Resources.confirmar_24x24;
-            this.btnConfirmar.Location = new System.Drawing.Point(234, 6);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(90, 33);
-            this.btnConfirmar.TabIndex = 10;
-            this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnConfirmar.UseVisualStyleBackColor = false;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
-            // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(184)))), ((int)(((byte)(92)))));
-            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnRegresar.Image = global::EscuelaConduccion.Properties.Resources.return_32x23;
-            this.btnRegresar.Location = new System.Drawing.Point(330, 6);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(90, 33);
-            this.btnRegresar.TabIndex = 8;
-            this.btnRegresar.Text = "Regresar";
-            this.btnRegresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRegresar.UseVisualStyleBackColor = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
             // frmLiquidarTarifas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,7 +223,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLiquidarTarifas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Tag = ">>>>>>>>>>>>>>>>>>>";
+            this.Tag = "";
             this.Text = "Liquidar Tarifas";
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

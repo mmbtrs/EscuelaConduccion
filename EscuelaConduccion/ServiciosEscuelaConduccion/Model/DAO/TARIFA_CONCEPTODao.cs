@@ -30,10 +30,10 @@ namespace ServiciosEscuelaConduccion.Model.DAO {
 			SqlCommand stmt = null;
 			try 
 			{
-				sql = "INSERT INTO TARIFA_CONCEPTO ( ID,"+
+				sql = "INSERT INTO TARIFA_CONCEPTO ("+
 				" CODIGO, NOMBRE, DESCRIPCION, ESTADO"+
 				")"+
-                 "VALUES (@ID,@CODIGO,@NOMBRE,@DESCRIPCION,@ESTADO)";
+                 "VALUES (@CODIGO,@NOMBRE,@DESCRIPCION,@ESTADO)";
 
 				stmt = new SqlCommand(sql, conn);
 

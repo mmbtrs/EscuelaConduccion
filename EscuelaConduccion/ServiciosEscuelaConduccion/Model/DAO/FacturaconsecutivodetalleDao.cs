@@ -112,9 +112,8 @@ partial class FacturaconsecutivodetalleDao {
 					stmt.Dispose();
 			}
 	}
-
-
-	public int countAll(SqlConnection conn) {
+		
+		public int countAll(SqlConnection conn) {
 		String sql = "SELECT count(*) FROM FACTURA_CONSECUTIVO_DETALLE";
 		SqlCommand stmt = null;
 		SqlDataReader result = null;

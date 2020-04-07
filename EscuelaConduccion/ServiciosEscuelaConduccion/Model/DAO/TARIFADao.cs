@@ -37,9 +37,17 @@ namespace ServiciosEscuelaConduccion.Model.DAO {
 
 				stmt = new SqlCommand(sql, conn);
 
+				if (valueObject.ID_VIGENCIA > 0)
+					stmt.Parameters.AddWithValue("@ID_VIGENCIA", valueObject.ID_VIGENCIA);
+				else
+					stmt.Parameters.AddWithValue("@ID_VIGENCIA", DBNull.Value);
 
+				if (valueObject.ID_TARIFA_CATEGORIA > 0)
+					stmt.Parameters.AddWithValue("@ID_TARIFA_CATEGORIA", valueObject.ID_TARIFA_CATEGORIA);
+				else
+					stmt.Parameters.AddWithValue("@ID_TARIFA_CATEGORIA", DBNull.Value);
 
-				if(!String.IsNullOrEmpty(valueObject.NOMBRE) && valueObject.NOMBRE.Length <= 50)
+				if (!String.IsNullOrEmpty(valueObject.NOMBRE) && valueObject.NOMBRE.Length <= 50)
 					stmt.Parameters.AddWithValue("@NOMBRE", valueObject.NOMBRE);
 				else
 					stmt.Parameters.AddWithValue("@NOMBRE", DBNull.Value);
@@ -64,14 +72,22 @@ namespace ServiciosEscuelaConduccion.Model.DAO {
 			String sql = "";
 			try 
 			{
-				sql = "UPDATE TARIFA SET ID = @ID ,"+
+				sql = "UPDATE TARIFA SET"+
                 " ID_VIGENCIA = @ID_VIGENCIA, ID_TARIFA_CATEGORIA = @ID_TARIFA_CATEGORIA , NOMBRE = @NOMBRE , ESTADO = @ESTADO " +
 				" WHERE (id = @id)";
 				stmt = new SqlCommand(sql, conn);
 
+				if (valueObject.ID_VIGENCIA > 0)
+					stmt.Parameters.AddWithValue("@ID_VIGENCIA", valueObject.ID_VIGENCIA);
+				else
+					stmt.Parameters.AddWithValue("@ID_VIGENCIA", DBNull.Value);
 
+				if (valueObject.ID_TARIFA_CATEGORIA > 0)
+					stmt.Parameters.AddWithValue("@ID_TARIFA_CATEGORIA", valueObject.ID_TARIFA_CATEGORIA);
+				else
+					stmt.Parameters.AddWithValue("@ID_TARIFA_CATEGORIA", DBNull.Value);
 
-				if(!String.IsNullOrEmpty(valueObject.NOMBRE) && valueObject.NOMBRE.Length <= 50)
+				if (!String.IsNullOrEmpty(valueObject.NOMBRE) && valueObject.NOMBRE.Length <= 50)
 					stmt.Parameters.AddWithValue("@NOMBRE", valueObject.NOMBRE);
 				else
 					stmt.Parameters.AddWithValue("@NOMBRE", DBNull.Value);

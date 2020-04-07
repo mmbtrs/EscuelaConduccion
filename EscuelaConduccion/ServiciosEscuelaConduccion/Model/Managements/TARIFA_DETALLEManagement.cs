@@ -147,7 +147,31 @@ namespace ServiciosEscuelaConduccion.Model.Managements
 			}
 			return result;
 		}
-	
+
+		public TARIFA_DETALLE[] buscarTARIFA_DETALLE_SoloActivos(TARIFA_DETALLE obj)
+		{
+			TARIFA_DETALLE[] result = null;
+			List<TARIFA_DETALLE> lista = null;
+			try
+			{
+				TARIFA_DETALLEDao dao = new TARIFA_DETALLEDao();
+				conn = conexion.conection();
+				lista = dao.searchSoloActivos(conn, obj);
+				if (lista != null && lista.Count > 0)
+					result = lista.ToArray();
+			}
+			catch (Exception e)
+			{
+				result = null;
+			}
+			finally
+			{
+				if (conn != null && conn.State == System.Data.ConnectionState.Open)
+					conn.Close();
+			}
+			return result;
+		}
+
 		/**
 		 * Consulta todos los registros de la tabla
 		 * @param TARIFA_DETALLE obj

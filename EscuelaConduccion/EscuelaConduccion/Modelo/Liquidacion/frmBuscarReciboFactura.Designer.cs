@@ -77,10 +77,11 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.grdDatos = new System.Windows.Forms.DataGridView();
             this.num_recibo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.num_factura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO_FACTURA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.identificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_liquidacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha_pago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -162,6 +163,7 @@
             this.btnAnularPago.Text = "Anular pago";
             this.btnAnularPago.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAnularPago.UseVisualStyleBackColor = false;
+            this.btnAnularPago.Click += new System.EventHandler(this.btnAnularPago_Click);
             // 
             // btnPagar
             // 
@@ -602,10 +604,11 @@
             this.grdDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.num_recibo,
+            this.estado,
             this.num_factura,
+            this.ESTADO_FACTURA,
             this.documento,
             this.identificacion,
-            this.estado,
             this.fecha_liquidacion,
             this.fecha_pago,
             this.tipo,
@@ -643,6 +646,12 @@
             this.num_recibo.Name = "num_recibo";
             this.num_recibo.ReadOnly = true;
             // 
+            // estado
+            // 
+            this.estado.HeaderText = "ESTADO RECIBO";
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
+            // 
             // num_factura
             // 
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -650,6 +659,12 @@
             this.num_factura.HeaderText = "No. FACTURA";
             this.num_factura.Name = "num_factura";
             this.num_factura.ReadOnly = true;
+            // 
+            // ESTADO_FACTURA
+            // 
+            this.ESTADO_FACTURA.HeaderText = "ESTADO FACTURA";
+            this.ESTADO_FACTURA.Name = "ESTADO_FACTURA";
+            this.ESTADO_FACTURA.ReadOnly = true;
             // 
             // documento
             // 
@@ -663,12 +678,6 @@
             this.identificacion.Name = "identificacion";
             this.identificacion.ReadOnly = true;
             this.identificacion.Width = 150;
-            // 
-            // estado
-            // 
-            this.estado.HeaderText = "ESTADO";
-            this.estado.Name = "estado";
-            this.estado.ReadOnly = true;
             // 
             // fecha_liquidacion
             // 
@@ -780,10 +789,11 @@
         protected System.Windows.Forms.Button btnAnularPago;
         protected System.Windows.Forms.Button btnAnularRecibo;
         private System.Windows.Forms.DataGridViewTextBoxColumn num_recibo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn num_factura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO_FACTURA;
         private System.Windows.Forms.DataGridViewTextBoxColumn documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn identificacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_liquidacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_pago;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo;

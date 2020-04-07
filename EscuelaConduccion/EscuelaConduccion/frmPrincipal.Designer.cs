@@ -42,13 +42,17 @@
             this.anularReciboToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.anularPagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestiónVigenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consecutivosDIANToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestiónConsecutivosFacturasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tarifasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestiónTarifasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestiónCategoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clienteProveedorToolStripMenuItem,
             this.liquidacionToolStripMenuItem,
@@ -64,11 +68,11 @@
             this.clienteProveedorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gestiónClienteToolStripMenuItem,
             this.gestiónProveedorToolStripMenuItem});
-            this.clienteProveedorToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clienteProveedorToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clienteProveedorToolStripMenuItem.Image = global::EscuelaConduccion.Properties.Resources.ciente_proveedor_32x32;
             this.clienteProveedorToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.clienteProveedorToolStripMenuItem.Name = "clienteProveedorToolStripMenuItem";
-            this.clienteProveedorToolStripMenuItem.Size = new System.Drawing.Size(161, 36);
+            this.clienteProveedorToolStripMenuItem.Size = new System.Drawing.Size(170, 36);
             this.clienteProveedorToolStripMenuItem.Text = "Cliente/Proveedor";
             // 
             // gestiónClienteToolStripMenuItem
@@ -76,7 +80,7 @@
             this.gestiónClienteToolStripMenuItem.Image = global::EscuelaConduccion.Properties.Resources.person_32x32;
             this.gestiónClienteToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.gestiónClienteToolStripMenuItem.Name = "gestiónClienteToolStripMenuItem";
-            this.gestiónClienteToolStripMenuItem.Size = new System.Drawing.Size(205, 38);
+            this.gestiónClienteToolStripMenuItem.Size = new System.Drawing.Size(217, 38);
             this.gestiónClienteToolStripMenuItem.Text = "Gestión Cliente";
             this.gestiónClienteToolStripMenuItem.Click += new System.EventHandler(this.gestiónClienteToolStripMenuItem_Click);
             // 
@@ -85,7 +89,7 @@
             this.gestiónProveedorToolStripMenuItem.Image = global::EscuelaConduccion.Properties.Resources.cliente_proveedor_32x32;
             this.gestiónProveedorToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.gestiónProveedorToolStripMenuItem.Name = "gestiónProveedorToolStripMenuItem";
-            this.gestiónProveedorToolStripMenuItem.Size = new System.Drawing.Size(205, 38);
+            this.gestiónProveedorToolStripMenuItem.Size = new System.Drawing.Size(217, 38);
             this.gestiónProveedorToolStripMenuItem.Text = "Gestión Proveedor";
             // 
             // liquidacionToolStripMenuItem
@@ -94,11 +98,11 @@
             this.liquidaciónToolStripMenuItem,
             this.acuerdoDePagoToolStripMenuItem,
             this.gestiónRecibofacturaToolStripMenuItem});
-            this.liquidacionToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.liquidacionToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.liquidacionToolStripMenuItem.Image = global::EscuelaConduccion.Properties.Resources.caja_32x32;
             this.liquidacionToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.liquidacionToolStripMenuItem.Name = "liquidacionToolStripMenuItem";
-            this.liquidacionToolStripMenuItem.Size = new System.Drawing.Size(121, 36);
+            this.liquidacionToolStripMenuItem.Size = new System.Drawing.Size(126, 36);
             this.liquidacionToolStripMenuItem.Text = "Liquidación";
             // 
             // liquidaciónToolStripMenuItem
@@ -116,7 +120,7 @@
             this.acuerdoDePagoToolStripMenuItem.Image = global::EscuelaConduccion.Properties.Resources.iconfinder_3_3319636;
             this.acuerdoDePagoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.acuerdoDePagoToolStripMenuItem.Name = "acuerdoDePagoToolStripMenuItem";
-            this.acuerdoDePagoToolStripMenuItem.Size = new System.Drawing.Size(234, 38);
+            this.acuerdoDePagoToolStripMenuItem.Size = new System.Drawing.Size(249, 38);
             this.acuerdoDePagoToolStripMenuItem.Text = "Acuerdo de Pago";
             this.acuerdoDePagoToolStripMenuItem.Click += new System.EventHandler(this.acuerdoDePagoToolStripMenuItem_Click);
             // 
@@ -130,7 +134,7 @@
             this.gestiónRecibofacturaToolStripMenuItem.Image = global::EscuelaConduccion.Properties.Resources.recibo_32x32;
             this.gestiónRecibofacturaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.gestiónRecibofacturaToolStripMenuItem.Name = "gestiónRecibofacturaToolStripMenuItem";
-            this.gestiónRecibofacturaToolStripMenuItem.Size = new System.Drawing.Size(234, 38);
+            this.gestiónRecibofacturaToolStripMenuItem.Size = new System.Drawing.Size(249, 38);
             this.gestiónRecibofacturaToolStripMenuItem.Text = "Gestión Recibo/Factura";
             // 
             // buscarToolStripMenuItem
@@ -138,7 +142,7 @@
             this.buscarToolStripMenuItem.Image = global::EscuelaConduccion.Properties.Resources.buscarFactura_32x32;
             this.buscarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
-            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(184, 38);
             this.buscarToolStripMenuItem.Text = "Buscar";
             this.buscarToolStripMenuItem.Click += new System.EventHandler(this.buscarToolStripMenuItem_Click);
             // 
@@ -147,7 +151,7 @@
             this.pagarToolStripMenuItem.Image = global::EscuelaConduccion.Properties.Resources.money_32x32;
             this.pagarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.pagarToolStripMenuItem.Name = "pagarToolStripMenuItem";
-            this.pagarToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.pagarToolStripMenuItem.Size = new System.Drawing.Size(184, 38);
             this.pagarToolStripMenuItem.Text = "Pagar";
             this.pagarToolStripMenuItem.Click += new System.EventHandler(this.pagarToolStripMenuItem_Click);
             // 
@@ -156,7 +160,7 @@
             this.anularReciboToolStripMenuItem.Image = global::EscuelaConduccion.Properties.Resources.anularFactura_32x32;
             this.anularReciboToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.anularReciboToolStripMenuItem.Name = "anularReciboToolStripMenuItem";
-            this.anularReciboToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.anularReciboToolStripMenuItem.Size = new System.Drawing.Size(184, 38);
             this.anularReciboToolStripMenuItem.Text = "Anular Recibo";
             this.anularReciboToolStripMenuItem.Click += new System.EventHandler(this.anularReciboToolStripMenuItem_Click);
             // 
@@ -165,38 +169,68 @@
             this.anularPagoToolStripMenuItem.Image = global::EscuelaConduccion.Properties.Resources.anularPago_32x32;
             this.anularPagoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.anularPagoToolStripMenuItem.Name = "anularPagoToolStripMenuItem";
-            this.anularPagoToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.anularPagoToolStripMenuItem.Size = new System.Drawing.Size(184, 38);
             this.anularPagoToolStripMenuItem.Text = "Anular Pago";
             this.anularPagoToolStripMenuItem.Click += new System.EventHandler(this.anularPagoToolStripMenuItem_Click);
             // 
             // configuraciónToolStripMenuItem
             // 
             this.configuraciónToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.consecutivosDIANToolStripMenuItem});
+            this.gestiónVigenciasToolStripMenuItem,
+            this.consecutivosDIANToolStripMenuItem,
+            this.tarifasToolStripMenuItem});
             this.configuraciónToolStripMenuItem.Image = global::EscuelaConduccion.Properties.Resources.configuracion_32x32;
             this.configuraciónToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
-            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(127, 36);
+            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(146, 36);
             this.configuraciónToolStripMenuItem.Text = "Configuración";
+            // 
+            // gestiónVigenciasToolStripMenuItem
+            // 
+            this.gestiónVigenciasToolStripMenuItem.Image = global::EscuelaConduccion.Properties.Resources.vigencia_32x32;
+            this.gestiónVigenciasToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.gestiónVigenciasToolStripMenuItem.Name = "gestiónVigenciasToolStripMenuItem";
+            this.gestiónVigenciasToolStripMenuItem.Size = new System.Drawing.Size(220, 38);
+            this.gestiónVigenciasToolStripMenuItem.Text = "Gestión Vigencias";
+            this.gestiónVigenciasToolStripMenuItem.Click += new System.EventHandler(this.gestiónVigenciasToolStripMenuItem_Click);
             // 
             // consecutivosDIANToolStripMenuItem
             // 
-            this.consecutivosDIANToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestiónConsecutivosFacturasToolStripMenuItem});
-            this.consecutivosDIANToolStripMenuItem.Image = global::EscuelaConduccion.Properties.Resources.Consecutivo_32x32;
+            this.consecutivosDIANToolStripMenuItem.Image = global::EscuelaConduccion.Properties.Resources.rango_32x32;
             this.consecutivosDIANToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.consecutivosDIANToolStripMenuItem.Name = "consecutivosDIANToolStripMenuItem";
-            this.consecutivosDIANToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
+            this.consecutivosDIANToolStripMenuItem.Size = new System.Drawing.Size(220, 38);
             this.consecutivosDIANToolStripMenuItem.Text = "Consecutivos DIAN";
+            this.consecutivosDIANToolStripMenuItem.Click += new System.EventHandler(this.consecutivosDIANToolStripMenuItem_Click);
             // 
-            // gestiónConsecutivosFacturasToolStripMenuItem
+            // tarifasToolStripMenuItem
             // 
-            this.gestiónConsecutivosFacturasToolStripMenuItem.Image = global::EscuelaConduccion.Properties.Resources.Configuracion_consecutivo_32x32;
-            this.gestiónConsecutivosFacturasToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.gestiónConsecutivosFacturasToolStripMenuItem.Name = "gestiónConsecutivosFacturasToolStripMenuItem";
-            this.gestiónConsecutivosFacturasToolStripMenuItem.Size = new System.Drawing.Size(251, 38);
-            this.gestiónConsecutivosFacturasToolStripMenuItem.Text = "Gestión Consecutivos Facturas";
-            this.gestiónConsecutivosFacturasToolStripMenuItem.Click += new System.EventHandler(this.gestiónConsecutivosFacturasToolStripMenuItem_Click);
+            this.tarifasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gestiónTarifasToolStripMenuItem,
+            this.gestiónCategoriasToolStripMenuItem});
+            this.tarifasToolStripMenuItem.Image = global::EscuelaConduccion.Properties.Resources.tarifaBlue_32x32;
+            this.tarifasToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tarifasToolStripMenuItem.Name = "tarifasToolStripMenuItem";
+            this.tarifasToolStripMenuItem.Size = new System.Drawing.Size(220, 38);
+            this.tarifasToolStripMenuItem.Text = "Tarifas";
+            // 
+            // gestiónTarifasToolStripMenuItem
+            // 
+            this.gestiónTarifasToolStripMenuItem.Image = global::EscuelaConduccion.Properties.Resources.tarifaConfigBlue_32x32;
+            this.gestiónTarifasToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.gestiónTarifasToolStripMenuItem.Name = "gestiónTarifasToolStripMenuItem";
+            this.gestiónTarifasToolStripMenuItem.Size = new System.Drawing.Size(219, 38);
+            this.gestiónTarifasToolStripMenuItem.Text = "Gestión Tarifas";
+            this.gestiónTarifasToolStripMenuItem.Click += new System.EventHandler(this.gestiónTarifasToolStripMenuItem_Click);
+            // 
+            // gestiónCategoriasToolStripMenuItem
+            // 
+            this.gestiónCategoriasToolStripMenuItem.Image = global::EscuelaConduccion.Properties.Resources.categoria_32x32;
+            this.gestiónCategoriasToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.gestiónCategoriasToolStripMenuItem.Name = "gestiónCategoriasToolStripMenuItem";
+            this.gestiónCategoriasToolStripMenuItem.Size = new System.Drawing.Size(219, 38);
+            this.gestiónCategoriasToolStripMenuItem.Text = "Gestión Categorias";
+            this.gestiónCategoriasToolStripMenuItem.Click += new System.EventHandler(this.gestiónCategoriasToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -236,7 +270,10 @@
         private System.Windows.Forms.ToolStripMenuItem anularPagoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configuraciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consecutivosDIANToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestiónConsecutivosFacturasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestiónVigenciasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tarifasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestiónTarifasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestiónCategoriasToolStripMenuItem;
     }
 }
 

@@ -186,6 +186,17 @@ namespace ServiciosEscuelaConduccion.Model.Managements
 			resultado = false;
 			try 
 			{
+				TARIFA_DETALLEManagement gestionDetalle = new TARIFA_DETALLEManagement();
+				TARIFA_DETALLE tARIFA_DETALLE = new TARIFA_DETALLE();
+				tARIFA_DETALLE.ID_TARIFA = obj.ID;
+				TARIFA_DETALLE[] lstDetalle = gestionDetalle.buscarTARIFA_DETALLE(tARIFA_DETALLE);
+				if (lstDetalle != null && lstDetalle.Length > 0)
+				{
+					foreach (TARIFA_DETALLE detalle in lstDetalle)
+					{
+						gestionDetalle.eliminarTARIFA_DETALLE(detalle);
+					}
+				}
 				TARIFADao dao = new TARIFADao();
 				conn = conexion.conection();
 				dao.delete(conn, obj);

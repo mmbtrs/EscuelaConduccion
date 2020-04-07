@@ -1,11 +1,7 @@
+using ServiciosEscuelaConduccion.objetos;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Globalization;
 using System.Data.SqlClient;
-
-using ServiciosEscuelaConduccion.objetos;
 
 namespace ServiciosEscuelaConduccion.dao
 {
@@ -304,6 +300,12 @@ namespace ServiciosEscuelaConduccion.dao
                 sql += "AND TARIFA= '" + valueObject.TARIFA + "' ";
             }
 
+            if (!String.IsNullOrEmpty(valueObject.ESTADO_FACTURA))
+            {
+                if (first) { first = false; }
+                sql += "AND ESTADO_FACTURA= '" + valueObject.ESTADO_FACTURA + "' ";
+            }
+
             sql += "ORDER BY NUMERO_RECIBO ASC ";
 
             if (first)
@@ -370,7 +372,7 @@ namespace ServiciosEscuelaConduccion.dao
             if (fechaIniLiq != DateTime.MinValue && fechaFinLiq != DateTime.MinValue)
             {
                 if (first) { first = false; }
-                sql += "AND FECHA_LIQUIDACION between '" + fechaIniLiq.ToString("dd/MM/yyyy HH:mm:ss") + "' AND '" + fechaFinLiq.ToString("dd/MM/yyyy HH:mm:ss") + "' ";
+                sql += "AND FECHA_LIQUIDACION between CONVERT(datetime,'" + fechaIniLiq.ToString("dd/MM/yyyy HH:mm:ss") + "',103) AND CONVERT(datetime,'" + fechaFinLiq.ToString("dd/MM/yyyy HH:mm:ss") + "',103) ";
             }
 
             if (valueObject.FECHA_PAGO != DateTime.MinValue)
@@ -382,7 +384,7 @@ namespace ServiciosEscuelaConduccion.dao
             if (fechaIniPag != DateTime.MinValue && fechaFinPag != DateTime.MinValue)
             {
                 if (first) { first = false; }
-                sql += "AND FECHA_PAGO between '" + fechaIniPag.ToString("dd/MM/yyyy HH:mm:ss") + "' AND '" + fechaFinPag.ToString("dd/MM/yyyy HH:mm:ss") + "' ";
+                sql += "AND FECHA_PAGO between CONVERT(datetime,'" + fechaIniPag.ToString("dd/MM/yyyy HH:mm:ss") + "',103) AND CONVERT(datetime,'" + fechaFinPag.ToString("dd/MM/yyyy HH:mm:ss") + "',103) ";
             }
 
             if (valueObject.ID_TIPO_LIQUIDACION != null && valueObject.ID_TIPO_LIQUIDACION != 0)
@@ -401,6 +403,12 @@ namespace ServiciosEscuelaConduccion.dao
             {
                 if (first) { first = false; }
                 sql += "AND TARIFA= '" + valueObject.TARIFA + "' ";
+            }
+
+            if (!String.IsNullOrEmpty(valueObject.ESTADO_FACTURA))
+            {
+                if (first) { first = false; }
+                sql += "AND ESTADO_FACTURA= '" + valueObject.ESTADO_FACTURA + "' ";
             }
 
             sql += "ORDER BY NUMERO_RECIBO ASC ";
@@ -490,6 +498,12 @@ namespace ServiciosEscuelaConduccion.dao
                 sql += "AND TARIFA= '" + valueObject.TARIFA + "' ";
             }
 
+            if (!String.IsNullOrEmpty(valueObject.ESTADO_FACTURA))
+            {
+                if (first) { first = false; }
+                sql += "AND ESTADO_FACTURA= '" + valueObject.ESTADO_FACTURA + "' ";
+            }
+
             sql += ") AS CONSULTA WHERE RowNumber >=" + limiteInf + " AND RowNumber <=" + limiteSup;
 
             if (first)
@@ -577,6 +591,12 @@ namespace ServiciosEscuelaConduccion.dao
                 sql += "AND TARIFA= '" + valueObject.TARIFA + "' ";
             }
 
+            if (!String.IsNullOrEmpty(valueObject.ESTADO_FACTURA))
+            {
+                if (first) { first = false; }
+                sql += "AND ESTADO_FACTURA= '" + valueObject.ESTADO_FACTURA + "' ";
+            }
+
             SqlCommand stmt = null;
             SqlDataReader result = null;
             int allRows = 0;
@@ -630,6 +650,7 @@ namespace ServiciosEscuelaConduccion.dao
                     temp.ID_TIPO_LIQUIDACION = reader["ID_TIPO_LIQUIDACION"] != null && long.TryParse(reader["ID_TIPO_LIQUIDACION"].ToString(), out longg) ? longg : 0;
                     temp.TIPO = reader["TIPO"] != null ? reader["TIPO"].ToString() : null;
                     temp.TARIFA = reader["TARIFA"] != null ? reader["TARIFA"].ToString() : null;
+                    temp.ESTADO_FACTURA = reader["ESTADO_FACTURA"] != null ? reader["ESTADO_FACTURA"].ToString() : null;
                     searchResults.Add(temp);
                 }
             }

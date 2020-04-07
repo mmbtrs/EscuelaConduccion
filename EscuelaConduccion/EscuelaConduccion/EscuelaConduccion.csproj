@@ -66,6 +66,24 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\Accesorias\frmCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Accesorias\frmCategoria.Designer.cs">
+      <DependentUpon>frmCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Accesorias\frmConcepto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Accesorias\frmConcepto.Designer.cs">
+      <DependentUpon>frmConcepto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Accesorias\frmGestionCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Accesorias\frmGestionCategoria.Designer.cs">
+      <DependentUpon>frmGestionCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelo\Accesorias\frmMunicipios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +113,12 @@
     </Compile>
     <Compile Include="Modelo\Facturas\frmCrearConsecutivo.Designer.cs">
       <DependentUpon>frmCrearConsecutivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Facturas\frmDetalleConsecutivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Facturas\frmDetalleConsecutivo.Designer.cs">
+      <DependentUpon>frmDetalleConsecutivo.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Facturas\frmGestionConsecutivosFactura.cs">
       <SubType>Form</SubType>
@@ -161,6 +185,42 @@
     </Compile>
     <Compile Include="Modelo\Liquidacion\frmViewAcuerdoPago.Designer.cs">
       <DependentUpon>frmViewAcuerdoPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Tarifas\frmDetalleTarifa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Tarifas\frmDetalleTarifa.Designer.cs">
+      <DependentUpon>frmDetalleTarifa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Tarifas\frmGestionTarifas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Tarifas\frmGestionTarifas.Designer.cs">
+      <DependentUpon>frmGestionTarifas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Tarifas\frmTarifa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Tarifas\frmTarifa.Designer.cs">
+      <DependentUpon>frmTarifa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Vigencia\frmDuplicarVigencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Vigencia\frmDuplicarVigencia.Designer.cs">
+      <DependentUpon>frmDuplicarVigencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Vigencia\frmGestionVigencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Vigencia\frmGestionVigencia.Designer.cs">
+      <DependentUpon>frmGestionVigencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Vigencia\frmVigencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\Vigencia\frmVigencia.Designer.cs">
+      <DependentUpon>frmVigencia.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -255,7 +315,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\wsServiciosTARIFACATEGORIA\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\wsServiciosTARIFA\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsServiciosTARIFA_CONCEPTO\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -303,6 +373,15 @@
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Accesorias\frmCategoria.resx">
+      <DependentUpon>frmCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Accesorias\frmConcepto.resx">
+      <DependentUpon>frmConcepto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Accesorias\frmGestionCategoria.resx">
+      <DependentUpon>frmGestionCategoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modelo\Accesorias\frmMunicipios.resx">
       <DependentUpon>frmMunicipios.cs</DependentUpon>
     </EmbeddedResource>
@@ -317,6 +396,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modelo\Facturas\frmCrearConsecutivo.resx">
       <DependentUpon>frmCrearConsecutivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Facturas\frmDetalleConsecutivo.resx">
+      <DependentUpon>frmDetalleConsecutivo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modelo\Facturas\frmGestionConsecutivosFactura.resx">
       <DependentUpon>frmGestionConsecutivosFactura.cs</DependentUpon>
@@ -350,6 +432,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Modelo\Liquidacion\frmViewAcuerdoPago.resx">
       <DependentUpon>frmViewAcuerdoPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Tarifas\frmDetalleTarifa.resx">
+      <DependentUpon>frmDetalleTarifa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Tarifas\frmGestionTarifas.resx">
+      <DependentUpon>frmGestionTarifas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Tarifas\frmTarifa.resx">
+      <DependentUpon>frmTarifa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Vigencia\frmDuplicarVigencia.resx">
+      <DependentUpon>frmDuplicarVigencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Vigencia\frmGestionVigencia.resx">
+      <DependentUpon>frmGestionVigencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelo\Vigencia\frmVigencia.resx">
+      <DependentUpon>frmVigencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -512,12 +612,28 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\wsServiciosSQL\ServiciosSQL.wsdl" />
+    <None Include="Web References\wsServiciosTARIFACATEGORIA\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosTARIFACATEGORIA\ServiciosTARIFACATEGORIA.wsdl" />
+    <None Include="Web References\wsServiciosTARIFACATEGORIA\TARIFACATEGORIA.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\wsServiciosTARIFA\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\wsServiciosTARIFA\ServiciosTARIFA.wsdl" />
     <None Include="Web References\wsServiciosTARIFA\TARIFA.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\wsServiciosTARIFA_CONCEPTO\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\wsServiciosTARIFA_CONCEPTO\ServiciosTARIFA_CONCEPTO.wsdl" />
+    <None Include="Web References\wsServiciosTARIFA_CONCEPTO\TARIFA_CONCEPTO.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
     <None Include="Web References\wsServiciosTARIFA_DETALLE\Reference.map">
@@ -593,6 +709,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="carroAzul.ico" />
+    <None Include="Resources\categoria_32x32.png" />
+    <None Include="Resources\rango_32x32.png" />
+    <None Include="Web References\wsServiciosTARIFA_CONCEPTO\ServiciosTARIFA_CONCEPTO.disco" />
+    <None Include="Resources\tarifaConfigBlue_32x32.png" />
+    <None Include="Resources\tarifaBlue_32x32.png" />
+    <None Include="Web References\wsServiciosTARIFACATEGORIA\ServiciosTARIFACATEGORIA.disco" />
+    <None Include="Resources\gestion_tarifas_32x32.png" />
+    <None Include="Resources\tarifas_32x32.png" />
+    <None Include="Resources\calendar2_32x32.png" />
+    <None Include="Resources\calendar_32x32.png" />
+    <None Include="Resources\copy_32x32.png" />
+    <None Include="Resources\vigencia_32x32.png" />
+    <None Include="Web References\wsServiciosViewliquidacion\ServiciosViewliquidacion.disco" />
     <None Include="Web References\wsServiciosFACTURA_ESTADO\ServiciosFACTURA_ESTADO.disco" />
     <None Include="Web References\wsServiciosACUERDO_PAGO\ServiciosACUERDO_PAGO.disco" />
     <None Include="Web References\wsServiciosACUERDO_ESTADO\ServiciosACUERDO_ESTADO.disco" />
@@ -613,7 +742,6 @@
     <None Include="Resources\Configuracion_consecutivo_32x32.png" />
     <None Include="Resources\Consecutivo_32x32.png" />
     <None Include="Resources\configuracion_32x32.png" />
-    <None Include="Web References\wsServiciosViewliquidacion\ServiciosViewliquidacion.disco" />
     <None Include="Web References\wsServiciosRECIBO_ESTADO\ServiciosRECIBO_ESTADO.disco" />
     <None Include="Resources\iconfinder_3_3319636.png" />
     <None Include="Resources\acuerdo_pago_32x32.png" />
@@ -661,7 +789,12 @@
     <None Include="Resources\cliente_proveedor_32x32.png" />
     <None Include="Resources\ciente_proveedor_32x32.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ServiciosEscuelaConduccion\ServiciosEscuelaConduccion.csproj">
+      <Project>{A6DC594F-085D-4DA1-8857-9EC17CD8DEF3}</Project>
+      <Name>ServiciosEscuelaConduccion</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
@@ -877,6 +1010,28 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>EscuelaConduccion_wsServiciosTARIFA_ServiciosTARIFA</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosTARIFACATEGORIA.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosTARIFACATEGORIA\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosTARIFACATEGORIA.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosTARIFACATEGORIA_ServiciosTARIFACATEGORIA</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosTARIFA_CONCEPTO.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\wsServiciosTARIFA_CONCEPTO\</RelPath>
+      <UpdateFromURL>http://localhost:52393/Model/Services/ServiciosTARIFA_CONCEPTO.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EscuelaConduccion_wsServiciosTARIFA_CONCEPTO_ServiciosTARIFA_CONCEPTO</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="http://localhost:52393/Model/Services/ServiciosTARIFA_DETALLE.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>

@@ -368,6 +368,8 @@ namespace EscuelaConduccion.wsServiciosViewliquidacion {
         
         private string tARIFAField;
         
+        private string eSTADO_FACTURAField;
+        
         /// <remarks/>
         public string NUMERO_RECIBO {
             get {
@@ -485,6 +487,16 @@ namespace EscuelaConduccion.wsServiciosViewliquidacion {
             }
             set {
                 this.tARIFAField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ESTADO_FACTURA {
+            get {
+                return this.eSTADO_FACTURAField;
+            }
+            set {
+                this.eSTADO_FACTURAField = value;
             }
         }
     }

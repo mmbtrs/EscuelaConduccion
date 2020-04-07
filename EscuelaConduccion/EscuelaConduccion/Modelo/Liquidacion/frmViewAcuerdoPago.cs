@@ -1,6 +1,7 @@
 ﻿using EscuelaConduccion.wsServiciosACUERDO_PAGO;
 using EscuelaConduccion.wsServiciosSQL;
 using EscuelaConduccion.wsServiciosTIPO_DOCUMENTO;
+using EscuelaConduccion.wsServiciosVIEW_CLIENTE;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,7 @@ namespace EscuelaConduccion.Modelo.Liquidacion
         ServiciosTIPO_DOCUMENTO serviciosTIPO_DOCUMENTO;
         ServiciosSQL serviciosSQL;
         ServiciosACUERDO_PAGO serviciosACUERDO_PAGO;
+        ServiciosVIEW_CLIENTE serviciosVIEW_CLIENTE;
 
         public frmViewAcuerdoPago()
         {
@@ -26,6 +28,7 @@ namespace EscuelaConduccion.Modelo.Liquidacion
             serviciosTIPO_DOCUMENTO = (ServiciosTIPO_DOCUMENTO)Configurador.ConfigurarServicio(typeof(ServiciosTIPO_DOCUMENTO));
             serviciosSQL = (ServiciosSQL)Configurador.ConfigurarServicio(typeof(ServiciosSQL));
             serviciosACUERDO_PAGO = (ServiciosACUERDO_PAGO)Configurador.ConfigurarServicio(typeof(ServiciosACUERDO_PAGO));
+            serviciosVIEW_CLIENTE = (ServiciosVIEW_CLIENTE)Configurador.ConfigurarServicio(typeof(ServiciosVIEW_CLIENTE));
             getTiposDocumento();
         }
 
@@ -128,7 +131,80 @@ namespace EscuelaConduccion.Modelo.Liquidacion
 
         private void btnInsertar_Click(object sender, EventArgs e)
         {
+            crearAcuerdo();
+        }
 
+        private void crearAcuerdo()
+        {
+            VIEW_CLIENTE cliente = new VIEW_CLIENTE();
+            cliente.TIPO_DOCUMENTO = ((TIPO_DOCUMENTO)cmbTipoDocumento.SelectedItem).TIPO;
+            cliente.IDENTIFICACION = txtIdentificacion.Text.Trim();
+            cliente = serviciosVIEW_CLIENTE.buscarPrimeroVIEW_CLIENTE(cliente);
+            if (cliente != null && cliente.ID > 0)
+            {
+                frmBuscarLiquidacion frm = new frmBuscarLiquidacion(cliente);
+                frm.ShowDialog(this);
+                buscarAcuerdos();
+            }
+            else
+                MessageBox.Show("No se encontró el cliente", "Sin cliente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            eliminarAcuerdo();
+        }
+
+        private void eliminarAcuerdo()
+        {
+            if (grdDatos.Rows != null && grdDatos.Rows.Count > 0 && grdDatos.SelectedRows != null && grdDatos.SelectedRows.Count > 0)
+            {
+                ACUERDO_PAGO acuerdo = new ACUERDO_PAGO();
+                acuerdo.ID = int.Parse(grdDatos.SelectedRows[0].Cells["ID"].Value.ToString());
+                acuerdo = serviciosACUERDO_PAGO.buscarPrimeroACUERDO_PAGO(acuerdo);
+                if (acuerdo != null && acuerdo.ID > 0)
+                {
+                    if (MessageBox.Show("¿Está seguro(a) que desea eliminar el acuerdo de pago No." + acuerdo.NUMERO_ACUERDO + "?", 
+                        "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                    {
+                        string sql =
+                                        @"SELECT 
+                                        ACUERDO_PAGO.ID,
+                                        ACUERDO_PAGO_DETALLE.ID_RECIBO,
+                                        RECIBO.NUMERO_RECIBO,
+                                        RECIBO_ESTADO.ESTADO
+                                        FROM 
+                                        ACUERDO_PAGO
+                                        INNER JOIN ACUERDO_PAGO_DETALLE ON (ACUERDO_PAGO.ID = ACUERDO_PAGO_DETALLE.ID_ACUERDO_PAGO)
+                                        INNER JOIN RECIBO ON (ACUERDO_PAGO_DETALLE.ID_RECIBO = RECIBO.ID)
+                                        LEFT JOIN RECIBO_ESTADO ON (RECIBO.ID_ESTADO = RECIBO_ESTADO.ID)
+                                        WHERE RECIBO_ESTADO.ESTADO  = 'PAGADO' AND ACUERDO_PAGO.ID = " + acuerdo.ID;
+                        DataSet ds = serviciosSQL.consultaSQL(sql, "recibos");
+                        if (ds != null && 
+                            ds.Tables != null && 
+                            ds.Tables["recibos"] != null && 
+                            ds.Tables["recibos"].Rows != null &&
+                            ds.Tables["recibos"].Rows.Count > 0)
+                            MessageBox.Show("No es posible eliminar el acuerdo No." + acuerdo.NUMERO_ACUERDO + ", ya que tiene cuotas en estado PAGADO", 
+                                "No es posible eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        else
+                        {
+                            if (serviciosACUERDO_PAGO.eliminarACUERDO_PAGO(acuerdo))
+                            {
+                                MessageBox.Show("Se eliminó correctamente el acuerdo de pago seleccionado", "Eliminación correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                buscarAcuerdos();
+                            }
+                            else
+                                MessageBox.Show("Ocurrio un error y no se eliminó correctamente el acuerdo de pago seleccionado", "Eliminación incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                else
+                    MessageBox.Show("No se encontró el acuerdo de pago", "Sin acuerdo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+                MessageBox.Show("Debe seleccionar un acuerdo de pago de la lista", "Sin acuerdos", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
     }
 }

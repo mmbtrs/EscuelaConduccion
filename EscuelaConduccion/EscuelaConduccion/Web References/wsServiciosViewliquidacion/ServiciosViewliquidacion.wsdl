@@ -23,6 +23,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="ID_TIPO_LIQUIDACION" type="s:long" />
           <s:element minOccurs="0" maxOccurs="1" name="TIPO" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="TARIFA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ESTADO_FACTURA" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="buscarPrimeroViewliquidacionResponse">

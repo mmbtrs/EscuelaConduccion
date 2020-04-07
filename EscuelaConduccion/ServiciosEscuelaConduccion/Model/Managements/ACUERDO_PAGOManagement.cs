@@ -190,6 +190,25 @@ namespace ServiciosEscuelaConduccion.Model.Managements
 			resultado = false;
 			try 
 			{
+				ACUERDO_PAGO_DETALLEManagement gestionDetalle = new ACUERDO_PAGO_DETALLEManagement();
+				ACUERDO_PAGO_DETALLE detalle = new ACUERDO_PAGO_DETALLE();
+				detalle.ID_ACUERDO_PAGO = obj.ID;
+				ACUERDO_PAGO_DETALLE[] lstDetalles = gestionDetalle.buscarACUERDO_PAGO_DETALLE(detalle);
+				if (lstDetalles != null && lstDetalles.Length > 0)
+				{
+					RECIBOManagement gestionRecibo = new RECIBOManagement();
+					
+					foreach (ACUERDO_PAGO_DETALLE item in lstDetalles)
+					{
+						RECIBO recibo = new RECIBO();
+						if (item.ID_RECIBO != null && item.ID_RECIBO > 0)
+						{
+							recibo.ID = item.ID_RECIBO;
+							gestionRecibo.eliminarRECIBO(recibo); 
+						}
+						gestionDetalle.eliminarACUERDO_PAGO_DETALLE(item);
+					}
+				}
 				ACUERDO_PAGODao dao = new ACUERDO_PAGODao();
 				conn = conexion.conection();
 				dao.delete(conn, obj);

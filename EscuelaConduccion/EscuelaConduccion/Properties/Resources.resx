@@ -136,8 +136,8 @@
   <data name="ok_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ok_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="anularFactura_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\anularFactura_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="gestion_tarifas_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gestion_tarifas_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="items_20x20_negro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\items_20x20_negro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,6 +148,15 @@
   <data name="person_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\person_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="confirmar_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\confirmar_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tarifaBlue_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tarifaBlue_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tarifaConfigBlue_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tarifaConfigBlue_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="edit_20x20_negro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit_20x20_negro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,14 +166,20 @@
   <data name="more_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\more_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ventana" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ventana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="calendar2_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calendar2_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="calendar_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calendar_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="recibo_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\recibo_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="confirmar_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\confirmar_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="vigencia_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vigencia_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tarifas_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tarifas_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="configuracion_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\configuracion_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,8 +202,8 @@
   <data name="fondo con logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondo con logo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="search_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\search_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ventana" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ventana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Incognita" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Incognita.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,8 +214,14 @@
   <data name="Configuracion_consecutivo_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Configuracion_consecutivo_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="anularFactura_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\anularFactura_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="liquidar_48x48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\liquidar_48x48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="calcular2_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calcular2_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="print_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\print_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,8 +241,17 @@
   <data name="buscarFactura_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buscarFactura_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="rango_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rango_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="minus_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minus_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search_24x24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search_24x24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="copy_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\copy_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Consecutivo_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Consecutivo_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,7 +268,7 @@
   <data name="fondo con logo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondo con logo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="calcular2_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\calcular2_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="categoria_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\categoria_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

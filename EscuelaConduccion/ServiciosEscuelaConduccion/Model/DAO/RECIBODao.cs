@@ -260,17 +260,17 @@ namespace ServiciosEscuelaConduccion.Model.DAO {
 
 			if (valueObject.FECHA_RECIBO > DateTime.MinValue) {
 				if (first) { first = false; }
-				sql += "AND FECHA_RECIBO= '" + valueObject.FECHA_RECIBO.ToString("dd/MM/yyyy HH:mm:ss") + "' ";
+				sql += "AND FECHA_RECIBO= CONVERT(datetime,'" + valueObject.FECHA_RECIBO.ToString("dd/MM/yyyy HH:mm:ss") + "',103) ";
 			}
 
 			if (valueObject.FECHA_REGISTRO_PAGO > DateTime.MinValue) {
 				if (first) { first = false; }
-				sql += "AND FECHA_REGISTRO_PAGO= '" + valueObject.FECHA_REGISTRO_PAGO.ToString("dd/MM/yyyy HH:mm:ss") + "' ";
+				sql += "AND FECHA_REGISTRO_PAGO= CONVERT(datetime,'" + valueObject.FECHA_REGISTRO_PAGO.ToString("dd/MM/yyyy HH:mm:ss") + "',103) ";
 			}
 
 			if (valueObject.FECHA_PAGO > DateTime.MinValue) {
 				if (first) { first = false; }
-				sql += "AND FECHA_PAGO= '" + valueObject.FECHA_PAGO.ToString("dd/MM/yyyy HH:mm:ss") + "' ";
+				sql += "AND FECHA_PAGO= CONVERT(datetime,'" + valueObject.FECHA_PAGO.ToString("dd/MM/yyyy HH:mm:ss") + "',103) ";
 			}
 
 			if (!String.IsNullOrEmpty(valueObject.VALOR.ToString()) && valueObject.VALOR > 0) {
@@ -280,27 +280,27 @@ namespace ServiciosEscuelaConduccion.Model.DAO {
 
 			if (valueObject.FECHA_VENCIMIENTO > DateTime.MinValue) {
 				if (first) { first = false; }
-				sql += "AND FECHA_VENCIMIENTO= '" + valueObject.FECHA_VENCIMIENTO.ToString("dd/MM/yyyy HH:mm:ss") + "' ";
+				sql += "AND FECHA_VENCIMIENTO= CONVERT(datetime,'" + valueObject.FECHA_VENCIMIENTO.ToString("dd/MM/yyyy HH:mm:ss") + "',103) ";
 			}
 
 			if (valueObject.FECHA_ENTRAMITE > DateTime.MinValue) {
 				if (first) { first = false; }
-				sql += "AND FECHA_ENTRAMITE= '" + valueObject.FECHA_ENTRAMITE.ToString("dd/MM/yyyy HH:mm:ss") + "' ";
+				sql += "AND FECHA_ENTRAMITE= CONVERT(datetime,'" + valueObject.FECHA_ENTRAMITE.ToString("dd/MM/yyyy HH:mm:ss") + "',103) ";
 			}
 
 			if (valueObject.FECHA_ANULADO > DateTime.MinValue) {
 				if (first) { first = false; }
-				sql += "AND FECHA_ANULADO= '" + valueObject.FECHA_ANULADO.ToString("dd/MM/yyyy HH:mm:ss") + "' ";
+				sql += "AND FECHA_ANULADO= CONVERT(datetime,'" + valueObject.FECHA_ANULADO.ToString("dd/MM/yyyy HH:mm:ss") + "',103) ";
 			}
 
 			if (valueObject.FECHA_PAGOANULADO > DateTime.MinValue) {
 				if (first) { first = false; }
-				sql += "AND FECHA_PAGOANULADO= '" + valueObject.FECHA_PAGOANULADO.ToString("dd/MM/yyyy HH:mm:ss") + "' ";
+				sql += "AND FECHA_PAGOANULADO= CONVERT(datetime,'" + valueObject.FECHA_PAGOANULADO.ToString("dd/MM/yyyy HH:mm:ss") + "',103) ";
 			}
 
 			if (valueObject.FECHA_PROCESADO > DateTime.MinValue) {
 				if (first) { first = false; }
-				sql += "AND FECHA_PROCESADO= '" + valueObject.FECHA_PROCESADO.ToString("dd/MM/yyyy HH:mm:ss") + "' ";
+				sql += "AND FECHA_PROCESADO= CONVERT(datetime,'" + valueObject.FECHA_PROCESADO.ToString("dd/MM/yyyy HH:mm:ss") + "',103) ";
 			}
 
 			sql += "ORDER BY id ASC ";

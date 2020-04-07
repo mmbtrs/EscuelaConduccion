@@ -81,7 +81,7 @@ namespace ServiciosEscuelaConduccion.Model.Managements
                 TARIFA_DETALLE tARIFA_DETALLE = new TARIFA_DETALLE();
                 tARIFA_DETALLE.ID_TARIFA = tarifa.ID;
                 TARIFA_DETALLEManagement tARIFA_DETALLEManagement = new TARIFA_DETALLEManagement();
-                TARIFA_DETALLE[] lst_tarifas_detalle = tARIFA_DETALLEManagement.buscarTARIFA_DETALLE(tARIFA_DETALLE);
+                TARIFA_DETALLE[] lst_tarifas_detalle = tARIFA_DETALLEManagement.buscarTARIFA_DETALLE_SoloActivos(tARIFA_DETALLE);
                 if (lst_tarifas_detalle != null && lst_tarifas_detalle.Length > 0)
                 {
                     foreach (TARIFA_DETALLE item in lst_tarifas_detalle)
